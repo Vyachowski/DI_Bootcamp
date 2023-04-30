@@ -1,3 +1,57 @@
-.background-color {
-  background-color: lightgrey;
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  background-color: rgb(241, 241, 241);
+}
+
+.navbar {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(124, 124, 124);
+}
+
+.sign-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;;
+}
+
+.hero-section {
+  height: 80vh;
+  padding: 50px 30px;
+  background-image: url("img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  
 }
