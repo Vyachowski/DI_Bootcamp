@@ -8,6 +8,7 @@ body {
 .main-header {
   position: sticky;
   top: 0;
+  z-index: 3;
   background-color: rgb(241, 241, 241);
 }
 
@@ -25,33 +26,84 @@ body {
   color: rgb(124, 124, 124);
 }
 
-.sign-button {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+.button {
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
   background-color: #0d6efd;
   color: white;
-  border-radius: 5px;;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.sign-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .hero-section {
-  height: 80vh;
-  padding: 50px 30px;
+  position: relative;
+  height: 300px;
+  padding: 75px 30px;
   background-image: url("img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
 }
 
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .wrapper {
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
 }
 
 h1 {
-  
+  margin: 25px 0;
+  margin-bottom: 45px;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  min-width: 350px;
+  padding: 15px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.sign-up {
+  padding: 16px 40px;
+}
+
+.features {
+  background-color: rgb(241, 241, 241);
+}
+
+.features-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.features-title {
+  margin: 0;
 }
