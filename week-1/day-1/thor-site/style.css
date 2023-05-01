@@ -2,14 +2,14 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
 }
 
 .main-header {
   position: sticky;
   top: 0;
   z-index: 3;
-  background-color: rgb(241, 241, 241);
+  background-color: black;
 }
 
 .navbar {
@@ -18,37 +18,41 @@ body {
   margin: 0 auto;
 }
 
+.site-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.site-list li {
+  display: inline-block;
+}
+
+.site-link {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: white;
+}
+
 .logo {
   display: inline-block;
   padding: 15px;
   text-decoration: none;
-  font-size: 1.2rem;
-  color: rgb(124, 124, 124);
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  background-color: #0d6efd;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: white;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-.sign-button {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
 }
 
 .hero-section {
   position: relative;
-  height: 300px;
+  height: 350px;
   padding: 75px 30px;
-  background-image: url("img/background.jpg");
+  background-image: url("img/thor.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
@@ -61,49 +65,20 @@ body {
   left: 0;
   right: 0;
   padding: 100px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .wrapper {
   width: 65%;
-  margin: 0 auto;
 }
 
 h1 {
   margin: 25px 0;
   margin-bottom: 45px;
-  font-size: 2.5rem;
-  text-align: center;
-  color: white;
+  font-size: 5.5rem;
+  color: black;
 }
 
-form {
-  margin: 0 auto;
-  text-align: center;
-}
-
-input {
-  min-width: 350px;
-  padding: 15px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  margin-right: 5px;
-}
-
-.sign-up {
-  padding: 16px 40px;
-}
-
-.features {
-  background-color: rgb(241, 241, 241);
-}
-
-.features-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.features-title {
-  margin: 0;
+h1 + p {
+  color: black;
 }
