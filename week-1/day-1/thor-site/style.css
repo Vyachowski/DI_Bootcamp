@@ -50,36 +50,26 @@ body {
 
 .hero-section {
   position: relative;
-  height: 100vh;
-  padding: 75px 30px;
+  padding: 0 30px;
+  padding-top: 205px;
   background-image: url("img/thor.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-}
-
-.background-wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 100px;
-  padding-top: 200px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-size: 120%;
+  background-position: center -150px;
 }
 
 .wrapper {
-  width: 65%;
+  width: 85%;
 }
 
 h1 {
-  margin: 25px 0;
-  margin-bottom: 45px;
+  margin: 55px 0;
+  margin-bottom: 35px;
   font-size: 5.5rem;
   color: black;
 }
 
 h1 + p {
+  margin: 0;
   color: black;
 }
