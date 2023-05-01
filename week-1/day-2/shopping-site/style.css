@@ -1,10 +1,58 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", "Roboto", Helvetica, Arial, sans-serif;
+}
+
+header {
+  position: relative;
+  background-color: black;
+}
+
+.logo-link {
+  display: inline-block;
+  padding: 20px 0;
+}
+
+.site-menu {
+  display: block;
+  padding: 0 30px;
+}
+
+.site-link,
+.footer-link {
+  display: inline-block;
+  padding: 20px 0;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-link {
+  position: absolute;
+  right: 30px;
+}
+
+.footer-navigation {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-navigation li {
+  display: inline-block;
+}
+
+.footer-navigation li:first-child {
+  margin-right: 50px;
+}
 
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color: black;
   color: white;
   text-align: center;
 }
