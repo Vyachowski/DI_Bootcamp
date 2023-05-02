@@ -1,5 +1,18 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-section {
+  margin: auto;
+  width: fit-content;
+}
+
 .login,
 .welcome {
   display: inline-block;
   width: 50%;
+  height: 50%;
+  border: 1px solid black;
 }
