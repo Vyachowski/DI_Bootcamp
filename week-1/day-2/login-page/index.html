@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/63bd801ead.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Shopping Website</title>
   </head>
@@ -14,21 +14,43 @@
       <div class="login">
         <form action="https://httpbin.org/anything" method="get">
           <h1 class="login-header">Log in</h1>
-            <input type="email" name="email" id="email_field" placeholder="email">
-            <input type="password" name="pass" id="pass" placeholder="password">
-            <label for="remember"></label>
-            <input type="checkbox" name="remember" id="remember">
+          <input class="field" type="email" name="email" id="email_field" placeholder="email">
+          <input class="field" type="password" name="pass" id="pass" placeholder="password">
+          <div class="login-button-wrapper">
+            <label class="remember" for="remember">
+              <input class="checkbox" type="checkbox" name="remember" id="remember">
+              Remember me
+            </label>
             <a class="forgot-pass-link" href="#">Forgot password?</a>
-            <button type="submit"></button>
+          </div>
+          <button class="button submit-button" type="submit">Log in</button>
         </form>
+        <span class="divider">Or Connect with</span>
+        <ul class="social-list">
+          <li class="social-item">
+            <i class="fa-brands fa-facebook-f"></i>
+          </li>
+          <li class="social-item">
+            <i class="fa-brands fa-twitter"></i>
+          </li>
+          <li class="social-item">
+            <i class="fa-brands fa-github"></i>
+          </li>
+          <li class="social-item">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </li>
+        </ul>
+        <span class="year">&#169; 2023</span>
       </div>
       <div class="welcome">
         <div class="wrapper">
-          <i class="fa-regular fa-user-plus" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-user-plus"></i>
           <h2 class="welcome-title">Hello, friend!</h2>
           <p class="subtitle">Enter your personal details and start journey with us</p>
-          <a class="button button-secondary" href="#">Register</a>
-          <i class="fa-solid fa-arrow-right-to-arc"></i>
+          <a class="button button-secondary" href="#">
+            <span class="button-text">Register</span>
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </a>
         </div>
       </div>
     </section>

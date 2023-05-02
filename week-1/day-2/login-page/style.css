@@ -2,6 +2,17 @@ html,
 body {
   height: 100%;
   font-family: 'Inter', sans-serif;
+  color: gray;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  all: unset;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* Login section */
@@ -14,46 +25,147 @@ body {
 
 .login,
 .welcome {
-  float: left;
   width: 50%;
-  height: 50%;
+  min-width: 350px;
+  min-height: 420px;
+  text-align: center;
 }
 
+.login {
+  float: left;
+  padding: 2rem 1rem;
+  padding-bottom: 0;
+  background-color:rgb(248, 248, 248);
+}
+
+.login-header {
+  margin: 0;
+  margin-bottom: 0.5rem;;
+}
+
+.field {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  color: darkgray;
+  background-color: rgb(240, 240, 240);
+}
+
+.remember {
+  position: relative;
+  left: -50px;
+  font-size: 0.8rem;
+}
+
+.forgot-pass-link {
+  position: relative;
+  left: 45px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.8rem;
+}
+
+.login-button-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.submit-button {
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  color: white;
+  background-color: blueviolet;
+}
+
+.divider {
+  display: block;
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.divider::before,
+.divider::after {
+  position: absolute;
+  top: 50%;
+  width: 95px;
+  height: 1px;
+  background-color: darkgray;
+  content: "";
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.social-list {
+  margin: 0;
+  margin-bottom: 3rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.social-item {
+  display: inline-block;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.year {
+  font-size: .6rem;
+}
+/* Welcome section */
+
 .welcome {
+  position: relative;
   float: right;
-  text-align: center;
   color: white;
   background: linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 103.4%);
 }
 
 .wrapper {
-  margin: auto;
-}
-
-.welcome-title {
-  margin-bottom: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
 }
 
 .fa-user-plus {
   display: block;
-  height: 40px;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
+.welcome-title {
+  margin-bottom: 0.3rem;
 }
 
 .subtitle {
   font-size: 0.8rem;
   max-width: 280px;
   margin: 0 auto;
-}
-
-/* Welcome section */
-
-.button {
-  all: unset;
-  padding: 10px 20px;
+  margin-bottom: 1.5rem;
 }
 
 .button-secondary {
+  display: inline-block;
   border: 1px solid white;
   border-radius: 20px;
+}
+
+.fa-arrow-right-to-arc {
+  width: 20px;
+  height: 20px;
+  color: white;
 }
