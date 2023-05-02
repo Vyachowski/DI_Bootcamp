@@ -21,11 +21,39 @@ body {
 
 .welcome {
   float: right;
+  text-align: center;
+  color: white;
   background: linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 103.4%);
+}
+
+.wrapper {
+  margin: auto;
+}
+
+.welcome-title {
+  margin-bottom: 3px;
+}
+
+.fa-user-plus {
+  display: block;
+  height: 40px;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 /* Welcome section */
 
 .button {
   all: unset;
+  padding: 10px 20px;
+}
+
+.button-secondary {
+  border: 1px solid white;
+  border-radius: 20px;
 }
