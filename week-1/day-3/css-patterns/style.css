@@ -1,4 +1,10 @@
-section {
+h2 {
+  text-align: center;
+}
+
+/* Exercise 1 */
+
+.exercise-1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,4 +38,65 @@ section {
   height: 50px;
   border: 1px solid black;
   background-color: yellow;
+}
+
+/*  Exercise 2 */
+
+.exercise-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  width: 400px;
+  height: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.exercise-2 .square {
+  width: 20px;
+  height: 20px;
+  background-color: orangered;
+}
+
+
+.exercise-2 .square:nth-child(3n-1) {
+  background-color: orange;
+}
+
+.exercise-2 .square:nth-child(3n) {
+  background-color: brown;
+}
+
+/* Exercise 3 */
+
+.exercise-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  width: 400px;
+  height: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.exercise-3 .square {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+}
+
+.exercise-3 .square:nth-child(2n) {
+  background-color: lightgray;
+}
+
+.exercise-3 .square:nth-child(4n - 1) {
+  background-color: darkgray;
+}
+
+.exercise-3 .square:nth-child(4n) {
+  background-color: black;
 }
