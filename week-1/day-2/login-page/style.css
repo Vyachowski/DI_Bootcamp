@@ -4,15 +4,28 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* Login section */
+
 .form-section {
   margin: auto;
   width: fit-content;
+  height: fit-content;
 }
 
 .login,
 .welcome {
-  display: inline-block;
+  float: left;
   width: 50%;
   height: 50%;
-  border: 1px solid black;
+}
+
+.welcome {
+  float: right;
+  background: linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 103.4%);
+}
+
+/* Welcome section */
+
+.button {
+  all: unset;
 }
