@@ -1,5 +1,7 @@
 h2 {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px 0;
 }
 
 /* Exercise 1 */
@@ -11,7 +13,6 @@ h2 {
   width: 80%;
   height: 80%;
   margin: 0 auto;
-  padding: 100px 0;
 }
 
 .column,
@@ -51,7 +52,6 @@ h2 {
   width: 400px;
   height: 80%;
   margin: 0 auto;
-  padding: 100px 0;
 }
 
 .exercise-2 .square {
@@ -80,7 +80,6 @@ h2 {
   width: 400px;
   height: 80%;
   margin: 0 auto;
-  padding: 100px 0;
 }
 
 .exercise-3 .square {
@@ -99,4 +98,40 @@ h2 {
 
 .exercise-3 .square:nth-child(4n) {
   background-color: black;
+}
+
+/* Exercise 4 */
+
+.exercise-4 {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 100px 0;
+  border: 1px solid black;
+  padding: 0;
+}
+
+.exercise-4 .line-odd,
+.exercise-4 .line-even {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exercise-4 .square {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+
+.line-odd .square:nth-child(2n) {
+  background-color: lightcoral;
+}
+
+.line-even .square {
+  background-color: lightcoral;
+}
+
+.line-even .square:nth-child(2n) {
+  background-color: red;
 }
