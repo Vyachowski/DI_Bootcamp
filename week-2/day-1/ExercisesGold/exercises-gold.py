@@ -10,10 +10,10 @@ print('Hello world\n'*5 + 'I love python\n'*5)
 #    Autumn runs from September (9) to November (11)
 #    Winter runs from December (12) to February (2)
 monthNumber = int(input("Please enter a number of a month (from 1 to 12): "))
-if (monthNumber == 12 or monthNumber < 3):
-  print('It is winter now!')
-elif (monthNumber < 6 and monthNumber > 2):
+if (monthNumber > 2 and monthNumber < 6 ):
   print('It is spring now!')
-elif (monthNumber < 9 and monthNumber > 5):
+elif (monthNumber > 5 and monthNumber < 9 ):
   print('It is summer now!')
+elif (monthNumber == 12 or monthNumber < 3):
+  print('It is winter now!')
 else: print('It is fall now!')
