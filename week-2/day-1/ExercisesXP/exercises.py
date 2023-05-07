@@ -8,7 +8,7 @@ print((99^3)*8)
 
 # Exercise 3
 # Predict the output of the following code snippets:
-# I've predicted but here is the outpu
+# I've predicted but here is the output
 print(5 < 3)
 print(3 == 3)
 print(3 == "3")
