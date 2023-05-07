@@ -28,7 +28,8 @@ for sym in str:
 str_list = list(str)
 random.shuffle(str_list)
 str_shuffled = ''.join(str_list)
-result = ''
-for sym in str_shuffled:
-  result = result + sym
-  print(result)
+print(str_shuffled)
+# result = ''
+# for sym in str_shuffled:
+#   result = result + sym
+#   print(result)
