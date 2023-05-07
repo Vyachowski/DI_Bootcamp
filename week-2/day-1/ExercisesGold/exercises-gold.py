@@ -1,6 +1,6 @@
 # Exercise 1
 # Print the following output in one line of code:
-print('Hello world\n'*5,'I love python\n'*5)
+print('Hello world\n'*5 + 'I love python\n'*5)
 
 # Exercise 2
 # 1) Ask the user to input a month (1 to 12).
