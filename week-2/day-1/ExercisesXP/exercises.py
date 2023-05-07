@@ -58,7 +58,7 @@ my_name = 'Slava'
 name = str(input("Please enter your name, my friend: "))
 
 if (name == my_name):
-  print('Wow! You parents are the best with a great sense of beaty persons in the whole world!')
+  print('Wow! You parents are the best persons in the whole world!')
 
 # Exercise 9
 # Write code that will ask the user for their height in inches.
