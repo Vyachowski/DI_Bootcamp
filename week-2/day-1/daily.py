@@ -12,11 +12,16 @@ print(f'First letter is: {str[0]}')
 print(f'Last letter is: {str[-1]}')
 
 # Exercise 3
+result = ''
 for sym in str:
-  print(sym)
+  result = result + sym
+  print(result)
 
 # Exercise 4
-random.shuffle(list(str))
-str_new = ''.join(list(str))
-for sym in str_new:
-  print(sym)
+str_list = list(str)
+random.shuffle(str_list)
+str_shuffled = ''.join(str_list)
+result = ''
+for sym in str_shuffled:
+  result = result + sym
+  print(result)
