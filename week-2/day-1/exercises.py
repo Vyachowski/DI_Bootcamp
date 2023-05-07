@@ -1,9 +1,5 @@
 # Exercise 1
-print('Hello world')
-print('Hello world')
-print('Hello world')
-print('Hello world')
-print('Hello world\n')
+print('Hello world\n'*5)
 
 # Exercise 2
 print((99^3)*8)
