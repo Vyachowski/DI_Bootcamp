@@ -3,7 +3,7 @@ import random
 # Using the input function, ask the user for a string. The string must be 10 characters long.
 # If it’s less than 10 characters, print a message which states “string not long enough”.
 # If it’s more than 10 characters, print a message which states “string too long”.
-str = input("Please enter a sentence: ")
+str = input('Please enter a sentence: ')
 if (len(str) < 10):
   print('String is not long enough')
 elif (len(str) > 10):
