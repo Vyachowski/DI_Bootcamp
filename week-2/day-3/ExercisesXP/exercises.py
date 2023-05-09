@@ -98,9 +98,34 @@ print(brand['number_stores'])
 # #3/ 
 # >>> print(disney_users_C)
 # {"Ariel": 0, "Donald": 1, "Mickey": 2, "Minnie": 3, "Pluto": 4}
-# Use a for loop to recreate the 1st result) Tip : don’t hardcode the numbers)
-# Use a for loop to recreate the 2nd result) Tip : don’t hardcode the numbers)
-# Use a method to recreate the 3rd result) Hint: The 3rd result is sorted alphabetically)
+# Use a for loop to recreate the 1st result Tip : don’t hardcode the numbers
+# Use a for loop to recreate the 2nd result Tip : don’t hardcode the numbers
+# Use a method to recreate the 3rd result Hint: The 3rd result is sorted alphabetically
 # Only recreate the 1st result for:
 # The characters, which names contain the letter “i”)
 # The characters, which names start with the letter “m” or “p”)
+
+# Step 1
+users = ["Mickey","Minnie","Donald","Ariel","Pluto"]
+disney_users_A = {}
+number = 0
+for user in users:
+  disney_users_A[user] = number
+  number += 1
+
+# Step 2
+disney_users_B = {}
+number = 0
+for user in users:
+  disney_users_B[number] = user
+  number += 1
+
+# Step 3
+disney_users_C = {}
+number = 0
+sorted_list = users.copy()
+sorted_list.sort()
+for user in sorted_list:
+  disney_users_C[user] = number
+  number += 1
+print(disney_users_C)
