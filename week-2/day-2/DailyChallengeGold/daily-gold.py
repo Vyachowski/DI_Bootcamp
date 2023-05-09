@@ -14,9 +14,9 @@
 # Bonus : If they were born on a leap year, display two cakes !
 import datetime
 birth_date = input('Pleasy enter your birthday in a DD/MM/YYYY format: ')
-year = datetime.datetime.now().year
-birthday, birth_month, birth_year = birth_date.split('/')
-age = year - int(birth_year)
+birth_day, birth_month, birth_year = birth_date.split('/')
+current_year = datetime.datetime.now().year
+age = current_year - int(birth_year)
 candles_amount = age[-1]
 
 print(f'\t\t    _{}_    ')
