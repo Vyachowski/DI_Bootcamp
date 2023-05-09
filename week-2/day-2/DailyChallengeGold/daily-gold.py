@@ -19,7 +19,7 @@ current_year = datetime.datetime.now().year
 age = current_year - int(birth_year)
 candles_amount = age[-1]
 
-print(f'\t\t    _{}_    ')
+print(f'\t\t    _{ birth_date }_    ')
 print('\t\t   |:H:a:p:p:y:|   ')
 print('\t\t __|___________|__ ')
 print('\t\t|^^^^^^^^^^^^^^^^^|')
