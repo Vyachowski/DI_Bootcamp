@@ -78,7 +78,7 @@ else:
 toppings_list = list()
 exit_point = False
 while (exit_point == False):
-  answer = input('Please enter a topping, that you want add to your pizza (one at a time, to stop adding pleaser print "quit"): ')
+  answer = input('Please enter a topping, that you want add to your pizza (one at a time, to stop adding pleaser print \'quit\'): ')
   if (answer.lower() != 'quit'):
     toppings_list.append(answer)
     print(f'You\'ve added {answer} to the pizza!')
@@ -88,14 +88,50 @@ while (exit_point == False):
 
 # EXERCISE 9: CINEMAX
 # 1) A movie theater charges different ticket prices depending on a person’s age.
-# if a person is under the age of 3, the ticket is free.
-# if they are between 3 and 12, the ticket is $10.
-# if they are over the age of 12, the ticket is $15.
+#    – if a person is under the age of 3, the ticket is free.
+#    – if they are between 3 and 12, the ticket is $10.
+#    – if they are over the age of 12, the ticket is $15.
 
 # 2) Ask a family the age of each person who wants a ticket.
 
 # 3) Store the total cost of all the family’s tickets and print it out.
 
-# A group of teenagers are coming to your movie theater and want to watch a movie that is restricted for people between the ages of 16 and 21.
-# Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
-# At the end, print the final list.
+# 4) A group of teenagers are coming to your movie theater and want to watch a movie that is restricted for people between the ages of 16 and 21.
+#    Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
+#    At the end, print the final list.
+family = ['father', 'mother', 'daughter']
+total_cost = 0
+for member in family:
+  age = int(input('What is your age: '))
+  if (age >= 3 and age <= 12):
+    total_cost += 10
+  if (age > 12):
+    total_cost += 15
+print(f'${total_cost}')
+    
+# EXERCISE 10 : SANDWICH ORDERS
+# sandwich_orders = ['Tuna sandwich', 'Avocado sandwich', 'Egg sandwich', 'Sabih sandwich', 'Pastrami sandwich']
+
+# 1) Use the above list called sandwich_orders.
+# 2) Make an empty list called finished_sandwiches.
+# 3) As each sandwich is made, move it to the list of finished sandwiches.
+# 4) After all the sandwiches have been made, print a message listing each sandwich that was made , such as I made your tuna sandwich.
+sandwich_orders = ['Tuna sandwich', 'Avocado sandwich', 'Egg sandwich', 'Sabih sandwich', 'Pastrami sandwich']
+finished_sandwiches= list()
+for sandwich in sandwich_orders:
+  finished_sandwiches.append(sandwich)
+for sandwich in finished_sandwiches:
+  print(f'Your {sandwich} is ready!')
+
+
+# EXERCISE 11 : SANDWICH ORDERS
+# Using the list sandwich_orders from the previous exercise, make sure the sandwich ‘pastrami’ appears in the list at least three times.
+# Add code near the beginning of your program to print a message saying the deli has run out of pastrami, and then use a while loop to remove all occurrences of ‘pastrami’ from sandwich_orders.
+# Make sure no pastrami sandwiches end up in finished_sandwiches.
+sandwiches_order = ['Pastrami sandwich', 'Tuna sandwich', 'Avocado sandwich', 'Pastrami sandwich', 'Egg sandwich', 'Sabih sandwich', 'Pastrami sandwich']
+print('I am very sorry, but we are out of pastrami. We will prepare your order without it')
+finished_sandwiches_no_pastrami = sandwiches_order[:]
+while ('Pastrami sandwich' in finished_sandwiches_no_pastrami):
+  finished_sandwiches_no_pastrami.remove('Pastrami sandwich')
+print(finished_sandwiches_no_pastrami)
+
