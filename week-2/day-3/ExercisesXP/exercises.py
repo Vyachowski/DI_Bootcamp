@@ -71,14 +71,10 @@ brand = {
                           },
         }
 brand['number_stores'] = 2
-print(brand)
 print(f'Zara\'s clients are {brand["type_of_clothes"]}, who not explored yet { brand["international_competitors"]} or lived before {brand["creation_date"]}')
 brand['country_creation'] = 'Spain'
-print(brand)
 brand['international_competitors'] += ', Desigual'
-print(brand)
 brand.pop('creation_date')
-print(brand)
 print(brand['international_competitors'].split(', ')[3])
 print(brand['major_color']['US'])
 print(len(brand))
