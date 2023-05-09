@@ -129,3 +129,12 @@ for user in sorted_list:
   disney_users_C[user] = number
   number += 1
 print(disney_users_C)
+
+# Step 4
+disney_users_D = {}
+number = 0
+for user in users:
+  if 'i' in user or user[0] == 'M' or user[0] == 'P':
+    disney_users_D[user] = number
+  number += 1
+print(disney_users_D)
