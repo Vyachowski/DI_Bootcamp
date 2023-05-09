@@ -67,4 +67,4 @@ if (name == my_name):
 height = int(input("Please enter your height(in inches): "))
 if (height > 145):
   print('You are tall enough to ride!')
-else: print('I am sorry, but this roller coaster it\'s only for your brother')
+else: print('I am sorry, but this roller coaster is only for your brother')
