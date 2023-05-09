@@ -53,9 +53,9 @@ for number in range(1, 21):
 # EXERCISE 6
 # Write a while loop that will continuously ask the user for their name, unless the input is equal to your name.
 name = 'slava'
-answer = ''
-while (answer != name):
-  answer = input('May I have your name, sir: ').lower()
+new_topping = ''
+while (new_topping != name):
+  new_topping = input('May I have your name, sir: ').lower()
 
 # EXERCISE 7
 # Ask the user to input their favorite fruit(s) (one or several fruits).
@@ -76,15 +76,15 @@ else:
 # 2) As they enter each topping, print a message saying you’ll add that topping to their pizza.
 # 3) Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
 toppings_list = list()
-exit_point = False
-while (exit_point == False):
-  answer = input('Please enter a topping, that you want add to your pizza (one at a time, to stop adding pleaser print \'quit\'): ')
-  if (answer.lower() != 'quit'):
-    toppings_list.append(answer)
-    print(f'You\'ve added {answer} to the pizza!')
+exit_request = False
+while (exit_request == False):
+  new_topping = input('Please enter a topping, that you want add to your pizza (one at a time, to stop adding pleaser print \'quit\'): ')
+  if (new_topping.lower() != 'quit'):
+    toppings_list.append(new_topping)
+    print(f'You\'ve added {new_topping} to the pizza!')
   else:
     print(f'Total price is: {10 + 0.25 * len(toppings_list)}' )
-    exit_point = True
+    exit_request = True
 
 # EXERCISE 9: CINEMAX
 # 1) A movie theater charges different ticket prices depending on a person’s age.
@@ -130,8 +130,7 @@ for sandwich in finished_sandwiches:
 # Make sure no pastrami sandwiches end up in finished_sandwiches.
 sandwiches_order = ['Pastrami sandwich', 'Tuna sandwich', 'Avocado sandwich', 'Pastrami sandwich', 'Egg sandwich', 'Sabih sandwich', 'Pastrami sandwich']
 print('I am very sorry, but we are out of pastrami. We will prepare your order without it')
-finished_sandwiches_no_pastrami = sandwiches_order[:]
-while ('Pastrami sandwich' in finished_sandwiches_no_pastrami):
-  finished_sandwiches_no_pastrami.remove('Pastrami sandwich')
-print(finished_sandwiches_no_pastrami)
-
+finished_sandwiches_without_pastrami = sandwiches_order[:]
+while ('Pastrami sandwich' in finished_sandwiches_without_pastrami):
+  finished_sandwiches_without_pastrami.remove('Pastrami sandwich')
+print(finished_sandwiches_without_pastrami)

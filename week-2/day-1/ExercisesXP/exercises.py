@@ -49,7 +49,8 @@ if (a < b):
 num = int(input("Please enter a number: "))
 if (num % 2 == 0):
   print('It\'s even!')
-else: print('It\'s odd!')
+else: 
+  print('It\'s odd!')
 
 
 # EXERCISE 8
