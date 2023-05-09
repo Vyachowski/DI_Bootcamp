@@ -1,5 +1,5 @@
 import random
-# Exercise 1
+# EXERCISE 1
 # Using the input function, ask the user for a string. The string must be 10 characters long.
 # If it’s less than 10 characters, print a message which states “string not long enough”.
 # If it’s more than 10 characters, print a message which states “string too long”.
@@ -10,12 +10,12 @@ elif (len(str) > 10):
   print('String is too long')
 else: print('Well done!')
 
-# Exercise 2
+# EXERCISE 2
 # Then, print the first and last characters of the given text.
 print(f'First letter is: {str[0]}')
 print(f'Last letter is: {str[-1]}')
 
-# # Exercise 3
+# # EXERCISE 3
 # Using a for loop, construct the string character by character: Print the first character, then the second, 
 # then the third, until the full string is printed.
 result = ''
@@ -23,7 +23,7 @@ for sym in str:
   result = result + sym
   print(result)
 
-# Exercise 4
+# EXERCISE 4
 # Bonus: Swap some characters around then print the newly jumbled string (hint: look into the shuffle method).
 str_list = list(str)
 random.shuffle(str_list)

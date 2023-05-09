@@ -1,8 +1,8 @@
-# Exercise 1
+# EXERCISE 1
 # Print the following output in one line of code:
 print('Hello world\n'*5 + 'I love python\n'*5)
 
-# Exercise 2
+# EXERCISE 2
 # 1) Ask the user to input a month (1 to 12).
 # 2) Display the season of the month received :
 #    Spring runs from March (3) to May (5)
