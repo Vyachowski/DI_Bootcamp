@@ -24,8 +24,7 @@ word_to_dictionary('froggy')
 # 3) Return “Nothing” if you can’t afford anything from the store.
 
 def get_normalized_price(price):
-  result_price = int(price.replace('$', '').replace(',', ''))
-  return result_price
+  return int(price.replace('$', '').replace(',', ''))
 
 def get_affordable_items_list (items, wallet):
   affordable_items_list = []
