@@ -15,48 +15,65 @@ def word_to_dictionary(word):
   print(dictionary)
 
 # Examples
-word_to_dictionary('dodo')
-word_to_dictionary('froggy')
+# word_to_dictionary('dodo')
+# word_to_dictionary('froggy')
 
 # CHALLENGE 2
-# Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
-# Sort the list in alphabetical order.
-# Return “Nothing” if you can’t afford anything from the store.
-# Examples
+# 1) Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
+# 2) Sort the list in alphabetical order.
+# 3) Return “Nothing” if you can’t afford anything from the store.
 
+def get_normalized_price(price):
+  result_price = int(price.replace('$', '').replace(',', ''))
+  return result_price
+
+def get_affordable_items_list (items, wallet):
+  affordable_items_list = []
+  cash_amount = get_normalized_price(wallet)
+  for key, value in items.items():
+    price = get_normalized_price(value)
+    if price <= cash_amount:
+      affordable_items_list.append(key)
+  if len(affordable_items_list) == 0:
+    return 'Nothing'
+  return sorted(affordable_items_list)
+
+# Examples
 # The key is the product, the value is the price
 
-# items_purchase = {
-#   "Water": "$1",
-#   "Bread": "$3",
-#   "TV": "$1,000",
-#   "Fertilizer": "$20"
-# }
+# Example 1
+items_purchase = {
+  "Apple": "$4",
+  "Honey": "$3",
+  "Fan": "$14",
+  "Bananas": "$4",
+  "Pan": "$100",
+  "Spoon": "$2"
+}
 
-# wallet = "$300"
+wallet = "$100" 
 
-# ➞ ["Bread", "Fertilizer", "Water"]
+print(get_affordable_items_list(items_purchase, wallet)) # ➞ ["Apple", "Bananas", "Fan", "Honey", "Pan", "Spoon"]
 
-# items_purchase = {
-#   "Apple": "$4",
-#   "Honey": "$3",
-#   "Fan": "$14",
-#   "Bananas": "$4",
-#   "Pan": "$100",
-#   "Spoon": "$2"
-# }
+# Example 1
+items_purchase = {
+  "Phone": "$999",
+  "Speakers": "$300",
+  "Laptop": "$5,000",
+  "PC": "$1200"
+}
 
-# wallet = "$100" 
+wallet = "$1" 
 
-# ➞ ["Apple", "Bananas", "Fan", "Honey", "Pan", "Spoon"]
+print(get_affordable_items_list(items_purchase, wallet)) # ➞ "Nothing"
 
-# items_purchase = {
-#   "Phone": "$999",
-#   "Speakers": "$300",
-#   "Laptop": "$5,000",
-#   "PC": "$1200"
-# }
+items_purchase = {
+  "Water": "$1",
+  "Bread": "$3",
+  "TV": "$1,000",
+  "Fertilizer": "$20"
+  }
 
-# wallet = "$1" 
+wallet = "$300"
 
-# ➞ "Nothing"
+print(get_affordable_items_list(items_purchase, wallet)) # ➞ ["Bread", "Fertilizer", "Water"]
