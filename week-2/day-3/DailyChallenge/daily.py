@@ -18,6 +18,7 @@ def word_to_dictionary(word):
 word_to_dictionary('dodo')
 word_to_dictionary('froggy')
 
+
 # CHALLENGE 2
 # 1) Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
 # 2) Sort the list in alphabetical order.
