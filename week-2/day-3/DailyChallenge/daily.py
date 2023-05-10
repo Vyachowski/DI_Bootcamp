@@ -30,13 +30,13 @@ def get_normalized_price(price):
 def get_affordable_items_list (items, wallet):
   affordable_items_list = []
   cash_amount = get_normalized_price(wallet)
+
   for key, value in items.items():
     price = get_normalized_price(value)
     if price <= cash_amount:
       affordable_items_list.append(key)
-  if len(affordable_items_list) == 0:
-    return 'Nothing'
-  return sorted(affordable_items_list)
+
+  return 'Nothing' if len(affordable_items_list) == 0 else sorted(affordable_items_list)
 
 # Examples
 # The key is the product, the value is the price
