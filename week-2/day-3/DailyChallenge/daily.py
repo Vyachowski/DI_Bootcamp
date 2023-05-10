@@ -4,11 +4,19 @@
 #    - Make sure the letters are the keys.
 #    - Make sure the letters are strings.
 #    - Make sure the indexes are stored in a list and those lists are values.
-# Examples:
-# "dodo" ➞ { "d": [0, 2], "o": [1, 3] }
-# "froggy" ➞ { "f":  [0], "r": [1], "o": [2], "g": [3, 4], "y": [5] }
-# "grapes" ➞ { "g": [0], "r": [1], "a": [2], "p": [3]}
 
+def word_to_dictionary(word):
+  dictionary = {}
+  for position, letter in enumerate(word):
+    if letter not in dictionary:
+      dictionary[letter] = [position]
+    else:
+      dictionary[letter].append(position)
+  print(dictionary)
+
+# Examples
+word_to_dictionary('dodo')
+word_to_dictionary('froggy')
 
 # CHALLENGE 2
 # Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
