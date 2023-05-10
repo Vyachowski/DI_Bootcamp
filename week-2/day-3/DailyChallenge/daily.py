@@ -15,8 +15,8 @@ def word_to_dictionary(word):
   print(dictionary)
 
 # Examples
-# word_to_dictionary('dodo')
-# word_to_dictionary('froggy')
+word_to_dictionary('dodo')
+word_to_dictionary('froggy')
 
 # CHALLENGE 2
 # 1) Create a program that prints a list of the items you can afford in the store with the money you have in your wallet.
@@ -55,7 +55,7 @@ wallet = "$100"
 
 print(get_affordable_items_list(items_purchase, wallet)) # ➞ ["Apple", "Bananas", "Fan", "Honey", "Pan", "Spoon"]
 
-# Example 1
+# Example 2
 items_purchase = {
   "Phone": "$999",
   "Speakers": "$300",
@@ -67,6 +67,7 @@ wallet = "$1"
 
 print(get_affordable_items_list(items_purchase, wallet)) # ➞ "Nothing"
 
+# Example 3
 items_purchase = {
   "Water": "$1",
   "Bread": "$3",
