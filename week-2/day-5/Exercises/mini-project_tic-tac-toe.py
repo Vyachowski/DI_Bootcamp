@@ -50,7 +50,7 @@ def player_input(step):
       try:
         column = int(input("Enter column: "))
       except:
-        print('Are you serious? Letters?')
+        print('No way, buddy. Only numbers from 1 to 3.')
     if board[row - 1][column - 1] == ' ':
       board[row - 1][column - 1] = current_mark
       succesful_step = True
