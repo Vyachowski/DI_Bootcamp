@@ -1,15 +1,3 @@
-# def display_board():
-#   line = '*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *'
-#   separator= line.replace(' ', '-')
-#   border = '*' * 17
-#   print('*' * 17)
-#   print('*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *')
-#   print('*  ' + '-' * 3 + '|' + '-' * 3 + '|' + '-' * 3 + '  *')
-#   print('*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *')
-#   print('*  ' + '-' * 3 + '|' + '-' * 3 + '|' + '-' * 3 + '  *')
-#   print('*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *')
-#   print('*' * 17)
-
 board = [
     ['1', '2', '3'],
     ['4', '5', '6'],
@@ -18,11 +6,12 @@ board = [
 # Board:
 
 def display_board():
-  separator = '*  ' + '-' * 3 + '|' + '-' * 3 + '|' + '-' * 3 + '  *'
+  board_name = 'TIC TAC TOE'
+  border = '* ' * 9
   line = lambda num : f'*   {board[num][0]} | {board[num][1]} | {board[num][2]}   *'
-  border = '*' * 17
+  separator = '*  ---|---|---  *'
 
-  print('TIC TAC TOE')
+  print(board_name)
   print(border)
   print(line(0))
   print(separator)
@@ -32,11 +21,3 @@ def display_board():
   print(border)
 
 display_board()
-
-# Use it if you need
-# line = '*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *'
-# separator= line.replace(' ', '-')
-
-# print(line)
-# print(separator)
-
