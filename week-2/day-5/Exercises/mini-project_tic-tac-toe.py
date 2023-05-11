@@ -39,20 +39,22 @@ def player_input(step):
   current_mark = other_mark if step % 2 != 0 else mark
   print(f'Player {current_mark}\'s turn...')
   while succesful_step == False:
-    row = 0
-    while not row in range(1,4):
+    row = -1
+    while not row in range(0,3):
       try:
-        row = int(input("Enter row: "))
+        answer = int(input("Enter row: "))
+        row =  answer - 1
       except:
         print('Are you serious? Letters?')
-    column = 0
-    while not column in range(1,4):
+    column = -1
+    while not column in range(0,3):
       try:
-        column = int(input("Enter column: "))
+        answer = int(input("Enter column: "))
+        column = answer - 1
       except:
         print('No way, buddy. Only numbers from 1 to 3.')
-    if board[row - 1][column - 1] == ' ':
-      board[row - 1][column - 1] = current_mark
+    if board[row][column] == ' ':
+      board[row][column] = current_mark
       succesful_step = True
     else:
       print('Sorry, this square is already taken. Choose another one...')
