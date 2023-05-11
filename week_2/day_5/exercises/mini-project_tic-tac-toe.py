@@ -22,23 +22,23 @@ other_mark = 'O'
 def display_board():
   board_name = 'TIC TAC TOE'
   border = '* ' * 9
-  line = lambda row_num : f'*   {board[row_num][0]} | {board[row_num][1]} | {board[row_num][2]}   *'
+  row = lambda row_num : f'*   {board[row_num][0]} | {board[row_num][1]} | {board[row_num][2]}   *'
   divider = '*  ---|---|---  *'
 
   print(board_name)
   print(border)
-  print(line(0))
+  print(row(0))
   print(divider)
-  print(line(1))
+  print(row(1))
   print(divider)
-  print(line(2))
+  print(row(2))
   print(border)
 
 def player_input(step):
-  succesful_step = False
+  move_is_succesful = False
   current_mark = mark if step % 2 == 0 else other_mark
   print(f'Player {current_mark}\'s turn...')
-  while succesful_step == False:
+  while move_is_succesful == False:
     row = -1
     while not row in range(0,3):
       try:
@@ -55,7 +55,7 @@ def player_input(step):
         print('No way, buddy. Only numbers from 1 to 3.')
     if board[row][column] == ' ':
       board[row][column] = current_mark
-      succesful_step = True
+      move_is_succesful = True
     else:
       print('Sorry, this square is already taken. Choose another one...')
 
