@@ -90,7 +90,7 @@ def check_win():
 def play():
   
   print('Welcome to TIC TAC TOE!\n')
-  for step, *rest in enumerate([item for sublist in board for item in sublist]): # ugly line, pending changes
+  for step, *rest in enumerate(sum(board, [])): # ugly line, pending changes
     display_board()
     player_input(step)
     win_status = check_win()
