@@ -22,7 +22,7 @@ other_mark = 'O'
 def display_board():
   board_name = 'TIC TAC TOE'
   border = '* ' * 9
-  line = lambda line_num : f'*   {board[line_num][0]} | {board[line_num][1]} | {board[line_num][2]}   *'
+  line = lambda row_num : f'*   {board[row_num][0]} | {board[row_num][1]} | {board[row_num][2]}   *'
   divider = '*  ---|---|---  *'
 
   print(board_name)
@@ -36,7 +36,7 @@ def display_board():
 
 def player_input(step):
   succesful_step = False
-  current_mark = other_mark if step % 2 != 0 else mark
+  current_mark = mark if step % 2 == 0 else other_mark
   print(f'Player {current_mark}\'s turn...')
   while succesful_step == False:
     row = -1
