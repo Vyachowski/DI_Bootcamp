@@ -14,11 +14,11 @@ board = [
     [' ', ' ', ' '],
   ]
 
-mark = 'X'
-other_mark = 'O'
+marks = ('X', 'O')
 
 # SERVICE FUNCTIONS
 
+## Show a board
 def display_board():
   board_name = 'TIC TAC TOE'
   border = '* ' * 9
@@ -34,9 +34,10 @@ def display_board():
   print(row(2))
   print(border)
 
+## Enter the answer
 def player_input(step):
   move_is_succesful = False
-  current_mark = mark if step % 2 == 0 else other_mark
+  current_mark = marks[0] if step % 2 == 0 else marks[1]
   print(f'Player {current_mark}\'s turn...')
   while move_is_succesful == False:
     row = -1
@@ -59,9 +60,10 @@ def player_input(step):
     else:
       print('Sorry, this square is already taken. Choose another one...')
 
+## Check if one of the player won
 def check_win():
-  player_1_win_condition =  mark * 3
-  player_2_win_condition =  other_mark * 3
+  player_1_win_condition =  marks[0] * 3
+  player_2_win_condition =  marks[1] * 3
 
   diagonal_1 = ''.join([board[0][0], board[1][1], board[2][2]])
   diagonal_2 = ''.join([board[0][2], board[1][1], board[2][0]])
@@ -71,7 +73,7 @@ def check_win():
 
   if (diagonal_1 or diagonal_2) == player_1_win_condition:
     return 'Player 1 has won!'
-  elif (diagonal_1 or diagonal_2)  == player_2_win_condition:
+  elif (diagonal_1 or diagonal_2) == player_2_win_condition:
     return 'Player 2 has won!'
   
   for row in result_board:
