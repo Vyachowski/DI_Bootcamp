@@ -56,7 +56,6 @@ equality_randomizer(2)
 ## 6) Make medium shirt with the default message
 ## 7) Make a shirt of any size with a different message.
 ## 8) Bonus: Call the function make_shirt() using keyword arguments.
-
 def make_shirt(size = 'L', message_text = 'I love Python'):
   print(f'The size of the shirt is {size} and the text is {message_text}')
 
