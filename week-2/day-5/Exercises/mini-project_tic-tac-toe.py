@@ -19,9 +19,6 @@ other_mark = 'O'
 
 # SERVICE FUNCTIONS
 
-
-  
-
 def display_board():
   board_name = 'TIC TAC TOE'
   border = '* ' * 9
@@ -39,7 +36,7 @@ def display_board():
 
 def player_input(step):
   succesful_step = False
-  current_mark = mark if step % 2 != 0 else other_mark
+  current_mark = other_mark if step % 2 != 0 else mark
   print(f'Player {current_mark}\'s turn...')
   while succesful_step == False:
     row = 0
@@ -60,19 +57,44 @@ def player_input(step):
     else:
       print('Sorry, this square is already taken. Choose another one...')
 
+def check_win():
+  # Variables
+  player_1_win_condition =  mark * 3
+  player_2_win_condition =  other_mark * 3
+
+  diagonal_1 = ''.join([board[0][0], board[1][1], board[2][2]])
+  diagonal_2 = ''.join([board[0][2], board[1][1], board[2][0]])
+
+  transposed_board = list(zip(*board))
+  result_board = board + transposed_board
+
+  if (diagonal_1 or diagonal_2) == player_1_win_condition:
+    return 'Player 1 has won!'
+  elif (diagonal_1 or diagonal_2)  == player_2_win_condition:
+    return 'Player 2 has won!'
+  
+  for row in result_board:
+    line = ''.join(row)
+    if line == player_1_win_condition:
+      return 'Player 1 has won!'
+    elif line == player_2_win_condition:
+      return 'Player 2 has won!'
+  return ''
 # GAME
 
 def play():
+  
   print('Welcome to TIC TAC TOE!\n')
   for step, *rest in enumerate([item for sublist in board for item in sublist]):
     display_board()
     player_input(step)
-    if check_win() == True:
-      print(f'And the winner is {mark}')
-      break
-  # display_board()
-  # print('Friendship!')
+    win_status = check_win()
+    if len(win_status) > 0:
+      display_board()
+      return print(win_status)
+  display_board()
+  print('Friendship!')
 
 # RUN GAME
 
-# play()
+play()
