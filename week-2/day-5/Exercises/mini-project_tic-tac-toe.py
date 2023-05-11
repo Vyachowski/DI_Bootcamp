@@ -58,7 +58,6 @@ def player_input(step):
       print('Sorry, this square is already taken. Choose another one...')
 
 def check_win():
-  # Variables
   player_1_win_condition =  mark * 3
   player_2_win_condition =  other_mark * 3
 
@@ -80,6 +79,7 @@ def check_win():
     elif line == player_2_win_condition:
       return 'Player 2 has won!'
   return ''
+
 # GAME
 
 def play():
