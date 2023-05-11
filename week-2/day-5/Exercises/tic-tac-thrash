@@ -1,14 +1,6 @@
-# Tic-tac-toe game
-# Instructions:
-# 1) display_board() – To display the Tic Tac Toe board (GUI).
-# 2) player_input(player) – To get the position from the player.
-# 3) check_win() – To check whether there is a winner or not.
-# 4) play() – The main function, which calls all the functions created above.
-
-# Board:
 # def display_board():
 #   line = '*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *'
-#   even_line= line.replace(' ', '-')
+#   separator= line.replace(' ', '-')
 #   border = '*' * 17
 #   print('*' * 17)
 #   print('*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *')
@@ -18,21 +10,33 @@
 #   print('*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *')
 #   print('*' * 17)
 
+board = [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
+  ]
+# Board:
+
 def display_board():
-  even_line = '*  ' + '-' * 3 + '|' + '-' * 3 + '|' + '-' * 3 + '  *'
-  line = even_line.replace('-', ' ')
+  separator = '*  ' + '-' * 3 + '|' + '-' * 3 + '|' + '-' * 3 + '  *'
+  line = lambda num : f'*   {board[num][0]} | {board[num][1]} | {board[num][2]}   *'
   border = '*' * 17
+
+  print('TIC TAC TOE')
   print(border)
-  print(line)
-  print(even_line)
-  print(line)
-  print(even_line)
-  print(line)
+  print(line(0))
+  print(separator)
+  print(line(1))
+  print(separator)
+  print(line(2))
   print(border)
+
 display_board()
 
+# Use it if you need
 # line = '*  ' + ' ' * 3 + '|' + ' ' * 3 + '|' + ' ' * 3 + '  *'
-# even_line= line.replace(' ', '-')
+# separator= line.replace(' ', '-')
 
 # print(line)
-# print(even_line)
+# print(separator)
+
