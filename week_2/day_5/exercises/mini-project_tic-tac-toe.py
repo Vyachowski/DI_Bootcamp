@@ -64,6 +64,7 @@ def player_input(step):
 def check_win():
   player_1_win_condition =  marks[0] * 3
   player_2_win_condition =  marks[1] * 3
+  
 
   diagonal_1 = ''.join([board[0][0], board[1][1], board[2][2]])
   diagonal_2 = ''.join([board[0][2], board[1][1], board[2][0]])
@@ -71,17 +72,19 @@ def check_win():
   transposed_board = list(zip(*board))
   result_board = board + transposed_board
 
+  victory_message = lambda player_num = 1 : f'Player {player_num} has won!'
+
   if (diagonal_1 or diagonal_2) == player_1_win_condition:
-    return 'Player 1 has won!'
+    return victory_message
   elif (diagonal_1 or diagonal_2) == player_2_win_condition:
-    return 'Player 2 has won!'
+    return victory_message(2)
   
   for row in result_board:
     line = ''.join(row)
     if line == player_1_win_condition:
-      return 'Player 1 has won!'
+      return victory_message
     elif line == player_2_win_condition:
-      return 'Player 2 has won!'
+      return victory_message(2)
   return ''
 
 # GAME
