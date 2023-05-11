@@ -19,7 +19,7 @@ other_mark = 'O'
 
 # SERVICE FUNCTIONS
 
-def check_win():
+
   
 
 def display_board():

@@ -1,0 +1,23 @@
+test_board = [
+    ['X', 'X', 'X'],
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+  ]
+
+test_board2 = [
+    ['X', ' ', ' '],
+    [' ', 'X', ' '],
+    [' ', ' ', 'X'],
+  ]
+
+test_board3 = [
+    ['X', ' ', ' '],
+    ['X', ' ', ' '],
+    ['X', ' ', ' '],
+  ]
+
+
+def check_win():
+  print(list(zip(*test_board3)))
+
+check_win()
