@@ -1,5 +1,5 @@
-# Tic-tac-toe game
-#
+# --- TIC TAC TOE GAME --- #
+
 ## Instructions:
 ## 1) The game is played on a grid that’s 3 squares by 3 squares.
 ## 2) Players take turns putting their marks (O or X) in empty squares.
