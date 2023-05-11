@@ -129,7 +129,7 @@ def main():
     print('To coat or not to coat? Hard to decise')
   elif 23 < temp <= 32:
     print('Grab a hoodie for the evening, my friend.')
-  elif 32 < temp < 40:
+  else:
     print('Welcome to Eilat, please use a sun protection and wear a sunglasses!')
 
 print(get_random_temp('spring'))
