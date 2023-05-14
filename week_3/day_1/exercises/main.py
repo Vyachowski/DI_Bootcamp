@@ -89,15 +89,72 @@ class Song:
 stairway = Song(["There’s a lady who's sure", "all that glitters is gold", "and she’s buying a stairway to heaven"])
 
 stairway.sing_me_a_song()
+
 # Exercise 4 : Afternoon At The Zoo
-# Instructions
-# Create a class called Zoo.
-# In this class create a method __init__ that takes one parameter: zoo_name.
-# It instantiates two attributes: animals (an empty list) and name (name of the zoo).
-# Create a method called add_animal that takes one parameter new_animal. This method adds the new_animal to the animals list as long as it isn’t already in the list.
-# Create a method called get_animals that prints all the animals of the zoo.
-# Create a method called sell_animal that takes one parameter animal_sold. This method removes the animal from the list and of course the animal needs to exist in the list.
-# Create a method called sort_animals that sorts the animals alphabetically and groups them together based on their first letter.
+# Instructions:
+# 1) Create a class called Zoo.
+# 2) In this class create a method __init__ that takes one parameter: zoo_name.
+# 3) It instantiates two attributes: animals (an empty list) and name (name of the zoo).
+# 4) Create a method called add_animal that takes one parameter new_animal. 
+#    – This method adds the new_animal to the animals list as long as it isn’t already in the list.
+# 5) Create a method called get_animals that prints all the animals of the zoo.
+# 6) Create a method called sell_animal that takes one parameter animal_sold. 
+#    – This method removes the animal from the list and of course the animal needs to exist in the list.
+# 7) Create a method called sort_animals that sorts the animals alphabetically 
+#    – and groups them together based on their first letter.
+# 8) Create a method called get_groups that prints the animal/animals inside each group.
+# 9) Create an object called ramat_gan_safari and call all the methods.
+# Tip: The zookeeper is the one who will use this class.
+# Example
+# Which animal should we add to the zoo --> Giraffe
+# x.add_animal(Giraffe)
+
+# LOGIC
+
+class Zoo:
+  def __init__(self, zoo_name):
+    self.animals = []
+    self.name = zoo_name
+
+  def add_animal(self, new_animal):
+    if new_animal not in self.animals:
+      self.animals.append(new_animal)
+
+  def get_animals(self):
+    print(self.animals)
+  
+  def sell_animal(self, sold_animal):
+    self.animals.remove(sold_animal) if sold_animal in self.animals else print('Maybe we already sold them, Boss?')
+
+  def sort_animals(self):
+    sorted_animals = self.animals.copy().sort()
+
+# OUTPUT
+
+ramat_gan_safari = Zoo('Ramat Gan City Zoo')
+
+ramat_gan_safari.add_animal('Ape')
+ramat_gan_safari.add_animal('Baboon')
+ramat_gan_safari.add_animal('Bear')
+ramat_gan_safari.add_animal('Cat')
+ramat_gan_safari.add_animal('Cougar')
+ramat_gan_safari.add_animal('Eel')
+ramat_gan_safari.add_animal('Emu')
+ramat_gan_safari.sell_animal('Eel')
+ramat_gan_safari.sell_animal('Emu')
+ramat_gan_safari.sell_animal('Emu')
+ramat_gan_safari.add_animal('Emu')
+ramat_gan_safari.add_animal('Eel')
+
+ramat_gan_safari.get_animals()
+
+
+
+
+
+
+
+
 # Example
 
 # { 
@@ -106,12 +163,3 @@ stairway.sing_me_a_song()
 #     3: ['Cat', 'Cougar'],
 #     4: ['Eel', 'Emu']
 # }
-
-
-# Create a method called get_groups that prints the animal/animals inside each group.
-
-# Create an object called ramat_gan_safari and call all the methods.
-# Tip: The zookeeper is the one who will use this class.
-# Example
-# Which animal should we add to the zoo --> Giraffe
-# x.add_animal(Giraffe)
