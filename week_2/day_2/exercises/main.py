@@ -52,9 +52,9 @@ for number in range(1, 21):
 # EXERCISE 6
 # Write a while loop that will continuously ask the user for their name, unless the input is equal to your name.
 name = 'slava'
-new_topping = ''
-while (new_topping != name):
-  new_topping = input('May I have your name, sir: ').lower()
+users_name = ''
+while (users_name != name):
+  users_name = input('May I have your name, sir: ').lower()
 
 # EXERCISE 7
 # Ask the user to input their favorite fruit(s) (one or several fruits).
