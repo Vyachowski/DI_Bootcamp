@@ -1,35 +1,19 @@
-import random
-# EXERCISE 1
-# Using the input function, ask the user for a string. The string must be 10 characters long.
-# If it’s less than 10 characters, print a message which states “string not long enough”.
-# If it’s more than 10 characters, print a message which states “string too long”.
-str = input('Please enter a sentence: ')
-if (len(str) < 10):
-  print('String is not long enough')
-elif (len(str) > 10):
-  print('String is too long')
-else: print('Well done!')
+# --- OLD MACDONALD’s FARM --- #
 
-# EXERCISE 2
-# Then, print the first and last characters of the given text.
-print(f'First letter is: {str[0]}')
-print(f'Last letter is: {str[-1]}')
+# 1) Create the code that is needed to receive the result. Below are a few questions to assist you with your code:
+# 2) Create a class called Farm. How should it be implemented?
+#    – Does the Farm class need an __init__ method? If so, what parameters should it take?
+#    – How many methods does the Farm class need?
+#    – Do you notice anything interesting about the way we are calling the add_animal method? What parameters should this function have? How many…?
+#    – Test your code and make sure you get the same results as the example above.
+#    – Bonus: nicely line the text in columns as seen in the example above. Use string formatting.
+# 3) Expand The Farm:
+#    – Add a method called get_animal_types to the Farm class. This method should return a sorted list of all the animal types (names) in the farm. With the example above, the list should be: ['cow', 'goat', 'sheep'].
+#    – Add another method to the Farm class called get_short_info. This method should return the following string: “McDonald’s farm has cows, goats and sheep.”. The method should call the get_animal_types function to get a list of the animals.
+# Expected:
+# McDonald's farm
+# cow : 5
+# sheep : 2
+# goat : 12
+# E-I-E-I-0!
 
-# # EXERCISE 3
-# Using a for loop, construct the string character by character: Print the first character, then the second, 
-# then the third, until the full string is printed.
-result = ''
-for sym in str:
-  result = result + sym
-  print(result)
-
-# EXERCISE 4
-# Bonus: Swap some characters around then print the newly jumbled string (hint: look into the shuffle method).
-str_list = list(str)
-random.shuffle(str_list)
-str_shuffled = ''.join(str_list)
-print(str_shuffled)
-# result = ''
-# for sym in str_shuffled:
-#   result = result + sym
-#   print(result)
