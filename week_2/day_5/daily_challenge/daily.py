@@ -6,6 +6,7 @@
 ## 2) Use List Comprehension (???)
 
 # DATA
+
 str = 'without,hello,bag,world'
 
 # LOGIC
