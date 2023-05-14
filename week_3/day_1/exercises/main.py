@@ -127,7 +127,31 @@ class Zoo:
     self.animals.remove(sold_animal) if sold_animal in self.animals else print('Maybe we already sold them, Boss?')
 
   def sort_animals(self):
-    sorted_animals = self.animals.copy().sort()
+    sorted_animals = sorted(self.animals.copy())
+    temporary_dict = {}
+    animals_dict = {}
+    # Если первая буква КЛЮЧА из СПИСКА ЖИВОТНЫХ совпадает с одной из первых букв СУЩЕСТВУЮЩИХ КЛЮЧЕЙ СЛОВАРЯ,
+    # то добавить ЗНАЧЕНИЕ в этот КЛЮЧ, а если нет то СОЗДАТЬ КЛЮЧ (ПОСЛЕДНИЙ КЛЮЧ СЛОВАРЯ + 1)
+    for word in sorted_animals:
+      temporary_dict.setdefault(word[0], []).append(word)
+    grouped_animals = list(temporary_dict.values())
+    for num, group in enumerate(grouped_animals):
+      animals_dict[num + 1] = group
+    print(animals_dict)
+    
+    # for animal in sorted_animals:
+    #   for key, value in animals_dict.items():
+    #     print(key)
+    #     print(value)
+    #     if animal[0].lower() == value[0].lower() and animal != value:
+    #       print(animal[0])
+    #       animals_dict[key] = list(animals_dict[key]).append(animal)
+    #     else:
+    #       print(len(animals_dict) + 1)
+    #       animals_dict[len(animals_dict) + 1] = value
+
+        
+    
 
 # OUTPUT
 
@@ -146,20 +170,6 @@ ramat_gan_safari.sell_animal('Emu')
 ramat_gan_safari.add_animal('Emu')
 ramat_gan_safari.add_animal('Eel')
 
-ramat_gan_safari.get_animals()
+# ramat_gan_safari.get_animals()
 
-
-
-
-
-
-
-
-# Example
-
-# { 
-#     1: "Ape",
-#     2: ["Baboon", "Bear"],
-#     3: ['Cat', 'Cougar'],
-#     4: ['Eel', 'Emu']
-# }
+ramat_gan_safari.sort_animals()
