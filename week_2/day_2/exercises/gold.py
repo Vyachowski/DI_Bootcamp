@@ -19,7 +19,7 @@ from datetime import date
 
 # DATA
 
-leap_year = False
+born_leap_year = False
 
 # LOGIC
 
@@ -52,7 +52,7 @@ def display_cake(candles_amount = 0):
   print( '\t\t|                 |')
   print( '\t\t~~~~~~~~~~~~~~~~~~~')
 
-  if leap_year:
+  if born_leap_year:
     print(f'\t\t    {make_top}     ')
     print( '\t\t   |:H:a:p:p:y:|   ')
     print( '\t\t __|___________|__ ')
@@ -64,7 +64,5 @@ def display_cake(candles_amount = 0):
 # OUTPUT
 
 birthday = get_birthday()
-print(birthday)
-leap_year = is_year_leap(birthday)
-candles_amount = calculate_birthday_candles(birthday)
-display_cake(candles_amount)
+born_leap_year = is_year_leap(birthday)
+display_cake(calculate_birthday_candles(birthday))
