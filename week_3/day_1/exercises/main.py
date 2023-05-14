@@ -1,71 +1,84 @@
-# EXERCISE 1
-# Print the following output in one line of code:
-print('Hello world\n'*5)
+# 🌟 Exercise 1: Cats
+# Instructions:
+# – Using this class
+#    class Cat:
+#      def __init__(self, cat_name, cat_age):
+#        self.name = cat_name
+#        self.age = cat_age
+# 1) Instantiate three Cat objects using the code provided above.
+# 2) Outside of the class, create a function that finds the oldest cat and returns the cat.
+# 3) Print the following string: “The oldest cat is <cat_name>, and is <cat_age> years old.”. Use the function previously created.
+class Cat:
+  def __init__(self, cat_name, cat_age):
+    self.name = cat_name
+    self.age = cat_age
 
-# EXERCISE 2
-# Write code that calculates the result of: (99^3)*8 (meaning 99 to the power of 3, times 8).
-print((99^3)*8)
+cat_1 = Cat('Murzik', 12)
+cat_2 = Cat('Ryzhik', 3)
+cat_3 = Cat('Spasokukozkiy Vadim Alexandrovich', 290)
+cats = [cat_1, cat_2, cat_3]
 
-# EXERCISE 3
-# Predict the output of the following code snippets:
-# I've predicted but here is the output
-print(5 < 3)
-print(3 == 3)
-print(3 == "3")
-# print('3' > 3)
-print("Hello" == "hello")
+def find_oldest_cat(cats):
+  cats.sort(key = lambda cat : cat.age) # => Sorts cat by age
+  return cats[-1]
 
-# EXERCISE 4
-# Create a variable called computer_brand which value is the brand name of your computer.
-# Using the computer_brand variable print a sentence that states the following: "I have a <computer_brand> computer".
-computer_brand = 'Apple'
-print(f'I have an {computer_brand} computer')
+oldest_cat = find_oldest_cat(cats)
 
-# EXERCISE 5
-# Create a variable called name, and set it’s value to your name.
-# Create a variable called age, and set it’s value to your age.
-# Create a variable called shoe_size, and set it’s value to your shoe size.
-# Create a variable called info and set it’s value to an interesting sentence about yourself. The sentence must contain all the variables created in parts 1, 2 and 3.
-# Have your code print the info message.
-# Run your code
-name = 'Slava'
-age = 34
-shoe_size = 42
-info = (f'Surprise is that {name} is {age} years old and it\'s so close to his {shoe_size} shoe size')
-print(info)
+print(f'The oldest cat is {oldest_cat.name}, and he is {oldest_cat.age} years old.')
 
-# EXERCISE 6
-# Create two variables, a and b.
-# Each variable value should be a number.
-# If a is bigger then b, have your code print Hello World.
-a = 3
-b = 6
-
-if (a < b):
-  print("Hello World!")
-
-# EXERCISE 7
-# Write code that asks the user for a number and determines whether this number is odd or even.
-num = int(input("Please enter a number: "))
-if (num % 2 == 0):
-  print('It\'s even!')
-else: 
-  print('It\'s odd!')
+# 🌟 Exercise 2 : Dogs
+# Instructions
+# Create a class called Dog.
+# In this class, create an __init__ method that takes two parameters : name and height. This function instantiates two attributes, which values are the parameters.
+# Create a method called bark that prints the following string “<dog_name> goes woof!”.
+# Create a method called jump that prints the following string “<dog_name> jumps <x> cm high!”. x is the height*2.
+# Outside of the class, create an object called davids_dog. His dog’s name is “Rex” and his height is 50cm.
+# Print the details of his dog (ie. name and height) and call the methods bark and jump.
+# Create an object called sarahs_dog. Her dog’s name is “Teacup” and his height is 20cm.
+# Print the details of her dog (ie. name and height) and call the methods bark and jump.
+# Create an if statement outside of the class to check which dog is bigger. Print the name of the bigger dog.
 
 
-# EXERCISE 8
-# Write code that asks the user for their name and determines whether or not you have the same name, print out a funny message based on the outcome.
-my_name = 'Slava'
-name = str(input("Please enter your name, my friend: "))
+# 🌟 Exercise 3 : Who’s The Song Producer?
+# Instructions
+# Define a class called Song, it will show the lyrics of a song.
+# Its __init__() method should have two arguments: self and lyrics (a list).
+# Inside your class create a method called sing_me_a_song that prints each element of lyrics on its own line.
+# Create an object, for example:
 
-if (name == my_name):
-  print('Wow! You parents are the best persons in the whole world!')
+# stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
 
-# EXERCISE 9
-# Write code that will ask the user for their height in inches.
-# If they are over 145cm print a message that states they are tall enough to ride.
-# If they are not tall enough print a message that says they need to grow some more to ride.
-height = int(input("Please enter your height(in inches): "))
-if (height > 145):
-  print('You are tall enough to ride!')
-else: print('I am sorry, but this roller coaster is only for your brother')
+
+# Then, call the sing_me_a_song method. The output should be:
+
+# There’s a lady who's sure
+# all that glitters is gold
+# and she’s buying a stairway to heaven
+
+
+# Exercise 4 : Afternoon At The Zoo
+# Instructions
+# Create a class called Zoo.
+# In this class create a method __init__ that takes one parameter: zoo_name.
+# It instantiates two attributes: animals (an empty list) and name (name of the zoo).
+# Create a method called add_animal that takes one parameter new_animal. This method adds the new_animal to the animals list as long as it isn’t already in the list.
+# Create a method called get_animals that prints all the animals of the zoo.
+# Create a method called sell_animal that takes one parameter animal_sold. This method removes the animal from the list and of course the animal needs to exist in the list.
+# Create a method called sort_animals that sorts the animals alphabetically and groups them together based on their first letter.
+# Example
+
+# { 
+#     1: "Ape",
+#     2: ["Baboon", "Bear"],
+#     3: ['Cat', 'Cougar'],
+#     4: ['Eel', 'Emu']
+# }
+
+
+# Create a method called get_groups that prints the animal/animals inside each group.
+
+# Create an object called ramat_gan_safari and call all the methods.
+# Tip: The zookeeper is the one who will use this class.
+# Example
+# Which animal should we add to the zoo --> Giraffe
+# x.add_animal(Giraffe)
