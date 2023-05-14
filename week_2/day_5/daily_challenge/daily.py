@@ -12,7 +12,7 @@ str = 'without,hello,bag,world'
 
 # Variant 1
 def sorting(str, user_input = False):
-    if user_input == True:
-        str = input('Please type a comma-separated sequence of words: ')
-    sorted_list = ','.join(sorted(str.split(',')))
-    return sorted_list
+  if user_input == True:
+    str = input('Please type a comma-separated sequence of words: ')
+  sorted_list = ','.join(sorted(str.split(',')))
+  return sorted_list
