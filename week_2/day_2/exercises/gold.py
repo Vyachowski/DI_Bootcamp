@@ -21,16 +21,13 @@ from datetime import date
 
 # LOGIC
 
-def get_birthday():
+def calculate_birthday_candles():
   birthday_input = input('Please enter your birthday in a DD/MM/YYYY format: ')
   birthday_to_numbers = list(map(int, birthday_input.split('/')))
-  return {key: value for key, value in zip(['day', 'month', 'year'], birthday_to_numbers)} # => transforming to the object with year, month, day
-
-def calculate_candles(born):
-    print(born)
-    today = date.today()
-    age = today.year - born['year'] - ((today.month, today.day) < (born['month'], born['day']))
-    return int(str(age)[-1])
+  born = {key: value for key, value in zip(['day', 'month', 'year'], birthday_to_numbers)} # => transforming to the object with year, month, day
+  today = date.today()
+  age = today.year - born['year'] - ((today.month, today.day) < (born['month'], born['day']))
+  return int(str(age)[-1])    
 
 def display_cake(candles_amount = 0):
   cake_icing = '_'
@@ -49,6 +46,7 @@ def display_cake(candles_amount = 0):
   print( '\t\t~~~~~~~~~~~~~~~~~~~')
 
 # OUTPUT
+
 display_cake(3)
 display_cake(5)
 display_cake(9)
