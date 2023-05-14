@@ -19,7 +19,7 @@ cat_3 = Cat('Spasokukozkiy Vadim Alexandrovich', 290)
 cats = [cat_1, cat_2, cat_3]
 
 def find_oldest_cat(cats):
-  cats.sort(key = lambda cat : cat.age) # => Sorts cat by age
+  cats.sort(key = lambda cat : cat.age) # Sorts cat by age
   return cats[-1]
 
 oldest_cat = find_oldest_cat(cats)

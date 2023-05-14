@@ -17,3 +17,31 @@
 # goat : 12
 # E-I-E-I-0!
 
+class Farm:
+  def __init__(self, farm_name):
+    self.owner = farm_name
+    self.slogan = 'E-I-E-I-0!'
+    self.animals = {}
+  
+  def add_animal(self, animal, amount = 1):
+    self.animals.setdefault(animal, 0)
+    self.animals[animal] += amount
+
+  def get_info(self):
+    welcome_text = (f'{self.owner} \'s farm\n\n')
+    animals_text = ''
+    slogan_text = '\n\t' + self.slogan
+
+    for key, value in self.animals.items():
+      animals_text += f'{key} : {value} \n'
+
+    farm_info = welcome_text + animals_text + slogan_text
+    return farm_info
+
+  
+mcdonald = Farm('McDonald')
+mcdonald.add_animal('cow',5)
+mcdonald.add_animal('sheep')
+mcdonald.add_animal('sheep')
+mcdonald.add_animal('goat', 12)
+print(mcdonald.get_info())
