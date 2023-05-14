@@ -47,8 +47,5 @@ def display_cake(candles_amount = 0):
 
 # OUTPUT
 
-display_cake(3)
-display_cake(5)
-display_cake(9)
-display_cake(10)
-display_cake(11)
+candles_amount = calculate_birthday_candles()
+display_cake(candles_amount)
