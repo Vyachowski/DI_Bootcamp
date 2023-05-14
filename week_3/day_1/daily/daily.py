@@ -31,14 +31,12 @@ class Farm:
 
   def get_info(self):
     welcome_text = (f'{self.owner} \'s farm\n\n')
-    animals_text = ''
     slogan_text = '\n\t' + self.slogan
+    animals_text = ''
+    
+    for key, value in self.animals.items(): animals_text += f'{key} : {value} \n'
 
-    for key, value in self.animals.items():
-      animals_text += f'{key} : {value} \n'
-
-    farm_info = welcome_text + animals_text + slogan_text
-    return farm_info
+    return welcome_text + animals_text + slogan_text
   
   def get_animal_types(self):
     return sorted(list(self.animals.keys()))
