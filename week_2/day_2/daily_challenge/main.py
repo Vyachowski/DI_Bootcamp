@@ -28,7 +28,6 @@ print(numbers)
 # First variant
 word = input('Give me a word, please, with any duplicate consecutive letters, for instance\'ppoeeemm\': ')
 letters_list = list(word)
-print(letters_list)
 final_list = []
 for letter in letters_list:
   if (letter not in final_list):
@@ -40,6 +39,5 @@ print(corrected_word1)
 word = input('Give me a word, please, with any duplicate consecutive letters, for instance\'ppoeeemm\': ')
 letters_list = list(word)
 removed_duplicates_list = list(dict.fromkeys(letters_list))
-print(removed_duplicates_list)
 corrected_word = ''.join(removed_duplicates_list)
 print(corrected_word)

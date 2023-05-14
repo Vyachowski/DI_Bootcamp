@@ -5,7 +5,7 @@
 # 4) Create a set called friend_fav_numbers with your friend’s favorites numbers.
 # 5) Concatenate my_fav_numbers and friend_fav_numbers to a new variable called our_fav_numbers.
 
-my_fav_numbers = set((0, 1, 22))
+my_fav_numbers = { 0, 1, 22 }
 my_fav_numbers.add(222)
 my_fav_numbers.add(2222)
 my_fav_numbers.pop()
@@ -27,7 +27,7 @@ print('No, because a tuple is not able to be changed')
 # 7) Print(basket)
 basket = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
 basket.remove('Banana')
-basket.pop(2)
+basket.pop()
 basket.append('Kiwi')
 basket.insert(0, 'Apples')
 print(basket.count('Apples'))
@@ -38,9 +38,8 @@ print(basket)
 # Recap – What is a float? What is the difference between an integer and a float?
 # Can you think of another way to generate a sequence of floats?
 # Create a list containing the following sequence 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 (don’t hard-code the sequence).
-float_list = list((1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5))
+float_list = [num * 0.5 for num in range(3, 11)]
 print(float_list)
-print(type(float_list[0]))
 
 # EXERCISE 5
 # 1) Use a for loop to print all numbers from 1 to 20, inclusive.
@@ -75,7 +74,7 @@ else:
 # 1) Write a loop that asks a user to enter a series of pizza toppings, when the user inputs ‘quit’ stop asking for toppings.
 # 2) As they enter each topping, print a message saying you’ll add that topping to their pizza.
 # 3) Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
-toppings_list = list()
+toppings_list = []
 exit_request = False
 while (exit_request == False):
   new_topping = input('Please enter a topping, that you want add to your pizza (one at a time, to stop adding pleaser print \'quit\'): ')
