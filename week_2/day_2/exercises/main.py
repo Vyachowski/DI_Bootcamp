@@ -109,8 +109,6 @@ for member in family:
 print(f'${total_cost}')
     
 # EXERCISE 10 : SANDWICH ORDERS
-# sandwich_orders = ['Tuna sandwich', 'Avocado sandwich', 'Egg sandwich', 'Sabih sandwich', 'Pastrami sandwich']
-
 # 1) Use the above list called sandwich_orders.
 # 2) Make an empty list called finished_sandwiches.
 # 3) As each sandwich is made, move it to the list of finished sandwiches.
