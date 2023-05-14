@@ -27,11 +27,10 @@ def get_birthday():
   return input('Please enter your birthday in a DD/MM/YYYY format: ').split('/')
 
 def calculate_birthday_candles(birthday):
-  birthday_to_numbers = list(map(int, birthday))
-  born = {key: value for key, value in zip(['day', 'month', 'year'], birthday_to_numbers)} # => transforming to the object with year, month, day
+  birthday_to_numbers_list = list(map(int, birthday))
+  born = {key: value for key, value in zip(['day', 'month', 'year'], birthday_to_numbers_list)} # => transforming to the object with year, month, day
   today = date.today()
   age = today.year - born['year'] - ((today.month, today.day) < (born['month'], born['day']))
-  born_year = born['year']
   return int(str(age)[-1])
 
 def is_year_leap(birthday):
