@@ -155,5 +155,4 @@ ramat_gan_safari.add_animal('Emu')
 ramat_gan_safari.add_animal('Eel')
 
 ramat_gan_safari.get_animals()
-
 ramat_gan_safari.sort_animals()
