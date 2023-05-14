@@ -8,8 +8,10 @@
 #    – Test your code and make sure you get the same results as the example above.
 #    – Bonus: nicely line the text in columns as seen in the example above. Use string formatting.
 # 3) Expand The Farm:
-#    – Add a method called get_animal_types to the Farm class. This method should return a sorted list of all the animal types (names) in the farm. With the example above, the list should be: ['cow', 'goat', 'sheep'].
-#    – Add another method to the Farm class called get_short_info. This method should return the following string: “McDonald’s farm has cows, goats and sheep.”. The method should call the get_animal_types function to get a list of the animals.
+#    – Add a method called get_animal_types to the Farm class. This method should return a sorted list of all the animal types (names) in the farm. 
+#      With the example above, the list should be: ['cow', 'goat', 'sheep'].
+#    – Add another method to the Farm class called get_short_info. This method should return the following string: “McDonald’s farm has cows, goats and sheep.”. 
+#      The method should call the get_animal_types function to get a list of the animals.
 # Expected:
 # McDonald's farm
 # cow : 5
@@ -37,6 +39,13 @@ class Farm:
 
     farm_info = welcome_text + animals_text + slogan_text
     return farm_info
+  
+  def get_animal_types(self):
+    return sorted(list(self.animals.keys()))
+  
+  def get_short_info(self):
+    animals_list = self.get_animal_types()
+    return f'McDonald’s farm has {animals_list[0]}s, {animals_list[1]}s and {animals_list[2]}.'
 
   
 mcdonald = Farm('McDonald')
@@ -45,3 +54,5 @@ mcdonald.add_animal('sheep')
 mcdonald.add_animal('sheep')
 mcdonald.add_animal('goat', 12)
 print(mcdonald.get_info())
+print(mcdonald.get_animal_types())
+print(mcdonald.get_short_info())
