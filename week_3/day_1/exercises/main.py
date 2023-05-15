@@ -130,8 +130,8 @@ class Zoo:
     sorted_animals = sorted(self.animals.copy())
     temporary_dict = {}
     animals_dict = {}
-    for word in sorted_animals:
-      temporary_dict.setdefault(word[0], []).append(word)
+    for animal in sorted_animals:
+      temporary_dict.setdefault(animal[0], []).append(animal)
     grouped_animals = list(temporary_dict.values())
     for num, group in enumerate(grouped_animals):
       animals_dict[num + 1] = group
