@@ -34,7 +34,11 @@ class Farm:
   
   def get_short_info(self):
     animals_list = self.get_animal_types()
-    return f'McDonald’s farm has {animals_list[0]}s, {animals_list[1]}s and {animals_list[2]}.'
+    animals_text_nobody = 'There are no animals on the farm now'
+    animals_text = f'McDonald’s farm has '
+    for animal in animals_list: animals_text += f'{animal}s, '
+    animals_text = (animals_text.replace(",", " and", 1))[:-2]
+    return animals_text if len(animals_list) > 0 else animals_text_nobody
   
   def get_info(self):
     welcome_text = (f'{self.owner} \'s farm\n\n')
