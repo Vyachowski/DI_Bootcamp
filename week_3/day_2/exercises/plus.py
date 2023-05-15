@@ -15,6 +15,7 @@
 #    family_presentation: a method that prints the family’s last name and all the members’ first name.
 
 # CODE
+
 class Family:
   def __init__(self, members, last_name):
     self.members = members
@@ -31,10 +32,9 @@ class Family:
       if name in member.values(): 
         if member['age'] >= 18: return True
         else: return False
-    return None
 
   def family_presentation(self):
-    print(f'It is {self.name} Family\n\nFrom left to right:')
+    print(f'It is {self.name} Family!\n\nFrom left to right:')
     for member in self.members: print(member['name'])
 
 members = [
