@@ -28,15 +28,6 @@ class Farm:
   def add_animal(self, animal, amount = 1):
     self.animals.setdefault(animal, 0)
     self.animals[animal] += amount
-
-  def get_info(self):
-    welcome_text = (f'{self.owner} \'s farm\n\n')
-    slogan_text = '\n\t' + self.slogan
-    animals_text = ''
-    
-    for key, value in self.animals.items(): animals_text += f'{key} : {value} \n'
-
-    return welcome_text + animals_text + slogan_text
   
   def get_animal_types(self):
     return sorted(list(self.animals.keys()))
@@ -44,6 +35,13 @@ class Farm:
   def get_short_info(self):
     animals_list = self.get_animal_types()
     return f'McDonald’s farm has {animals_list[0]}s, {animals_list[1]}s and {animals_list[2]}.'
+  
+  def get_info(self):
+    welcome_text = (f'{self.owner} \'s farm\n\n')
+    slogan_text = '\n\t' + self.slogan
+    animals_text = ''
+    for key, value in self.animals.items(): animals_text += f'{key} : {value} \n'
+    return welcome_text + animals_text + slogan_text
 
   
 mcdonald = Farm('McDonald')
