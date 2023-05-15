@@ -16,11 +16,10 @@
 
 # IMPORT
 
+from main import Dog
 import random
 
 # CODE
-
-from main import Dog
 
 class PetDog(Dog):
   def __init__(self, name, age, weight, trained = False):
@@ -41,7 +40,7 @@ class PetDog(Dog):
     tricks = [' does a barrel roll', ' stands on his back legs', ' shakes your hand', ' plays dead']
     if self.trained: return self.name + random.choice(tricks)
 
-
+# Instances
 dog = PetDog('Caesar', 5, 20)
 eric = PetDog('Eric', 4, 32)
 chipinkos = PetDog('Chipinkos', 3, 400)
