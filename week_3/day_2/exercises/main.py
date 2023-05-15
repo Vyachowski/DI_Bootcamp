@@ -35,13 +35,14 @@ class Siamese(Cat):
     def sing(self, sounds):
         return f'{sounds}'
     
-bengal = Bengal('Bingo', 4)
-chart = Chartreux('Chat', 4)
-siam = Siamese('Siam', 4)
+if __name__ == '__main__':   
+  bengal = Bengal('Bingo', 4)
+  chart = Chartreux('Chat', 4)
+  siam = Siamese('Siam', 4)
 
-all_cats = [bengal, chart, siam]
-sara_pets = Pets(all_cats)
-sara_pets.walk()
+  all_cats = [bengal, chart, siam]
+  sara_pets = Pets(all_cats)
+  sara_pets.walk()
 
 # 🌟 Exercise 2 : Dogs
 # Instructions:
@@ -72,10 +73,10 @@ sarahs_dog = Dog('Teacup', 20, 45)
 boris_dog = Dog('Monstr', 2, 95)
 
 # OUTPUT
-
-davids_dog.bark()
-print(davids_dog.fight(sarahs_dog))
-sarahs_dog.bark()
-print(sarahs_dog.fight(davids_dog))
-boris_dog.bark()
-print(boris_dog.fight(sarahs_dog))
+if __name__ == '__main__':
+  davids_dog.bark()
+  print(davids_dog.fight(sarahs_dog))
+  sarahs_dog.bark()
+  print(sarahs_dog.fight(davids_dog))
+  boris_dog.bark()
+  print(boris_dog.fight(sarahs_dog))
