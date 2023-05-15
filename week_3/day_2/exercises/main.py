@@ -1,4 +1,5 @@
-# 🌟 Exercise 1 : Pets
+# --- 🌟 Exercise 1 : Pets ---
+
 # Instructions
 # Using this code:
 # 1) Create another cat breed named Siamese which inherits from the Cat class.
@@ -44,7 +45,7 @@ if __name__ == '__main__':
   sara_pets = Pets(all_cats)
   sara_pets.walk()
 
-# 🌟 Exercise 2 : Dogs
+# --- 🌟 Exercise 2 : Dogs ---
 # Instructions:
 # 1) Create a class called Dog with the following attributes name, age, weight.
 # 2) Implement the following methods in the Dog class:
