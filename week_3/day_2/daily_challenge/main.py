@@ -83,22 +83,22 @@ alphabetList = 'abcdefghijklmnopqrstuvwxyz'
 p = Pagination(alphabetList, 4)
 
 print('\nTEST #1:')
-print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
-print(p.totalPages)        # -> 7
-print(p.currentPage)       # -> 1
+print(p.getVisibleItems())  # -> ['a', 'b', 'c', 'd']
+print(p.totalPages)         # -> 7
+print(p.currentPage)        # -> 1
 
 print('\nTEST #2:')
 p.prevPage()               
-print(p.currentPage)       # -> 1
-print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+print(p.currentPage)         # -> 1
+print(p.getVisibleItems())   # -> ['a', 'b', 'c', 'd']
 
 p.nextPage()
-print(p.currentPage)       # -> 2
-print(p.getVisibleItems()) # -> ['e', 'f', 'g', 'h']
+print(p.currentPage)         # -> 2
+print(p.getVisibleItems())   # -> ['e', 'f', 'g', 'h']
 
 p.prevPage()
-print(p.currentPage)       # -> 1
-print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+print(p.currentPage)         # -> 1
+print(p.getVisibleItems())   # -> ['a', 'b', 'c', 'd']
 
 
 print('\nTEST #3:')
