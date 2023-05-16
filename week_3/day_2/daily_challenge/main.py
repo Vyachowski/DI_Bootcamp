@@ -41,61 +41,74 @@
 
 class Pagination:
     def __init__(self, items = None, pageSize = 10):
-      self.items =  items if items is not None else []
+      self.items =  list(items) if items is not None else []
       self.pageSize = int(pageSize)
-      self.totalPages = len(self.items)
-      self.__current = 0
-      
+      # eg. [1, 2, 3, 4, 5, 6, 7] => [[1, 2, 3],[4, 5, 6],[7]] – Group content in chunks
+      self.__pagesList = [self.items[start_point:start_point + pageSize] for start_point in range(0, len(self.items), pageSize)]
+      self.totalPages = len(self.__pagesList)
+      self.__currentIndex= 0
+      self.__lastIndex = self.totalPages - 1
+
     @property
     def currentPage(self): 
-      self.__current += 1
-      return self.__current
-
+      current_page = self.__currentIndex + 1
+      return current_page
+    
     def getVisibleItems(self):
-      return self.items[self.__current:self.__current + self.pageSize]
+      return self.__pagesList[self.__currentIndex]
 
     def prevPage(self):
-      if self.__current >= self.pageSize:
-          self.__current -= self.pageSize
-      else:
-          self.__current = 0
-    
+      self.__currentIndex -= 1 if self.__currentIndex > 0 else 0
+
     def nextPage(self):
-      if self.totalPages - self.__current > self.pageSize:
-          self.__current += self.pageSize
-      else:
-          self.__current += 0
+      self.__currentIndex += 1 if  self.__currentIndex < self.__lastIndex else 0
         
     def firstPage(self):
-      self.__current = 0
+      self.__currentIndex = 0
 
     def lastPage(self):
-      self.__current = self.totalPages - 1
+      self.__currentIndex = self.__lastIndex
 
     def goToPage(self, pageNum):
       if 0 < pageNum <= self.totalPages:
-        self.__current = pageNum - 1 
+        self.__currentIndex= pageNum - 1 
       else:
         return 'Such page does not exist, sorry'
+      
 
 # OUTPUT
 
-alphabetList = list('abcdefghijklmnopqrstuvwxyz')
+alphabetList = 'abcdefghijklmnopqrstuvwxyz'
 p = Pagination(alphabetList, 4)
 
-print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+# print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+# print(p.totalPages)        # -> 7
+# print(p.currentPage)       # -> 1
 
-p.prevPage()
-print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+# p.prevPage()               
+# print(p.currentPage)       # -> 1
+# print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+
+# p.nextPage()
+# print(p.currentPage)       # -> 2
+# print(p.getVisibleItems()) # -> ['e', 'f', 'g', 'h']
+
+# p.prevPage()
+# print(p.currentPage)       # -> 1
+# print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
 
 p.nextPage()
-print(p.currentPage) # -> 5
-print(p.getVisibleItems()) # -> ['f', 'g', 'h', 'i']
-
 p.nextPage()
-print(p.currentPage) # -> 10
-print(p.getVisibleItems()) # -> ['k', 'l', 'm', 'n']
-
 p.nextPage()
-print(p.currentPage) # -> 15
-print(p.getVisibleItems()) # -> ['p', 'q', 'r', 's']
+p.nextPage()
+p.nextPage()
+p.nextPage()
+p.nextPage()
+p.nextPage()
+
+# print(p.currentPage)       # -> 6
+print(p.getVisibleItems()) # -> ['u', 'v', 'w', 'x']
+
+# p.nextPage()
+# print(p.currentPage) # -> 15
+# print(p.getVisibleItems()) # -> ['m', 'n', 'o', 'p']
