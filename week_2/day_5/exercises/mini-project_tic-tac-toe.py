@@ -62,21 +62,20 @@ def player_input(step):
 
 ## Check if one of the player won
 def check_win():
-  win_conditions = [marks[0] * 3, marks[1] * 3]
+  win_conditions = [[marks[0], marks[0], marks[0]], [marks[1], marks[1], marks[1]]]
   win_message = lambda player_num : f'Player {player_num} won!'
   draw_message = 'Friendship wins!'
-
-  diagonals = [''.join([board[0][0], board[1][1], board[2][2]]), 
-               ''.join([board[0][2], board[1][1], board[2][0]])]
-  transposed_board = list(zip(*board))
+  # Create a result board with any possible combinations
+  diagonals = [[board[0][0], board[1][1], board[2][2]], 
+               [board[0][2], board[1][1], board[2][0]]]
+  transposed_board = list(map(list, zip(*board)))
   result_board = board + transposed_board + diagonals
-
+  # Check
   if ' ' in (sum(board, [])):
     for row in result_board:
-      line = ''.join(row)
-      if line == win_conditions[0]:
+      if row == win_conditions[0]:
         return win_message(1)
-      elif line == win_conditions[1]:
+      elif row == win_conditions[1]:
         return win_message(2)
     return None
   else: return draw_message
