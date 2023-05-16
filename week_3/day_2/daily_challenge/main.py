@@ -34,8 +34,8 @@
 # The methods used to change page should be chainable, so you can call them one after the other like this: p.nextPage().nextPage()
 # Please set the p.totalPages and p.currentPage attributes to the appropriate number as there cannot be a page 0.
 # If a page is outside of the totalPages attribute, then the goToPage method should go to the closest page to the number provided 
-# (e.g. there are only 5 total pages, but p.goToPage(10) is given: the p.currentPagePage should be set to 5; if 0 or a negative number is given, 
-# p.currentPagePage should be set to 1).
+# (e.g. there are only 5 total pages, but p.goToPage(10) is given: the p.currentPage should be set to 5; if 0 or a negative number is given, 
+# p.currentPage should be set to 1).
 
 # CODE
 
@@ -71,43 +71,45 @@ class Pagination:
 
     def goToPage(self, pageNum):
       if 0 < pageNum <= self.totalPages:
-        self.__currentIndex= pageNum - 1 
+        self.__currentIndex = pageNum - 1 
       else:
         return 'Such page does not exist, sorry'
       
-
 # OUTPUT
 
 alphabetList = 'abcdefghijklmnopqrstuvwxyz'
 p = Pagination(alphabetList, 4)
 
-# print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
-# print(p.totalPages)        # -> 7
-# print(p.currentPage)       # -> 1
+print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+print(p.totalPages)        # -> 7
+print(p.currentPage)       # -> 1
 
-# p.prevPage()               
-# print(p.currentPage)       # -> 1
-# print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
-
-# p.nextPage()
-# print(p.currentPage)       # -> 2
-# print(p.getVisibleItems()) # -> ['e', 'f', 'g', 'h']
-
-# p.prevPage()
-# print(p.currentPage)       # -> 1
-# print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+p.prevPage()               
+print(p.currentPage)       # -> 1
+print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
 
 p.nextPage()
-p.nextPage()
-p.nextPage()
-p.nextPage()
-p.nextPage()
-p.nextPage()
-p.nextPage()
-p.nextPage()
+print(p.currentPage)       # -> 2
+print(p.getVisibleItems()) # -> ['e', 'f', 'g', 'h']
 
-# print(p.currentPage)       # -> 6
-print(p.getVisibleItems()) # -> ['u', 'v', 'w', 'x']
+p.prevPage()
+print(p.currentPage)       # -> 1
+print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
+
+p.nextPage()
+p.nextPage()
+p.nextPage()
+p.nextPage()
+p.nextPage()                 # -> Some extra .nextPage method to check "Out of Range"
+print(p.currentPage)         # -> 6
+print(p.getVisibleItems())   # -> ['u', 'v', 'w', 'x']
+
+p.nextPage()
+p.nextPage()
+p.nextPage()
+print(p.currentPage)       # -> 7
+print(p.getVisibleItems()) # -> ['y', 'z']
+
 
 # p.nextPage()
 # print(p.currentPage) # -> 15
