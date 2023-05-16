@@ -83,7 +83,6 @@ def check_win():
 # GAME
 
 def play():
-  
   print('Welcome to TIC TAC TOE!\n')
   for step in range(9):
     display_board()
