@@ -41,25 +41,18 @@ def display_cake(candles_amount = 0):
   cake_top_slots = 11
   cake_candles = 'i' * candles_amount
   icing_half = cake_icing * ((cake_top_slots - candles_amount) // 2)
-
   make_top = icing_half + cake_candles + (icing_half if candles_amount % 2 != 0 else icing_half + '_')
-  
-  print(f'\t\t    {make_top}     ')
-  print( '\t\t   |:H:a:p:p:y:|   ')
-  print( '\t\t __|___________|__ ')
-  print( '\t\t|^^^^^^^^^^^^^^^^^|')
-  print( '\t\t|:B:i:r:t:h:d:a:y:|')
-  print( '\t\t|                 |')
-  print( '\t\t~~~~~~~~~~~~~~~~~~~')
-
-  if born_leap_year:
-    print(f'\t\t    {make_top}     ')
+  def print_cake(top):
+    print(f'\t\t    {top}     '     )
     print( '\t\t   |:H:a:p:p:y:|   ')
     print( '\t\t __|___________|__ ')
     print( '\t\t|^^^^^^^^^^^^^^^^^|')
     print( '\t\t|:B:i:r:t:h:d:a:y:|')
     print( '\t\t|                 |')
     print( '\t\t~~~~~~~~~~~~~~~~~~~')
+
+  if born_leap_year: print_cake(make_top)
+  print_cake(make_top)
 
 # OUTPUT
 

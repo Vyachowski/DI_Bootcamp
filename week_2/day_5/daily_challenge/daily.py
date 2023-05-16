@@ -9,7 +9,7 @@
 
 str = 'without,hello,bag,world'
 
-# LOGIC
+# CODE
 
 # Variant 1
 def sorting(str, user_input = False):
