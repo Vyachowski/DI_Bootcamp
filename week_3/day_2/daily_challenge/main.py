@@ -34,39 +34,41 @@
 # The methods used to change page should be chainable, so you can call them one after the other like this: p.nextPage().nextPage()
 # Please set the p.totalPages and p.currentPage attributes to the appropriate number as there cannot be a page 0.
 # If a page is outside of the totalPages attribute, then the goToPage method should go to the closest page to the number provided 
-# (e.g. there are only 5 total pages, but p.goToPage(10) is given: the p.currentPage should be set to 5; if 0 or a negative number is given, 
-# p.currentPage should be set to 1).
+# (e.g. there are only 5 total pages, but p.goToPage(10) is given: the p.currentPagePage should be set to 5; if 0 or a negative number is given, 
+# p.currentPagePage should be set to 1).
 
 # CODE
 
 class Pagination:
-    def __init__(self, items = None, pageSize = 10) -> None:
-      self.items = items
+    def __init__(self, items = None, pageSize = 10):
+      self.items =  items if items is not None else []
       self.size = int(pageSize)
-      self.current = 0
+      self.totalPages = len(self.items)
+      self.__current = 0
+      self.currentPage = (lambda self : self.__current + 1)(self)
 
     def getVisibleItems(self):
       if self.items == None: return 'There is no data. Should be a list.'
-      return self.items[self.current:self.current + self.size]
+      return self.items[self.__current:self.__current + self.size]
       
     def prevPage(self):
-      self.current -= self.size if self.current - self.size >= 0 else 0
+      self.__current -= self.size if self.__current - self.size >= 0 else 0
     
     def nextPage(self):
       if self.items == None: return 'There is no data. Should be a list.'
-      self.current += self.size if len(self.items) - (self.current) > self.size else 0
+      self.__current += self.size if self.totalPages - (self.__current) > self.size else 0
         
     def firstPage(self):
-      self.current = 0
+      self.__current = 0
 
     def lastPage(self):
       if self.items == None: return 'There is no data. Should be a list.'
-      self.current = len(self.items) - 1
+      self.__current = self.totalPages - 1
 
     def goToPage(self, pageNum):
       if self.items == None: return 'There is no data. Should be a list.'
-      if 0 < pageNum <= len(self.items):
-        self.current = pageNum - 1
+      if 0 < pageNum <= self.totalPages:
+        self.__current = pageNum - 1 
       else:
         return 'Such page does not exist, sorry'
 
@@ -78,17 +80,18 @@ p = Pagination(alphabetList)
 print(p.getVisibleItems())
 
 p.prevPage()
+
 print(p.getVisibleItems())
 
 p.nextPage()
-print(p.current)
+print(p.currentPage)
 p.nextPage()
-print(p.current)
+print(p.currentPage)
 p.nextPage()
-print(p.current)
+print(p.currentPage)
 p.nextPage()
-print(p.current)
+print(p.currentPage)
 print(p.getVisibleItems())
 p.goToPage(1)
-print(p.current)
+print(p.currentPage)
 print(p.getVisibleItems())
