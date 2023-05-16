@@ -36,3 +36,52 @@
 # If a page is outside of the totalPages attribute, then the goToPage method should go to the closest page to the number provided 
 # (e.g. there are only 5 total pages, but p.goToPage(10) is given: the p.currentPage should be set to 5; if 0 or a negative number is given, 
 # p.currentPage should be set to 1).
+
+# CODE
+
+class Pagination:
+    def __init__(self, items = None, pageSize = 10) -> None:
+      self.items = items
+      self.size = int(pageSize)
+      self.current = 0
+
+    def getVisibleItems(self):
+      if self.items == None: return 'There is no data or data type is wrong. Should be a list.'
+      return self.items[self.current:self.current + self.size]
+      
+    def prevPage(self):
+      self.current -= self.size if self.current - self.size >= 0 else 0
+    
+    def nextPage(self):
+      self.current += self.size if len(self.items) - (self.current) > self.size else 0
+        
+    def firstPage(self):
+      self.current = 0
+
+    def lastPage(self):
+      self.current = len(self.items) - 1
+
+    def goToPage(pageNum):
+      pass
+
+# OUTPUT
+
+alphabetList = list('abcdefghijklmnopqrstuvwxyz')
+p = Pagination(alphabetList)
+
+print(p.getVisibleItems())
+
+p.prevPage()
+print(p.current)
+print(p.getVisibleItems())
+
+p.nextPage()
+print(p.current)
+p.nextPage()
+print(p.current)
+p.nextPage()
+print(p.current)
+p.nextPage()
+print(p.current)
+print(p.getVisibleItems())
+
