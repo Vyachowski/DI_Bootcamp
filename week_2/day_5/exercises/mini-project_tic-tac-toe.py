@@ -63,42 +63,35 @@ def player_input(step):
 ## Check if one of the player won
 def check_win():
   win_conditions = [marks[0] * 3, marks[1] * 3]
-  
+  win_message = lambda player_num : f'Player {player_num} won!'
+  draw_message = 'Friendship wins!'
+
   diagonals = [''.join([board[0][0], board[1][1], board[2][2]]), 
                ''.join([board[0][2], board[1][1], board[2][0]])]
-
   transposed_board = list(zip(*board))
-  result_board = board + transposed_board
+  result_board = board + transposed_board + diagonals
 
-  victory_message = lambda player_num : f'Player {player_num} has won!'
-
-  if win_conditions[0] in diagonals:
-    return victory_message(1)
-  elif win_conditions[1] in diagonals:
-    return victory_message(2)
-  
-  for row in result_board:
-    line = ''.join(row)
-    if line == win_conditions[0]:
-      return victory_message(1)
-    elif line == win_conditions[1]:
-      return victory_message(2)
-  return ''
+  if ' ' in (sum(board, [])):
+    for row in result_board:
+      line = ''.join(row)
+      if line == win_conditions[0]:
+        return win_message(1)
+      elif line == win_conditions[1]:
+        return win_message(2)
+    return None
+  else: return draw_message
 
 # GAME
 
 def play():
   
   print('Welcome to TIC TAC TOE!\n')
-  for step, *rest in enumerate(sum(board, [])): # ugly line, pending changes
+  for step in range(9):
     display_board()
     player_input(step)
-    win_status = check_win()
-    if len(win_status) > 0:
-      display_board()
-      return print(win_status)
-  display_board()
-  print('Friendship!')
+    if check_win() != None: 
+      print(check_win())
+      return display_board()
 
 # RUN GAME
 
