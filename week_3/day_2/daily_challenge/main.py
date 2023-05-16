@@ -46,23 +46,29 @@ class Pagination:
       self.current = 0
 
     def getVisibleItems(self):
-      if self.items == None: return 'There is no data or data type is wrong. Should be a list.'
+      if self.items == None: return 'There is no data. Should be a list.'
       return self.items[self.current:self.current + self.size]
       
     def prevPage(self):
       self.current -= self.size if self.current - self.size >= 0 else 0
     
     def nextPage(self):
+      if self.items == None: return 'There is no data. Should be a list.'
       self.current += self.size if len(self.items) - (self.current) > self.size else 0
         
     def firstPage(self):
       self.current = 0
 
     def lastPage(self):
+      if self.items == None: return 'There is no data. Should be a list.'
       self.current = len(self.items) - 1
 
-    def goToPage(pageNum):
-      pass
+    def goToPage(self, pageNum):
+      if self.items == None: return 'There is no data. Should be a list.'
+      if 0 < pageNum <= len(self.items):
+        self.current = pageNum - 1
+      else:
+        return 'Such page does not exist, sorry'
 
 # OUTPUT
 
@@ -72,7 +78,6 @@ p = Pagination(alphabetList)
 print(p.getVisibleItems())
 
 p.prevPage()
-print(p.current)
 print(p.getVisibleItems())
 
 p.nextPage()
@@ -84,4 +89,6 @@ print(p.current)
 p.nextPage()
 print(p.current)
 print(p.getVisibleItems())
-
+p.goToPage(1)
+print(p.current)
+print(p.getVisibleItems())
