@@ -42,31 +42,37 @@
 class Pagination:
     def __init__(self, items = None, pageSize = 10):
       self.items =  items if items is not None else []
-      self.size = int(pageSize)
+      self.pageSize = int(pageSize)
       self.totalPages = len(self.items)
       self.__current = 0
-      self.currentPage = (lambda self : self.__current + 1)(self)
+      
+    @property
+    def currentPage(self): 
+      self.__current += 1
+      return self.__current
 
     def getVisibleItems(self):
-      if self.items == None: return 'There is no data. Should be a list.'
-      return self.items[self.__current:self.__current + self.size]
-      
+      return self.items[self.__current:self.__current + self.pageSize]
+
     def prevPage(self):
-      self.__current -= self.size if self.__current - self.size >= 0 else 0
+      if self.__current >= self.pageSize:
+          self.__current -= self.pageSize
+      else:
+          self.__current = 0
     
     def nextPage(self):
-      if self.items == None: return 'There is no data. Should be a list.'
-      self.__current += self.size if self.totalPages - (self.__current) > self.size else 0
+      if self.totalPages - self.__current > self.pageSize:
+          self.__current += self.pageSize
+      else:
+          self.__current += 0
         
     def firstPage(self):
       self.__current = 0
 
     def lastPage(self):
-      if self.items == None: return 'There is no data. Should be a list.'
       self.__current = self.totalPages - 1
 
     def goToPage(self, pageNum):
-      if self.items == None: return 'There is no data. Should be a list.'
       if 0 < pageNum <= self.totalPages:
         self.__current = pageNum - 1 
       else:
@@ -75,23 +81,21 @@ class Pagination:
 # OUTPUT
 
 alphabetList = list('abcdefghijklmnopqrstuvwxyz')
-p = Pagination(alphabetList)
+p = Pagination(alphabetList, 4)
 
-print(p.getVisibleItems())
+print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
 
 p.prevPage()
+print(p.getVisibleItems()) # -> ['a', 'b', 'c', 'd']
 
-print(p.getVisibleItems())
+p.nextPage()
+print(p.currentPage) # -> 5
+print(p.getVisibleItems()) # -> ['f', 'g', 'h', 'i']
 
 p.nextPage()
-print(p.currentPage)
+print(p.currentPage) # -> 10
+print(p.getVisibleItems()) # -> ['k', 'l', 'm', 'n']
+
 p.nextPage()
-print(p.currentPage)
-p.nextPage()
-print(p.currentPage)
-p.nextPage()
-print(p.currentPage)
-print(p.getVisibleItems())
-p.goToPage(1)
-print(p.currentPage)
-print(p.getVisibleItems())
+print(p.currentPage) # -> 15
+print(p.getVisibleItems()) # -> ['p', 'q', 'r', 's']
