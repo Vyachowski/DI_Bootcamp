@@ -43,7 +43,7 @@ class Pagination:
     def __init__(self, items = None, pageSize = 10):
       self.items =  list(items) if items is not None else []
       self.pageSize = int(pageSize)
-      # eg. [1, 2, 3, 4, 5, 6, 7] => [[1, 2, 3],[4, 5, 6],[7]] – Group content in chunks
+      # eg. [1, 2, 3, 4, 5, 6, 7] => [[1, 2, 3],[4, 5, 6],[7]] – Group content in pages
       self.__pagesList = [self.items[start_point:start_point + pageSize] for start_point in range(0, len(self.items), pageSize)]
       self.totalPages = len(self.__pagesList)
       self.__currentIndex= 0
