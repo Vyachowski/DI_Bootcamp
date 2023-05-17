@@ -46,7 +46,7 @@ class Pagination:
       # eg. [1, 2, 3, 4, 5, 6, 7] => [[1, 2, 3],[4, 5, 6],[7]] – Group content in pages
       self.__pagesList = [self.items[start_point:start_point + pageSize] for start_point in range(0, len(self.items), pageSize)]
       self.totalPages = len(self.__pagesList)
-      self.__currentIndex= 0
+      self.__currentIndex = 0
       self.__lastIndex = self.totalPages - 1
 
     @property
