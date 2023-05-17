@@ -8,12 +8,12 @@
 
 # VARIABLES
 
-empty_field = ' '
+field = ' '
 board = [
-    [empty_field, empty_field, empty_field],
-    [empty_field, empty_field, empty_field],
-    [empty_field, empty_field, empty_field],
-  ]
+          [field, field, field],
+          [field, field, field],
+          [field, field, field],
+        ]
 marks = ('X', 'O')
 
 # SERVICE FUNCTIONS
@@ -43,10 +43,11 @@ def player_input(step):
 
   while is_move_succesful == False:
     row = None
-    while not row in range(0,3):
+    while not row in range(0, 3):
       try:
         answer = int(input("Enter row: "))
         row =  answer - 1
+        print(row)
       except:
         print('Are you serious? Letters?')
     column = None
@@ -56,11 +57,12 @@ def player_input(step):
         column = answer - 1
       except:
         print('No way, buddy. Only numbers from 1 to 3.')
-    if board[row][column] == empty_field:
-      board[row][column] = current_mark
-      is_move_succesful = True
-    else:
-      print('Sorry, this square is already taken. Choose another one...')
+    if row is not None and column is not None:
+      if board[row][column] == field:
+        board[row][column] = current_mark
+        is_move_succesful = True
+      else:
+        print('Sorry, this square is already taken. Choose another one...')
 
 ## Check if one of the player won
 def check_win():
@@ -73,7 +75,7 @@ def check_win():
   transposed_board = list(map(list, zip(*board)))
   result_board = board + transposed_board + diagonals
   
-  if empty_field in (sum(board, [])):
+  if field in (sum(board, [])):
     for row in result_board:
       if row == win_conditions[0]:
         return win_message(1)
@@ -85,8 +87,10 @@ def check_win():
 # GAME
 
 def play():
+  max_steps = range(len(sum(board, [])))
   print('Welcome to TIC TAC TOE!\n')
-  for step in range(9):
+  # Max steps depends on board size
+  for step in max_steps:
     display_board()
     player_input(step)
     if check_win() != None: 
