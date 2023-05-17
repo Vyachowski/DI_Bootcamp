@@ -8,12 +8,12 @@
 
 # VARIABLES
 
+empty_field = ' '
 board = [
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
+    [empty_field, empty_field, empty_field],
+    [empty_field, empty_field, empty_field],
+    [empty_field, empty_field, empty_field],
   ]
-
 marks = ('X', 'O')
 
 # SERVICE FUNCTIONS
@@ -70,8 +70,8 @@ def check_win():
                [board[0][2], board[1][1], board[2][0]]]
   transposed_board = list(map(list, zip(*board)))
   result_board = board + transposed_board + diagonals
-  # Check
-  if ' ' in (sum(board, [])):
+  
+  if empty_field in (sum(board, [])):
     for row in result_board:
       if row == win_conditions[0]:
         return win_message(1)
