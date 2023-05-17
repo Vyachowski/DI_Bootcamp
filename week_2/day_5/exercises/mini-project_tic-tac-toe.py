@@ -36,36 +36,38 @@ def display_board():
 
 ## Enter the answer
 def player_input(step):
-  move_is_succesful = False
+  is_move_succesful = False
   current_mark = marks[0] if step % 2 == 0 else marks[1]
+
   print(f'Player {current_mark}\'s turn...')
-  while move_is_succesful == False:
-    row = -1
+
+  while is_move_succesful == False:
+    row = None
     while not row in range(0,3):
       try:
         answer = int(input("Enter row: "))
         row =  answer - 1
       except:
         print('Are you serious? Letters?')
-    column = -1
+    column = None
     while not column in range(0,3):
       try:
         answer = int(input("Enter column: "))
         column = answer - 1
       except:
         print('No way, buddy. Only numbers from 1 to 3.')
-    if board[row][column] == ' ':
+    if board[row][column] == empty_field:
       board[row][column] = current_mark
-      move_is_succesful = True
+      is_move_succesful = True
     else:
       print('Sorry, this square is already taken. Choose another one...')
 
 ## Check if one of the player won
 def check_win():
   win_conditions = [[marks[0], marks[0], marks[0]], [marks[1], marks[1], marks[1]]]
-  win_message = lambda player_num : f'Player {player_num} won!'
-  draw_message = 'Friendship wins!'
-  # Create a result board with any possible combinations
+  win_message = lambda player_num : f'Player {player_num} won!\n'
+  draw_message = 'Friendship wins!\n'
+  # Create a result board with any possible combinations that should be ckecked
   diagonals = [[board[0][0], board[1][1], board[2][2]], 
                [board[0][2], board[1][1], board[2][0]]]
   transposed_board = list(map(list, zip(*board)))
