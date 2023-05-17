@@ -22,4 +22,6 @@ translation = translator.translate("Bonjour", src='fr')
 for word in french_words:
   french_dict[word] = translator.translate(word, src='fr').text
 
+# OUTPUT
+
 print(french_dict) # -> {"Bonjour": "Hello", "Au revoir": "Goodbye", "Bienvenue": "Welcome", "A bientôt": "See you soon"}
