@@ -67,25 +67,25 @@ circle1 = Circle(radius=3)
 circle2 = Circle(diameter=6)
 
 # Query properties
-print(circle1.radius)     # ->  3
-print(circle2.diameter)   # ->  6
+print(circle1.radius)         # ->  3
+print(circle2.diameter)       # ->  6
 
 # Compute area
-print(circle1.area)       # ->  28.274333882308138
+print(circle1.area)           # ->  28.274333882308138
 
 # Print circle
-print(circle2)            # ->  Circle with radius: 3.0
+print(circle2)                # ->  Circle with radius: 3.0
 
 # Add circles
 circle3 = circle1 + circle2
-print(circle3.radius)     # ->  6
+print(circle3.radius)         # ->  6
 
 # Compare circles
-print(circle1 > circle2)  # ->  False
-print(circle1 == circle2) # ->  True
-print(circle1 < circle2)  # ->  False
+print(circle1 > circle2)      # ->  False
+print(circle1 == circle2)     # ->  True
+print(circle1 < circle2)      # ->  False
 
 # Sort circles
 circles = [Circle(3), Circle(2), Circle(4), Circle(1)]
 sorted_circles = sorted(circles)
-print([circle.radius for circle in sorted_circles])     # ->  [Circle(radius=1), Circle(radius=2), Circle(radius=3), Circle(radius=4)]
+print([circle.radius for circle in sorted_circles])     # ->  [1, 2, 3, 4]
