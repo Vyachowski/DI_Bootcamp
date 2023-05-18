@@ -75,6 +75,18 @@ class Currency:
     else:
       if isinstance(other, (int, float)):
         return (self.amount + other)
+      
+  def __iadd__(self, other):
+    if isinstance(other, Currency):
+      try:
+        if self.currency == other.currency:
+          self.amount += other.amount
+      except:
+        raise TypeError(f'Cannot add between Currency type {self.currency} and {other.currency}')
+    else:
+      if isinstance(other, (int, float)):
+        self.amount += other
+    return self
 
 
 # OUTPUT
@@ -94,12 +106,12 @@ print(c1 + 5)    # -> 10
 
 print(c1 + c2)   # -> 15
 
-# c1        # -> 5 dollars
+print(c1)        # -> 5 dollars
 
-# c1 += 5
-# c1        # -> 10 dollars
+c1 += 5
+print(c1)        # -> 10 dollars
 
-# c1 += c2
-# c1        # -> 20 dollars
+c1 += c2
+print(c1)        # -> 20 dollars
 
-# c1 + c3   # -> TypeError: Cannot add between Currency type <dollar> and <shekel>
+print(c1 + c3)   # -> TypeError: Cannot add between Currency type <dollar> and <shekel>
