@@ -51,7 +51,7 @@ print(display_input_result.__doc__)   # -> Docs...
 # CODE
 
 class Currency:
-  ''''''
+  '''Class to perform an actions with any currencies'''
   def __init__(self, currency, amount):
     self.currency = currency
     self.amount = amount
@@ -115,3 +115,5 @@ c1 += c2
 print(c1)        # -> 20 dollars
 
 print(c1 + c3)   # -> TypeError: Cannot add between Currency type <dollar> and <shekel>
+
+print(c1.__doc__)# -> Documentation and don't forget to CONTINUE THE CODE!!!!!
