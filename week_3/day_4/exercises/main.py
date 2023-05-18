@@ -1,3 +1,5 @@
+# --- EXERCISE IS NOT READY YET --- #
+# REASON – STUCK IN PAGINATION EXERCISE
 
 # --- 🌟 Exercise 1 – Random Sentence Generator ---
 # Instructions

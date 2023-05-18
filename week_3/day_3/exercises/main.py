@@ -1,3 +1,5 @@
+# --- PART OF THE EXERCISE MISSED YET --- #
+# REASON – STUCK IN PAGINATION EXERCISE
 # --- 🌟 Exercise 1 : Built-In Functions --- #
 # Instructions:
 # Python has many built-in functions.
