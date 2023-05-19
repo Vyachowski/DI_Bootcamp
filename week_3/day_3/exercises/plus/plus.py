@@ -30,13 +30,19 @@ random_string = ''.join([random.choice(letters) for _ in range(5)])
 print(random_string) # -> e.g. 'fELch'
 
 # --- 🌟 Exercise 4 : Current Date --- #
-# Instructions
-# Create a function that displays the current date.
+# Instructions:
+# 1) Create a function that displays the current date.
 # Hint : Use the datetime module.
+from datetime import datetime
 
+def display_date():
+  current_date = datetime.now().date()
+  print(f'Current date is {current_date}')
+
+print(display_date()) # -> Current date is 2023-05-19
 
 # --- Exercise 5 : Amount Of Time Left Until January 1st --- #
-# Instructions
+# Instructions:
 # Create a function that displays the amount of time left from now until January 1st.
 # (Example: the 1st of January is in 10 days and 10:34:01hours).
 
