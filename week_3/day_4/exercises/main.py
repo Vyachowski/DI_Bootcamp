@@ -1,6 +1,3 @@
-# --- EXERCISE IS NOT READY YET --- #
-# REASON – STUCK IN PAGINATION EXERCISE
-
 # --- 🌟 Exercise 1 – Random Sentence Generator ---
 # Instructions
 # Description: In this exercise we will create a random sentence generator. 
@@ -21,24 +18,65 @@
 # 9) If the user inputs incorrect data, print an error message and end the program.
 #    If the user inputs correct data, run your code.
 
-import os
+# IMPORT
 
-def get_source_realtive_path(file_name):
+import os
+import random
+
+# CODE
+
+file_example = 'sowpods.txt'
+
+def get_source_absolute_path(file_name):
   # Get the absolute path of the current script
   current_file_path = os.path.abspath(__file__)
   # Get the directory of the current script
   current_directory = os.path.dirname(current_file_path)
   # Define the path relative to the current script
-  relative_path = os.path.join(current_directory, file_name)
-  return relative_path
+  absolute_path = os.path.join(current_directory, file_name)
+  try: 
+    if os.path.exists(absolute_path):
+      return absolute_path
+    else:
+      raise ValueError(f'{file_name} doesn\'t exist in current directory')
+  except ValueError as e:
+    print(e)
 
-def get_words_from_file(path):
-  words = open(path).read()
-  print(words)
-  
-sowpods_path = get_source_realtive_path('sowpods.txt')
-get_words_from_file(sowpods_path)
+def get_words_from_file(absolute_path):
+  words_list = open(absolute_path).readlines()
+  return words_list
 
+def get_random_sentence(length):
+  try:
+    if type(length) != int: 
+      raise ValueError(f'Length shoud be an integer')
+  except ValueError as e:
+    print(e)
+  else:
+    absolute_path = get_source_absolute_path(file_example)
+    words_list = get_words_from_file(absolute_path)
+    random_words = random.choices(words_list, k=length)
+    random_words_without_new_lines = [word.rstrip() for word in random_words]
+    sentence = ' '.join(random_words_without_new_lines).lower()
+    return sentence
+
+def main():
+  print('This program can give you a random sentence based on your length input. Let\'s try!')
+  try:
+    user_length = int(input('Please enter a length of a sentence between 2 and 20: '))
+    if (type(user_length) != int):
+      raise TypeError('Please, exhale. Inhale. And explain me why didn\'t you enter a number? Not for Griffindor, sorry.')
+    if 2 > user_length > 20:
+      raise ValueError('The number should be between 2 and 20, I am very sorry but Griffindor is not for you')
+  except (TypeError, ValueError) as e:
+    print(e)
+  else:
+    random_sentence = get_random_sentence(user_length)
+    return random_sentence
+
+# OUPUT
+
+print(main()) # -> irremovably leucemia starkness hemimorphisms bosser
 
 # 🌟 Exercise 2: Working With JSON
 # Instructions
