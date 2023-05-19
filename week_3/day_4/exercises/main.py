@@ -21,6 +21,24 @@
 # 9) If the user inputs incorrect data, print an error message and end the program.
 #    If the user inputs correct data, run your code.
 
+import os
+
+def get_source_realtive_path(file_name):
+  # Get the absolute path of the current script
+  current_file_path = os.path.abspath(__file__)
+  # Get the directory of the current script
+  current_directory = os.path.dirname(current_file_path)
+  # Define the path relative to the current script
+  relative_path = os.path.join(current_directory, file_name)
+  return relative_path
+
+def get_words_from_file(path):
+  words = open(path).read()
+  print(words)
+  
+sowpods_path = get_source_realtive_path('sowpods.txt')
+get_words_from_file(sowpods_path)
+
 
 # 🌟 Exercise 2: Working With JSON
 # Instructions
