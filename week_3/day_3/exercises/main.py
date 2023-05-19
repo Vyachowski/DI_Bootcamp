@@ -70,8 +70,10 @@ class Currency:
       try:
         if self.currency == other.currency:
           return (self.amount + other.amount)
-      except:
-        raise TypeError(f'Cannot add between Currency type {self.currency} and {other.currency}')
+        else:
+          raise ValueError(f'TypeError: Cannot add between Currency Type {self.currency} and {other.currency}')
+      except ValueError as e:
+        print(e)
     else:
       if isinstance(other, (int, float)):
         return (self.amount + other)
@@ -81,13 +83,14 @@ class Currency:
       try:
         if self.currency == other.currency:
           self.amount += other.amount
-      except:
-        raise TypeError(f'Cannot add between Currency type {self.currency} and {other.currency}')
+        else:
+          raise TypeError(f'TypeError: Cannot add between Currency type {self.currency} and {other.currency}')
+      except ValueError as e:
+        print(e)
     else:
       if isinstance(other, (int, float)):
         self.amount += other
     return self
-
 
 # OUTPUT
 
@@ -116,4 +119,4 @@ print(c1)        # -> 20 dollars
 
 print(c1 + c3)   # -> TypeError: Cannot add between Currency type <dollar> and <shekel>
 
-print(c1.__doc__)# -> Documentation and don't forget to CONTINUE THE CODE!!!!!
+print(c1.__doc__)# -> Documentation
