@@ -76,7 +76,7 @@ def main():
 
 # OUPUT
 
-print(main()) # -> irremovably leucemia starkness hemimorphisms bosser
+print(main()) # -> entered '5' => e.g. irremovably leucemia starkness hemimorphisms bosser
 
 # 🌟 Exercise 2: Working With JSON
 # Instructions
