@@ -1,34 +1,28 @@
-# REASON: TOO MUCH TIME SPENT ON PAGINATION EXERCISE
-# -- 🌟 Exercise 1: Import -- #
-# Instructions:
-# 1) In a file named func.py create a function that adds 2 number, and prints the result
-# 2) In a file namedexercise_one.py import and the function
-# Hint: You can use the the following syntaxes:
-# import module_name 
-# OR 
-# from module_name import function_name 
-# OR 
-# from module_name import function_name as fn 
-# OR
-# import module_name as mn
+# --- FOR NOW ONLY NECESSARY EXERCISE --- #
+# SPENT TOO MUCH TIME ON PAGINATION EXERCISE #
+# FIRST TASK IS IN ANOTHER FILES – AS DESCRIBED IN INTSTRUCTION #
 
 
 # --- 🌟 Exercise 2: Random Module --- #
 # Instructions
 # Create a function that accepts a number between 1 and 100, then rolls a random number between 1 and 100,
 # if it’s the same number, display a success message to the user, else don’t.
+import random
 
+def guess_random_number(user_number):
+  random_number = random.randint(1, 100)
+  
+  if user_number == random_number:
+    return f'Congratulations! Your guess is right:'
+  else:
+    return 'Sorry, not even close pal :('
 
 # --- 🌟 Exercise 3: String Module --- #
 # Instructions
 # Generate random String of length 5
 # Note: String must be the combination of the UPPER case and lower case letters only. No numbers and a special symbol.
 # Hint: use the string module
-
-
-# datetime module
-
-
+import string
 
 
 # --- 🌟 Exercise 4 : Current Date --- #
