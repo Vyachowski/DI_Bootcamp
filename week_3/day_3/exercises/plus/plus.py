@@ -44,9 +44,19 @@ print(display_date()) # -> Current date is 2023-05-19
 # --- Exercise 5 : Amount Of Time Left Until January 1st --- #
 # Instructions:
 # Create a function that displays the amount of time left from now until January 1st.
-# (Example: the 1st of January is in 10 days and 10:34:01hours).
+# (Example: the 1st of January is in 10 days and 10:34:01 hours).
+def display_time_before_new_year():
+  now = datetime.now()
+  new_year = datetime(now.year + 1, 1, 1)
+  time_left = new_year - now
+  days = time_left.days
+  hours = time_left.seconds // 3600
+  minutes = (time_left.seconds % 3600) // 60
+  seconds = (time_left.seconds % 3600) % 60
+    
+  print(f"The 1st of January is in {days} days, {hours:02d}:{minutes:02d}:{seconds:02d} hours.")
 
-
+display_time_before_new_year() # -> The 1st of January is in 225 days, 07:23:05 hours.
 # --- Exercise 6 : Birthday And Minutes --- #
 # Instructions
 # Create a function that accepts a birthdate as an argument (in the format of your choice), then displays a message stating how many minutes the user lived in his life.
