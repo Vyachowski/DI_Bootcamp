@@ -154,4 +154,4 @@ add_user()
 add_user()
 add_user()
 
-print(pprint.pprint(called_users)) # -> [prettified dictionary]
+print(pprint.pprint(called_users)) # -> [prettified dictionary with fake persons]
