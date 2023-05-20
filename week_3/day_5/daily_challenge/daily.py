@@ -34,5 +34,6 @@ def get_pages_load_time(urls):
 
 websites = ['https://www.google.com', 'https://www.ynet.co.il', 'https://www.imdb.com', 'https://www.ya.ru', 'https://www.codebless.me']
 website = 'https://www.yahoo.com'
-print(get_pages_load_time(websites))
-print(get_pages_load_time(website))
+
+print(get_pages_load_time(websites)) # -> {'https://www.codebless.me': '0.456 milliseconds'...}
+print(get_pages_load_time(website))  # -> {'https://www.yahoo.com': '0.784 milliseconds'}
