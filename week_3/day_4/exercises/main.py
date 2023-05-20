@@ -64,15 +64,17 @@ def main():
   print('This program can give you a random sentence based on your length input. Let\'s try!')
   try:
     user_length = int(input('Please enter a length of a sentence between 2 and 20: '))
-    if (type(user_length) != int):
-      raise TypeError('Please, exhale. Inhale. And explain me why didn\'t you enter a number? Not for Griffindor, sorry.')
-    if 2 > user_length > 20:
-      raise ValueError('The number should be between 2 and 20, I am very sorry but Griffindor is not for you')
-  except (TypeError, ValueError) as e:
-    print(e)
+  except ValueError:
+    print('Please, exhale. Inhale. And explain me why didn\'t you enter a number? Not for Griffindor, sorry.')
   else:
-    random_sentence = get_random_sentence(user_length)
-    return random_sentence
+    try:
+      if 2 > user_length or user_length > 20:
+        raise ValueError('The number should be between 2 and 20, I am very sorry but Griffindor is not for you.')
+    except ValueError as e:
+        print(e)
+    else:
+      random_sentence = get_random_sentence(user_length)
+      return random_sentence
 
 # OUPUT
 
