@@ -62,17 +62,16 @@ display_time_before_new_year() # -> The 1st of January is in 225 days, 07:23:05 
 # Instructions:
 # Create a function that accepts a birthdate as an argument (in the format of your choice), then displays a message stating how many minutes the user lived in his life.
 
-def calculate_minutes_lived(birthdate):
+def calculate_minutes_lived(birthday):
     now = datetime.now()
-    birthdate = datetime.strptime(birthdate, "%d-%m-%Y")
-    birthdate_formatted = birthdate.strftime("%d-%m-%Y")
-    time_lived = now - birthdate
+    birthday = datetime.strptime(birthday, "%d-%m-%Y")
+    birthday_formatted = birthday.strftime("%d-%m-%Y")
+    time_lived = now - birthday
     minutes_lived = int(time_lived.total_seconds() / 60)
     
-    print(f"You've lived {minutes_lived} minutes since {birthdate_formatted}")
+    print(f"You've lived {minutes_lived} minutes since {birthday_formatted}")
 
 calculate_minutes_lived("22-03-1989") # -> You've lived 17967882 minutes since 22-03-1989
-
 
 # --- Exercise 7 : Upcoming Holiday --- #
 # Instructions
@@ -80,9 +79,22 @@ calculate_minutes_lived("22-03-1989") # -> You've lived 17967882 minutes since 2
 # The function should also display the amount of time left from now until the next upcoming holiday and print which holiday that is. (Example: the next holiday is in 30 days and 12:03:45 hours).
 # Hint: Start by hardcoding the datetime and name of the upcoming holiday.
 
+def nearest_holiday():
+    current_date = datetime.now()
+    next_holiday = datetime(2023, 6, 12)  # Hardcoded date of the next upcoming holiday
+    holiday_name = "Day of Russia"  # Hardcoded name of the holiday
+    
+    time_left = next_holiday - current_date
+    total_seconds = time_left.total_seconds()
+    days = time_left.days
+    hours = int(total_seconds // 3600 % 24)
+    minutes = int(total_seconds // 60 % 60)
+    seconds = int(total_seconds % 60)
+    
+    print(f"Today is: {current_date.strftime('%Y-%m-%d')}")
+    print(f"Next holiday is {holiday_name} in {days} days, {hours:02d}:{minutes:02d}:{seconds:02d} hours")
 
-
-
+nearest_holiday()
 # --- Exercise 8 : How Old Are You On Jupiter? --- #
 # Instructions:
 # Given an age in seconds, calculate how old someone would be on:
