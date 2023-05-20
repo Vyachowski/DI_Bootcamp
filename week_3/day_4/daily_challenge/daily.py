@@ -15,6 +15,10 @@
 #    – Hint: You need to open and read the text from the text file.
 # 3) Now, use the provided the_stranger.txt file and try using the class you created above.
 
+# IMPORT
+
+import os
+
 # CODE
 
 example_string = 'A good book would sometimes cost as much as a good house'
@@ -26,7 +30,8 @@ class Text:
     words = self.text.split()
     count = words.count(word)
     return count
-    
+  
+  # get is method to get value of the key. Used for convinience
   def most_common_word(self):
     words = self.text.split()
     if not words:
@@ -48,4 +53,18 @@ class Text:
         unique_words.append(word)
     return unique_words
   
-  
+  @classmethod
+  def from_file(cls, file_path):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, file_path)
+    with open(file_path, 'r') as file:
+      text = file.read()
+    return cls(text)
+
+# OUTPUT
+
+text = Text(example_string)
+text_from_file = Text.from_file('the_stranger.txt')
+
+print(text.unique_words()) # -> ['A', 'good', 'book', 'would', 'sometimes', 'cost', 'as', 'much', 'a', 'house']
+print(text_from_file.most_common_word()) # -> the
