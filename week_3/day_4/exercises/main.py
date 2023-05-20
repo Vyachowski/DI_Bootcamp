@@ -1,4 +1,4 @@
-# --- 🌟 Exercise 1 – Random Sentence Generator ---
+# --- 🌟 Exercise 1 – Random Sentence Generator --- #
 # Instructions
 # Description: In this exercise we will create a random sentence generator. 
 # We will do this by asking the user how long the sentence should be and then printing the generated sentence.
