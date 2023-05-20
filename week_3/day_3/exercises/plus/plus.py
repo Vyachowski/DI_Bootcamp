@@ -54,7 +54,7 @@ def display_time_before_new_year():
   minutes = (time_left.seconds % 3600) // 60
   seconds = (time_left.seconds % 3600) % 60
     
-  print(f"The 1st of January is in {days} days, {hours:02d}:{minutes:02d}:{seconds:02d} hours.")
+  print(f'The 1st of January is in {days} days, {hours:02d}:{minutes:02d}:{seconds:02d} hours.')
 
 display_time_before_new_year() # -> The 1st of January is in 225 days, 07:23:05 hours.
 
@@ -64,14 +64,14 @@ display_time_before_new_year() # -> The 1st of January is in 225 days, 07:23:05 
 
 def calculate_minutes_lived(birthday):
     now = datetime.now()
-    birthday = datetime.strptime(birthday, "%d-%m-%Y")
-    birthday_formatted = birthday.strftime("%d-%m-%Y")
+    birthday = datetime.strptime(birthday, '%d-%m-%Y')
+    birthday_formatted = birthday.strftime('%d-%m-%Y')
     time_lived = now - birthday
     minutes_lived = int(time_lived.total_seconds() / 60)
     
-    print(f"You've lived {minutes_lived} minutes since {birthday_formatted}")
+    print(f'You\'ve lived {minutes_lived} minutes since {birthday_formatted}')
 
-calculate_minutes_lived("22-03-1989") # -> You've lived 17967882 minutes since 22-03-1989
+calculate_minutes_lived('22-03-1989') # -> You've lived 17967882 minutes since 22-03-1989
 
 # --- Exercise 7 : Upcoming Holiday --- #
 # Instructions
@@ -109,6 +109,19 @@ nearest_holiday() # -> Next holiday is Day of Russia in 22 days, 07:06:05 hours
 # Neptune: orbital period 164.79132 Earth years
 # So if you are told someone is 1,000,000,000 seconds old, the function should output that they are 31.69 Earth-years old.
 
+def calculate_age_on_other_planets(seconds):
+    earth_year_seconds = 31557600
+
+    orbital_periods = {
+        'Earth': 1.0,
+        'Mercury': 0.2408467,
+        'Venus': 0.61519726,
+        'Mars': 1.8808158,
+        'Jupiter': 11.862615,
+        'Saturn': 29.447498,
+        'Uranus': 84.016846,
+        'Neptune': 164.79132
+    }
 
 
 # --- Exercise 9 : Faker Module --- #
