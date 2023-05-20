@@ -45,7 +45,7 @@ print(get_pages_load_time(website))
 # What is an instance?
 '''Instance is the implementation of the class'''
 # What is encapsulation?
-'''Encapsulation is a way to restrict direct acces to some infi inside the class'''
+'''Encapsulation is a way to restrict direct access to some data that belongs to a class'''
 # What is abstraction?
 '''It is a way to hide a big amount of data by one name to reduce complexity of the created system'''
 # What is inheritance?
@@ -53,5 +53,7 @@ print(get_pages_load_time(website))
 # What is multiple inheritance?
 '''Multiple inheritance is when children inherit attributes or methods from two or more classes'''
 # What is polymorphism?
-''''''
+'''Polymorphism is a way to use a single interface to perform different actions on subclasses'''
 # What is method resolution order or MRO?
+'''It is a way that programming language use to deal with multiple inheritance. 
+   It helps resolve any potential conflicts and provides a consistent way to find methods in the inheritance hierarchy.'''
