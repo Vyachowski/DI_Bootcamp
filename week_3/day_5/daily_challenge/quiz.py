@@ -48,11 +48,8 @@ class Deck:
 
 # OUTPUT
 deck = Deck()
-deck.shuffle()
 
-for _ in range(5):
-  card = deck.deal()
-  if card:
-    print("Dealt card:", card)
-  else:
-    print("No more cards in the deck.")
+print(deck.cards) # ->  [...K of Spades]]
+deck.shuffle()
+print(deck.cards) # ->  [...J of Spades]
+
