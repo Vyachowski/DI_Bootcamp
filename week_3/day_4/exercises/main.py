@@ -80,22 +80,34 @@ def main():
 
 print(main()) # -> entered '5' => e.g. irremovably leucemia starkness hemimorphisms bosser
 
-# 🌟 Exercise 2: Working With JSON
-# Instructions
-# import json
-# sampleJson = """{ 
-#    "company":{ 
-#       "employee":{ 
-#          "name":"emma",
-#          "payable":{ 
-#             "salary":7000,
-#             "bonus":800
-#          }
-#       }
-#    }
-# }"""
+# --- 🌟 Exercise 2: Working With JSON --- #
+# Instructions:
+# 1) import json
+# 2) Access the nested “salary” key from the JSON-string above.
+# 3) Add a key called “birth_date” to the JSON-string at the same level as the “name” key.
+# 4) Save the dictionary as JSON to a file.
 
+# IMPORT
 
-# Access the nested “salary” key from the JSON-string above.
-# Add a key called “birth_date” to the JSON-string at the same level as the “name” key.
-# Save the dictionary as JSON to a file.
+import json
+
+# CODE
+
+sampleJson = """{ 
+   "company":{ 
+      "employee":{ 
+         "name":"emma",
+         "payable":{ 
+            "salary":7000,
+            "bonus":800
+         }
+      }
+   }
+}"""
+
+json_example = json.loads(sampleJson)
+
+salary = json_example['company']['employee']['payable']['salary']
+json_example['company']['employee']['birth_date'] = '22-03-1989'
+with open("output.json", "w") as file:
+  json.dump(json_example, file)
