@@ -7,7 +7,6 @@
 #    – a method to return the frequency of a word in the text (assume words are separated by whitespace) return None or a meaningful message.
 #    – a method that returns the most common word in the text.
 #    – a method that returns a list of all the unique words in the text.
-
 # Part II:
 # 1) Then, we will analyze a text coming from an external text file. Download the_stranger.txt file.
 # 2) Implement a classmethod that returns a Text instance but with a text file:
