@@ -57,9 +57,21 @@ def display_time_before_new_year():
   print(f"The 1st of January is in {days} days, {hours:02d}:{minutes:02d}:{seconds:02d} hours.")
 
 display_time_before_new_year() # -> The 1st of January is in 225 days, 07:23:05 hours.
+
 # --- Exercise 6 : Birthday And Minutes --- #
-# Instructions
+# Instructions:
 # Create a function that accepts a birthdate as an argument (in the format of your choice), then displays a message stating how many minutes the user lived in his life.
+
+def calculate_minutes_lived(birthdate):
+    now = datetime.now()
+    birthdate = datetime.strptime(birthdate, "%d-%m-%Y")
+    birthdate_formatted = birthdate.strftime("%d-%m-%Y")
+    time_lived = now - birthdate
+    minutes_lived = int(time_lived.total_seconds() / 60)
+    
+    print(f"You've lived {minutes_lived} minutes since {birthdate_formatted}")
+
+calculate_minutes_lived("22-03-1989") # -> You've lived 17967882 minutes since 22-03-1989
 
 
 # --- Exercise 7 : Upcoming Holiday --- #
@@ -67,6 +79,8 @@ display_time_before_new_year() # -> The 1st of January is in 225 days, 07:23:05 
 # Write a function that displays today’s date.
 # The function should also display the amount of time left from now until the next upcoming holiday and print which holiday that is. (Example: the next holiday is in 30 days and 12:03:45 hours).
 # Hint: Start by hardcoding the datetime and name of the upcoming holiday.
+
+
 
 
 # --- Exercise 8 : How Old Are You On Jupiter? --- #
