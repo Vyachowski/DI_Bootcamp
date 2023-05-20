@@ -14,3 +14,16 @@
 #    – Text.from_file('the_stranger.txt')
 #    – Hint: You need to open and read the text from the text file.
 # 3) Now, use the provided the_stranger.txt file and try using the class you created above.
+
+# IMPORT
+
+# CODE
+
+example_string = 'A good book would sometimes cost as much as a good house'
+class Text:
+  def __init__(self, text):
+    self.text = text
+
+
+
+# OUTPUT
