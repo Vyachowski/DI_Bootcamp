@@ -37,9 +37,7 @@ website = 'https://www.yahoo.com'
 print(get_pages_load_time(websites))
 print(get_pages_load_time(website))
 
-# Part 1 : Quizz :
-# Answer the following questions
-
+# Part 1 : Quizz
 # What is a class?
 '''Class is a blueprint to create instances. It combines attributes and methods, both are encapsulated from other data'''
 # What is an instance?
@@ -57,3 +55,42 @@ print(get_pages_load_time(website))
 # What is method resolution order or MRO?
 '''It is a way that programming language use to deal with multiple inheritance. 
    It helps resolve any potential conflicts and provides a consistent way to find methods in the inheritance hierarchy.'''
+
+# Part 2: Deck card
+
+# IMPORT
+
+import random
+
+# CODE
+class Card:
+  suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+  values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+
+  def __init__(self, suit, value):
+    self.suit = suit
+    self.value = value
+
+  def __repr__(self):
+    return f"{self.value} of {self.suit}"
+
+class Deck:
+  def __init__(self):
+    self.cards = [Card(suit, value) for suit in Card.suits for value in Card.values]
+
+  def shuffle(self):
+    random.shuffle(self.cards)
+
+  def deal(self):
+    return self.cards.pop() if self.cards else None
+
+# OUTPUT
+deck = Deck()
+deck.shuffle()
+
+for _ in range(5):
+  card = deck.deal()
+  if card:
+    print("Dealt card:", card)
+  else:
+    print("No more cards in the deck.")
