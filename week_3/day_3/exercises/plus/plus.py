@@ -109,9 +109,8 @@ nearest_holiday() # -> Next holiday is Day of Russia in 22 days, 07:06:05 hours
 # Neptune: orbital period 164.79132 Earth years
 # So if you are told someone is 1,000,000,000 seconds old, the function should output that they are 31.69 Earth-years old.
 
-def calculate_age_on_other_planets(seconds):
+def calculate_age_on_planets(seconds):
     earth_year_seconds = 31557600
-
     orbital_periods = {
         'Earth': 1.0,
         'Mercury': 0.2408467,
@@ -123,6 +122,12 @@ def calculate_age_on_other_planets(seconds):
         'Neptune': 164.79132
     }
 
+    age_on_planets = {}
+    for planet, orbital_period in orbital_periods.items():
+      age_on_planets[planet] = round(seconds / (earth_year_seconds * orbital_period), 2)
+    return age_on_planets
+
+print(calculate_age_on_planets(1_000_000_000))
 
 # --- Exercise 9 : Faker Module --- #
 # Instructions
