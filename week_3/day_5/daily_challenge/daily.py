@@ -41,7 +41,7 @@ print(get_pages_load_time(website))
 # Answer the following questions
 
 # What is a class?
-'''Class is a blueprint to create instances. It combines attributes a methods, both are encapsulated from other data'''
+'''Class is a blueprint to create instances. It combines attributes and methods, both are encapsulated from other data'''
 # What is an instance?
 '''Instance is the implementation of the class'''
 # What is encapsulation?
