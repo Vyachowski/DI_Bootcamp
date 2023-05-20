@@ -94,7 +94,8 @@ def nearest_holiday():
     print(f"Today is: {current_date.strftime('%Y-%m-%d')}")
     print(f"Next holiday is {holiday_name} in {days} days, {hours:02d}:{minutes:02d}:{seconds:02d} hours")
 
-nearest_holiday()
+nearest_holiday() # -> Next holiday is Day of Russia in 22 days, 07:06:05 hours
+
 # --- Exercise 8 : How Old Are You On Jupiter? --- #
 # Instructions:
 # Given an age in seconds, calculate how old someone would be on:
