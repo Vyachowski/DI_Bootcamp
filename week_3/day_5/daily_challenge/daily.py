@@ -36,3 +36,22 @@ websites = ['https://www.google.com', 'https://www.ynet.co.il', 'https://www.imd
 website = 'https://www.yahoo.com'
 print(get_pages_load_time(websites))
 print(get_pages_load_time(website))
+
+# Part 1 : Quizz :
+# Answer the following questions
+
+# What is a class?
+'''Class is a blueprint to create instances. It combines attributes a methods, both are encapsulated from other data'''
+# What is an instance?
+'''Instance is the implementation of the class'''
+# What is encapsulation?
+'''Encapsulation is a way to restrict direct acces to some infi inside the class'''
+# What is abstraction?
+'''It is a way to hide a big amount of data by one name to reduce complexity of the created system'''
+# What is inheritance?
+'''It is a property of classes to use a methods or attributes in children of the class'''
+# What is multiple inheritance?
+'''Multiple inheritance is when children inherit attributes or methods from two or more classes'''
+# What is polymorphism?
+''''''
+# What is method resolution order or MRO?
