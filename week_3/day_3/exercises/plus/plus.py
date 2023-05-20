@@ -81,8 +81,8 @@ calculate_minutes_lived("22-03-1989") # -> You've lived 17967882 minutes since 2
 
 def nearest_holiday():
     current_date = datetime.now()
-    next_holiday = datetime(2023, 6, 12)  # Hardcoded date of the next upcoming holiday
-    holiday_name = "Day of Russia"  # Hardcoded name of the holiday
+    next_holiday = datetime(2023, 6, 12)
+    holiday_name = "Day of Russia"
     
     time_left = next_holiday - current_date
     total_seconds = time_left.total_seconds()
