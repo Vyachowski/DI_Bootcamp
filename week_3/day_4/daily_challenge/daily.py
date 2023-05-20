@@ -40,4 +40,12 @@ class Text:
     most_common_word = max(word_counts, key=word_counts.get)
     return most_common_word
   
+  def unique_words(self):
+    words = self.text.split()
+    unique_words = []
+    for word in words:
+      if word not in unique_words:
+        unique_words.append(word)
+    return unique_words
+  
   
