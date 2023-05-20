@@ -1,5 +1,5 @@
+# --- Part 1 : Quizz --- #
 
-# Part 1 : Quizz
 # What is a class?
 '''Class is a blueprint to create instances. It combines attributes and methods, both are encapsulated from other data'''
 # What is an instance?
@@ -18,7 +18,7 @@
 '''It is a way that programming language use to deal with multiple inheritance. 
    It helps resolve any potential conflicts and provides a consistent way to find methods in the inheritance hierarchy.'''
 
-# Part 2: Deck card
+# --- Part 2: Deck card --- #
 
 # IMPORT
 
