@@ -109,5 +109,9 @@ json_example = json.loads(sampleJson)
 
 salary = json_example['company']['employee']['payable']['salary']
 json_example['company']['employee']['birth_date'] = '22-03-1989'
-with open("output.json", "w") as file:
+with open("result.json", "w") as file:
   json.dump(json_example, file)
+
+# OUTPUT
+
+# -> Code creates new file 'result.json'
