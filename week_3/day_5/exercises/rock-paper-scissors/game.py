@@ -17,7 +17,7 @@ class Game:
     user_variant = ''
 
     while user_variant not in self.__all_moves_list:
-      user_variant = input('Selecet [r]ock, [p]aper or [s]cissors: ') # Maybe need to add a code for printing errors
+      user_variant = input('Selecet [r]ock, [p]aper or [s]cissors: ') # Maybe need to add a code for printing errors but for what?
     user_item = ''.join([key for key, values in self.__move_variants.items() if user_variant in values])
     return user_item
   
@@ -43,10 +43,10 @@ class Game:
     print(f'You selected {user_item}. The computer selected {computer_item}.')
 
     if result == 'win':
-        print('You win!')
+      print('You win!')
     elif result == 'draw':
-        print('It\'s a draw!')
+      print('It\'s a draw!')
     else:
-        print('You lose!')
+      print('You lose!')
 
     return result
