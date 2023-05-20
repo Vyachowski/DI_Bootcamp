@@ -43,10 +43,10 @@ class Game:
     print(f'You selected {user_item}. The computer selected {computer_item}.')
 
     if result == 'win':
-      print('You win!')
+      print('You win!\n')
     elif result == 'draw':
-      print('It\'s a draw!')
+      print('It\'s a draw!\n')
     else:
-      print('You lose!')
+      print('You lose!\n')
 
     return result
