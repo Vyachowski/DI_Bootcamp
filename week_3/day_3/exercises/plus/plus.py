@@ -130,7 +130,28 @@ def calculate_age_on_planets(seconds):
 print(calculate_age_on_planets(1_000_000_000))
 
 # --- Exercise 9 : Faker Module --- #
-# Instructions
-# Install the faker module, and take a look at the documentation and learn how to properly implement faker in your code.
-# Create an empty list called users. Tip: It should be a list of dictionaries.
-# Create a function that adds new dictionaries to the users list. Each user has the following keys: name, adress, langage_code. Use faker to populate them with fake data.
+# Instructions:
+# 1) Install the faker module, and take a look at the documentation and learn how to properly implement faker in your code.
+# 2) Create an empty list called users. Tip: It should be a list of dictionaries.
+# 3) Create a function that adds new dictionaries to the users list. Each user has the following keys: name, adress, langage_code. 
+# 4) Use faker to populate them with fake data.
+
+from faker import Faker
+import pprint
+
+called_users = []
+fake = Faker()
+
+def add_user():
+  user = {
+    'name': fake.name(),
+    'address': fake.address(),
+    'language_code': fake.language_code()
+  }
+  called_users.append(user)
+
+add_user()
+add_user()
+add_user()
+
+print(pprint.pprint(called_users)) # -> [prettified dictionary]
