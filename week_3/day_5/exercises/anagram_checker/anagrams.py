@@ -1,9 +1,5 @@
 from anagram_checker import AnagramChecker
 
-### IN MY VERSION SCORE BOARD AND EXIT ARE NOT RELATED. SHOWING SCORE BOARD DOESN'T LEAD TO THE EXIT. ###
-
-from game import Game
-
 def get_user_menu_choice():
   user_menu = '\
   Menu:                 \n\n\
