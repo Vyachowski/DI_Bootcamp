@@ -26,7 +26,7 @@ def print_results(results):
   ***********************\n")
 
 def main():
-  game = Game()
+  Anagram_checker = AnagramChecker()
   user_choice = None
   score_board = {'win': 0, 'loss': 0, 'draw': 0}
   
