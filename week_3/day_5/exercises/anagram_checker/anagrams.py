@@ -1,10 +1,10 @@
 from anagram_checker import AnagramChecker
 
 def get_user_menu_choice():
-  user_menu = '\
-  Menu:                 \n\n\
-    (e) Enter a word \n\
-    (x) Exit            \n\
+  user_menu = \
+  'Menu:               \n\n\
+    (e) Enter a word   \n\
+    (x) Exit           \n\
   '
   user_choice = None
 
