@@ -26,6 +26,8 @@ VALUES
 ('Trevor', 'Green'),
 ('Melanie', 'Johnson')
 
+-- OUTPUT
+
 SELECT * FROM ITEMS
 
 SELECT * FROM ITEMS WHERE PRICE > 80
