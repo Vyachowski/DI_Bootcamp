@@ -27,7 +27,7 @@ def get_user_word():
     user_variant = input('Your word: ')
     if ' ' in user_variant.strip():
       print('Only one word is allowed!')
-    if re.search(pattern, user_variant.strip()):
+    elif re.search(pattern, user_variant.strip()):
       print('No numbers and special symbols allowed')
     else:
       word = user_variant.strip().lower()
