@@ -65,7 +65,3 @@ def main():
 # OUTPUT
 
 main()
-
-# ana = AnagramChecker(example)
-# result = ana.get_anagrams('meat')
-# print(result)
