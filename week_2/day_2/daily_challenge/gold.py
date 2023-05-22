@@ -28,7 +28,8 @@ def get_birthday():
 
 def calculate_birthday_candles(birthday):
   birthday_to_numbers_list = list(map(int, birthday))
-  born = {key: value for key, value in zip(['day', 'month', 'year'], birthday_to_numbers_list)} # => transforming to the object with year, month, day
+  # Transforming to the object with year, month, day
+  born = {key: value for key, value in zip(['day', 'month', 'year'], birthday_to_numbers_list)}
   today = date.today()
   age = today.year - born['year'] - ((today.month, today.day) < (born['month'], born['day']))
   return int(str(age)[-1])
