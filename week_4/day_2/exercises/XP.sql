@@ -104,11 +104,6 @@ SELECT city.city, country.country
 FROM city
 JOIN country on city.country_id = country.country_id;
 
--- Bonus You want to be able to see how your sellers have been doing? Write a query to get the customer’s id, names (first and last), the amount and the date of payment ordered by the id of the staff member who sold them the dvd.
-
-
-
-
 
 
 
