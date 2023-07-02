@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+  color: #212427;
+}
+
+.landing-page__first {
+  padding: 20px 20px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+    url("images/vector-world-map.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.first-title {
+  margin: 0;
+  margin-bottom: 45px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.features {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); */
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  gap: 85px;
+  margin: 0 auto;
+  margin-bottom: 85px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.feautures__item {
+  text-align: center;
+}
+
+.features__title {
+  color: cornflowerblue;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.features__text {
+  color: grey;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  gap: 45px;
+  min-height: 350px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.testimonials__item {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  background-color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.testimonials__item--first-item {
+  align-self: start;
+}
+
+.testimonials__item--second-item {
+  align-self: end;
+}
+
+.testimonials__item--third-item {
+  align-self: center;
+}
+
+.testimonials__item--first-item .testimonials__author {
+  background-color: crimson;
+}
+
+.testimonials__item--second-item .testimonials__author {
+  background-color: violet;
+}
+
+.testimonials__item--third-item .testimonials__author {
+  background-color: aquamarine;
+}
+
+.testimonials__text p {
+  margin: 0;
+  padding: 25px;
+  padding-bottom: 45px;
+  font-size: 0.85rem;
+}
+
+.testimonials__author {
+  position: relative;
+  text-align: center;
+}
+
+.testimonials__author .testimonials__image-wrapper{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.testimonials__author h2 {
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: white;
+}
+
+.testimonials__author span {
+  display: block;
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: white;
+}
+
+.testimonials__image-wrapper {
+  max-width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.testimonials__image-wrapper img {
+  max-width: 60px;
+}
