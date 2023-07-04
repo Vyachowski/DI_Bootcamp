@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap Landing Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
+
 <body>
-  <header>
+  <header class="px-5 py-3 fixed-top">
     <nav class="navbar navbar-expand-lg bg-none">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">FRAME</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand text-white fw-bold" href="#">FRAME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              <a class="nav-link active link-light" aria-current="page" href="#">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">FEATURES</a>
+              <a class="nav-link link-light" href="#">FEATURES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">PRICING</a>
+              <a class="nav-link link-light" href="#">PRICING</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">REVIEWS</a>
+              <a class="nav-link link-light" href="#">REVIEWS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CONTACTS</a>
+              <a class="nav-link link-light" href="#">CONTACTS</a>
             </li>
           </ul>
         </div>
@@ -37,43 +41,49 @@
     </nav>
   </header>
   <main>
-    <section class="hero">
-      <h1 class="display-5 fw-bold">
-        uicookies.com Creates High
-        Quality Bootstrap Template
-        For free
-      </h1>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Get Them Now</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">See Features</button>
-      </div>
-    </section>
-    <section class="features">
-      <ul>
-        <li>
-          <i class="fa-solid fa-mobile-screen-button"></i>
-          <h2>Mobile optimize</h2>
+    <div class="wrapper-background" style="background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('images/background-notebook.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+      <section class="hero container justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center min-vh-100">
+          <div class="col-6 m-auto">
+            <h1 class="display-5 fw-bold mb-5 text-light">
+              uicookies.com Creates High
+              Quality Bootstrap Template
+              For free
+            </h1>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Get Them Now</button>
+              <button type="button" class="btn btn-outline-light btn-lg px-4">See Features</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="features container py-5">
+      <ul class="row gx-3">
+        <li class="col-4 card border-0">
+          <i class="fa-solid fa-mobile-screen-button text-primary mb-4" style="font-size: 5rem;"></i>
+          <h2 class="text-primary display-6 mb-4">Mobile optimize</h2>
           <p>Far far away, behind the word mountains,
             far from the countries Vokalia and Consantia, there live the blind texts.
             Separated they live the blind texts. Separated they live in Bookmarksgrove right at the coast of
             the Semantics, a large language ocean.
           </p>
-          <a href="#">Learn more</a>
+          <a class="link-primary text-decoration-none" href="#">Learn more <i class="fa-solid fa-angle-right"></i></a>
         </li>
-        <li>
-          <i class="fa-solid fa-wallet"></i>
-          <h2>Increase revenue</h2>
+        <li class="col-4 card border-0">
+          <i class="fa-solid fa-wallet text-primary mb-4" style="font-size: 5rem;"></i>
+          <h2 class="text-primary display-6 mb-4">Increase revenue</h2>
           <p>
             A small river named Duden flows by
             their place and supplies it with the necessary regelialia. It is a
             paradisematic country, in which roasted
             parts of the sentences fly into your mouth.
           </p>
-          <a href="#">Learn more</a>
+          <a class="link-primary text-decoration-none" href="#">Learn more <i class="fa-solid fa-angle-right"></i></a>
         </li>
-        <li>
-          <i class="fa-regular fa-lightbulb"></i>
-          <h2>Smart idea</h2>
+        <li class="col-4 card border-0">
+          <i class="fa-regular fa-lightbulb text-primary mb-4" style="font-size: 5rem;"></i>
+          <h2 class="text-primary display-6 mb-4">Smart idea</h2>
           <p>
             Even the all powerful pointing has no
             control about the blind texts it is an
@@ -82,13 +92,19 @@
             name of lorem Ipsum decided to leave
             for the far World of Gramma.
           </p>
-          <a href="#">Learn more</a>
+          <a class="link-primary text-decoration-none" href="#">Learn more <i class="fa-solid fa-angle-right"></i></a>
         </li>
       </ul>
     </section>
   </main>
-  <span>Image by <a href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1850613">Pexels</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1850613">Pixabay</a></span>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <span hidden>Image by <a
+      href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1850613">Pexels</a>
+    from <a
+      href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1850613">Pixabay</a></span>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/63bd801ead.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
