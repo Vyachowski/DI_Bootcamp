@@ -38,7 +38,6 @@ body {
 
 .features {
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); */
   grid-template-columns: repeat(auto-fill, minmax(100px, 300px));
   justify-content: center;
   gap: 85px;
@@ -67,7 +66,6 @@ body {
 .testimonials {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  /* grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); */
   justify-content: center;
   gap: 45px;
   min-height: 350px;
