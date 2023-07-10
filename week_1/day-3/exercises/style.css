@@ -38,7 +38,7 @@ body {
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
   justify-content: center;
   gap: 85px;
   margin: 0 auto;
@@ -65,7 +65,7 @@ body {
 
 .testimonials {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
   gap: 45px;
   min-height: 350px;
@@ -110,7 +110,8 @@ body {
   margin: 0;
   padding: 25px;
   padding-bottom: 45px;
-  font-size: 0.85rem;
+  /* font-size: 0.85rem; */
+  font-size: clamp(1rem, 2vw, 1.2rem); 
 }
 
 .testimonials__author {
