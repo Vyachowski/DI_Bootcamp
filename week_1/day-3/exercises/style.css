@@ -17,6 +17,10 @@ body {
 }
 
 .landing-page__first {
+  /* display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center; */
   padding: 20px 20px;
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
     url("images/vector-world-map.jpg");
@@ -35,7 +39,8 @@ body {
 .features {
   display: grid;
   /* grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); */
-  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 300px));
+  justify-content: center;
   gap: 85px;
   margin: 0 auto;
   margin-bottom: 85px;
@@ -61,7 +66,9 @@ body {
 
 .testimonials {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); */
+  justify-content: center;
   gap: 45px;
   min-height: 350px;
   padding: 0;
