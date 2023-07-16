@@ -13,9 +13,9 @@
 guests_number = int(input('How many people will be on your wedding? Please type a number: '));
 if (guests_number > 200):
   print('It will cost your $20,000')
-elif (guests_number > 100 and guests_number <= 200):
+elif ( 100 < guests_number <= 200):
   print('It will cost your $15,000')
-elif (guests_number > 50 and guests_number <= 100):
+elif ( 50 < guests_number <= 100 ):
   print('It will cost your $10,000')
 elif (guests_number <= 50):
   print('It will cost your $4,000')
