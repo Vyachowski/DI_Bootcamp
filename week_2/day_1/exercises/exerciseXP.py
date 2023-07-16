@@ -17,31 +17,30 @@ print("Hello" == "hello")
 
 # EXERCISE 4
 # Create a variable called computer_brand which value is the brand name of your computer.
-# Using the computer_brand variable print a sentence that states the following: "I have a <computer_brand> computer".
 computer_brand = 'Apple'
+# Using the computer_brand variable print a sentence that states the following: "I have a <computer_brand> computer".
 print(f'I have an {computer_brand} computer')
 
 # EXERCISE 5
 # Create a variable called name, and set it’s value to your name.
+name = 'Slava'
 # Create a variable called age, and set it’s value to your age.
+age = 34
 # Create a variable called shoe_size, and set it’s value to your shoe size.
+shoe_size = 42
 # Create a variable called info and set it’s value to an interesting sentence about yourself. The sentence must contain all the variables created in parts 1, 2 and 3.
+info = (f'Surprise is that {name} is {age} years old and it\'s so close to his {shoe_size} shoe size')
 # Have your code print the info message.
 # Run your code
-name = 'Slava'
-age = 34
-shoe_size = 42
-info = (f'Surprise is that {name} is {age} years old and it\'s so close to his {shoe_size} shoe size')
 print(info)
 
 # EXERCISE 6
 # Create two variables, a and b.
 # Each variable value should be a number.
-# If a is bigger then b, have your code print Hello World.
-a = 3
+a = 7
 b = 6
-
-if (a < b):
+# If a is bigger then b, have your code print Hello World.
+if (a > b):
   print("Hello World!")
 
 # EXERCISE 7
