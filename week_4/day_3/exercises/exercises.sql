@@ -22,10 +22,10 @@ SELECT name
 FROM language;
 SELECT f.title, f.description, lg.name
 from film f
-         LEFT JOIN language lg on f.language_id = lg.language_id;
+    LEFT JOIN language lg on f.language_id = lg.language_id;
 SELECT f.title, f.description, lg.name
 from film f
-         RIGHT JOIN language lg on f.language_id = lg.language_id;
+    RIGHT JOIN language lg on f.language_id = lg.language_id;
 
 CREATE table new_film
 (

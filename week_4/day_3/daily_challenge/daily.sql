@@ -136,8 +136,8 @@ JOIN Book b ON l.book_fk_id = b.book_id;
 
 SELECT AVG(age) AS average_age
 FROM Library
-         JOIN Student ON Library.student_fk_id = Student.student_id
-         JOIN Book ON Library.book_fk_id = Book.book_id
+    JOIN Student ON Library.student_fk_id = Student.student_id
+    JOIN Book ON Library.book_fk_id = Book.book_id
 WHERE Book.title = 'Alice In Wonderland';
 
 DELETE from Student
