@@ -1,14 +1,37 @@
-CREATE TABLE actors(
-  actor_id SERIAL PRIMARY KEY,
-  first_name VARCHAR (50) NOT NULL,
-  last_name VARCHAR (100) NOT NULL,
-  age DATE NOT NULL,
-  number_oscars SMALLINT NOT NULL
-)
+-- // CREATING TABLE // --
 
-INSERT INTO actors (first_name, last_name, age, number_oscars)
-VALUES
-('Matt','Damon','08/10/1970', 5),
-('George','Clooney','06/05/1961', 2),
-('Angelina','Jolie','06/04/1975', 1),
-('Jennifer','Aniston','02/11/1969', 0)
+CREATE TABLE house_expenses (
+  id SERIAL PRIMARY KEY,
+  date_paid DATE NOT NULL,
+  electricity FLOAT,
+  water FLOAT,
+  paid_by VARCHAR(50)
+);
+
+-- // INSERTING DATA // --
+
+INSERT INTO house_expenses (date_paid, electricity, water, paid_by) 
+VALUES 
+('2023-07-30', '29', '113.21', 'Adam'),
+('2023-07-30', '18.51', '95.2', 'Sivan'),
+('2023-07-29', '17.51', '85.21', 'Adam'),
+('2023-07-29', '16.51', '75.21', 'Adam'),
+('2023-07-27', '15.51', '65.2', 'Sivan'),
+('2023-07-26', '14.5', '55.21', 'Sherlock');
+
+-- // DISPLAY DATA // --
+
+SELECT * FROM HOUSE_EXPENSES;
+
+SELECT MIN(ELECTRICITY) FROM HOUSE_EXPENSES;
+SELECT MAX(WATER) FROM HOUSE_EXPENSES;
+SELECT AVG(ELECTRICITY) FROM HOUSE_EXPENSES WHERE PAID_BY != 'Adam';
+SELECT PAID_BY, SUM(ELECTRICITY + WATER), MAX(ELECTRICITY + WATER) 
+FROM HOUSE_EXPENSES 
+GROUP BY PAID_BY;
+
+-- // UPDATE DATA // --
+
+UPDATE HOUSE_EXPENSES
+SET PAID_BY = 'Adam'
+WHERE ID = 6;
