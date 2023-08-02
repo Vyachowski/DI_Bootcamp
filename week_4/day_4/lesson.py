@@ -10,18 +10,34 @@ connection = psycopg2.connect(
     port='5432'
 )
 
-cursor = connection.cursor()
+# Placing cursor and collect data
+def retrieve_actors():
+  with connection:
+    with connection.cursor() as curs:
+      query = "select * from actor"
+      curs.execute(query)
+      data = curs.fetchall()
+      print(data)
 
-query = 'SELECT * FROM actor'
+# executing function
+retrieve_actors()
 
-cursor.execute(query)
+# ALTERNATE SOLUTION
 
-result = cursor.fetchall()
+# cursor = connection.cursor()
 
-print(result)
+# # Making query
 
-cursor.close()
-connection.close()
+# query = 'SELECT * FROM actor'
 
-def get_all_actors():
-  query = ''
+# cursor.execute(query)
+
+# result = cursor.fetchall()
+
+# print(result)
+
+# cursor.close()
+# connection.close()
+
+# def get_all_actors():
+#   query = ''
