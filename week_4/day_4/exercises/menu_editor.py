@@ -1,5 +1,3 @@
-# NOT READY YET, I need about hour to finish
-
 # Part 2
 # 1) Create a file called menu_editor.py , which will have the following functions:
 #    show_user_menu() - this function should display the program menu (not the restaurant menu!), and ask the user to :
