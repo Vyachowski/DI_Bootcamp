@@ -6,8 +6,10 @@
     
 import requests, random, sqlite3
 
-def get_random_countries(amount):
+def get_random_countries(amount = 10):
   response = requests.get('https://restcountries.com/v3.1/all')
   countries = response.json()
   random_countries = random.sample(countries, amount)
   return random_countries
+
+print(get_random_countries())
