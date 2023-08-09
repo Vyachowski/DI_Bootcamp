@@ -2,4 +2,5 @@
 *.code-workspace
 .vscode
 notes.py
+notes.js
 .idea
