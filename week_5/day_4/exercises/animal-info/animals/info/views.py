@@ -1,13 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from info.data import animals, families
+from .data import animals, families
+import json
+
 
 # Create your views here.
 def display_all_animals(request):
-    return HttpResponse(animals)
+
+    cleaned_animals = []
+
+    for animal in animals:
+        cleaned_animal = animal.copy()
+        del cleaned_animal["id"]
+        cleaned_animals.append(cleaned_animal)
+
+    result = "\n\n".join(json.dumps(cleaned_animal, indent=4) for cleaned_animal in cleaned_animals)
+
+    return HttpResponse(result, content_type="application/json")
+
 
 def display_all_families(request):
-    animals = list(map(lambda family: family['name'] + ' ', families))
+    animals = list(map(lambda family: f"{family['name']}<br>", families))
     return HttpResponse(animals)
 
 def display_one_animal(request, animal_id):
