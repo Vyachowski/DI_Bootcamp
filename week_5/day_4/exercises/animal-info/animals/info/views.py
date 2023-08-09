@@ -24,8 +24,17 @@ def display_all_families(request):
     return HttpResponse(animals)
 
 def display_one_animal(request, animal_id):
-    animal = animals[animal_id - 1]['name']
-    return HttpResponse(animal)
+    # animal = animals[animal_id - 1]['name']
+    # return HttpResponse(animal)
+    if 1 <= animal_id <= len(animals):
+        animal = animals[animal_id - 1]
+        cleaned_animal = animal.copy()
+        del cleaned_animal['id']
+
+        result = json.dumps(cleaned_animal, indent=4)
+        return HttpResponse(result, content_type='application/json')
+    else:
+        return HttpResponse('Animal not found')
 
 def display_animal_per_family(request, family_id):
     animals_in_family = [animal for animal in animals if animal['family'] == family_id]
