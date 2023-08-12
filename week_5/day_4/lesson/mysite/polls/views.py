@@ -17,3 +17,7 @@ def post(request, post_id: int):
 
 def about(request):
     return HttpResponse('<h1> Welcome Users<h1>')
+
+def all_posts(request, author_name:str):
+    pass
+    return HttpResponse('<h1> Welcome Users<h1>')

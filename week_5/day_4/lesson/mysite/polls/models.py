@@ -6,3 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=50)
     text = models.TextField()
     time_created = models.DateTimeField(auto_now_add=True)
+
+class Author(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(blank=True, null=True)
