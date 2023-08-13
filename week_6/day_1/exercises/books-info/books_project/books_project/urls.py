@@ -1,5 +1,5 @@
 """
-URL configuration for animals project.
+URL configuration for books_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,12 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from info.views import display_all_animals, display_all_families, display_one_animal, display_animal_per_family
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('animals/', display_all_animals, name='animals'),
-    path('families/', display_all_families, name='families'),
-    path('animals/<int:animal_id>/', display_one_animal, name='animal'),
-    path('animals_in_family/<int:family_id>/', display_animal_per_family, name='family')
 ]
