@@ -14,7 +14,9 @@ class Book(models.Model):
     page_count = models.IntegerField(blank=False)
     categories = models.CharField(max_length=100, blank=False)
     thumbnail_url = models.URLField()
-    objects = models.Manager()
+
+    def __str__(self):
+        return self.title
 
 
 class BookReview(models.Model):
