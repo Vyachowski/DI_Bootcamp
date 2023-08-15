@@ -12,7 +12,7 @@ class StudentList(generics.ListCreateAPIView):
     def get_queryset(self):
         queryset = Student.objects.all()
         date_joined_param = self.request.query_params.get('date_joined')
-
+        # Not sure about that part, filtering is working but...
         if date_joined_param:
             try:
                 date_joined = timezone.datetime.strptime(date_joined_param, '%Y-%m-%d')
