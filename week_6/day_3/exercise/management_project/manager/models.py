@@ -11,19 +11,21 @@ class Department(models.Model):
 
 
 class Employee(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     email = models.EmailField()
+    phone_number = models.CharField(max_length=20)
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
+    projects = models.ManyToManyField('Project', related_name='employees')
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return self.name
 
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    employees = models.ManyToManyField(Employee, related_name='projects')
+    start_date = models.DateField()
+    end_date = models.DateField()
 
     def __str__(self):
         return self.name
@@ -32,8 +34,12 @@ class Project(models.Model):
 class Task(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    due_date = models.DateField()
+    completed = models.BooleanField(default=False)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    assigned_to = models.ForeignKey(Employee, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.name
 
     def __str__(self):
         return self.name
