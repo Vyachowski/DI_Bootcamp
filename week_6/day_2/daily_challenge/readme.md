@@ -1,1 +1,1 @@
-Copied from exercises with all data that wascreated
+Copied from exercises with all data that was created
