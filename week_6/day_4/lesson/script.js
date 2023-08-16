@@ -123,9 +123,95 @@
 
 // Splice array
 
-let colors = ['Blue', 'Yellow', 'Green'];
-console.log(colors);
+// let colors = ['Blue', 'Yellow', 'Green'];
+// console.log(colors);
 
-colors.splice(1, 2, 'Pink', 'Orange', 'Grey');
+// colors.splice(1, 2, 'Pink', 'Orange', 'Grey');
 
-console.log(colors);
+// console.log(colors);
+
+// Slice
+
+// let colors = ['Blue', 'Yellow', 'Green', 'Red'];
+
+// let slicedArray = colors.slice(1, 3);
+
+// console.log(colors);
+// console.log(slicedArray);
+
+// const pets = ['dog', 'cat', 'fish', 'rabbit', 'cow'];
+
+// console.log(pets[0]);
+
+// pets.push('horse');
+// console.log(pets);
+// pets.splice(3, 1);
+// console.log(pets);
+
+// let person = {
+//   firstName: 'Slava',
+//   lastName: 'Haikin',
+//   age: 34,
+//   eyeColor: 'blue'
+// }
+
+// console.log(person.firstName);
+// console.log(person['firstName']);
+
+// // Add or change variables
+
+// person.country = 'Israel';
+// console.log(person);
+
+// // Delete from object
+// delete person.age;
+// console.log(person);
+
+
+// let x = 16;
+// // x = 18;
+// // x = 21;
+
+// if (x >= 21) {
+//   console.log('You can drink in the US');
+// }
+
+// else if (x >= 18) {
+//   console.log('You can drink in Russia');
+// }
+
+// else {
+//   console.log('You are to young to drink');
+// }
+
+
+// Exercise Keyless car
+
+// const userAnswer = Number(prompt('What is your age'));
+
+// if (userAnswer < 18) {
+//   alert('Sorry, you are to young to drive this car')
+// } else if (userAnswer === 18) {
+//   alert('Congratulions of your first year of driving')
+// } else {
+//   alert('Powering On. Enjoy the ride!')
+// }
+
+
+let fruit = 'Papayas';
+// fruit = 'Apples';
+
+switch (fruit) {
+  case 'Oranges':
+    console.log('It is orange! It cost: 6 bucks per kilo');
+    break;
+    case 'Mangoes':
+      console.log('It is mango! It cost: 6 bucks per kilo');
+      break;
+    case 'Bulbatini':
+    case 'Papayas':
+      console.log('It is papaya! It cost: 122 bucks per kilo');
+      break;
+    default:
+      console.log('Sorry, we are out of ' + fruit);
+}
