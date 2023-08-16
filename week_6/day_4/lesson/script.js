@@ -198,20 +198,100 @@
 // }
 
 
-let fruit = 'Papayas';
-// fruit = 'Apples';
+// let fruit = 'Papayas';
+// // fruit = 'Apples';
 
-switch (fruit) {
-  case 'Oranges':
-    console.log('It is orange! It cost: 6 bucks per kilo');
-    break;
-    case 'Mangoes':
-      console.log('It is mango! It cost: 6 bucks per kilo');
-      break;
-    case 'Bulbatini':
-    case 'Papayas':
-      console.log('It is papaya! It cost: 122 bucks per kilo');
-      break;
-    default:
-      console.log('Sorry, we are out of ' + fruit);
+// switch (fruit) {
+//   case 'Oranges':
+//     console.log('It is orange! It cost: 6 bucks per kilo');
+//     break;
+//     case 'Mangoes':
+//       console.log('It is mango! It cost: 6 bucks per kilo');
+//       break;
+//     case 'Bulbatini':
+//     case 'Papayas':
+//       console.log('It is papaya! It cost: 122 bucks per kilo');
+//       break;
+//     default:
+//       console.log('Sorry, we are out of ' + fruit);
+// }
+
+// Loops
+// // For loop
+
+// for (let i = 0; i < 5; i++) {
+//   console.log('the current number is ' + i)
+// }
+
+// let colors = ['red', 'blue', 'pink', 'red'];
+
+// for (let i = 0; i < colors.length; i++) {
+//   console.log('the ' + (i + 1) + ' color is ' + colors[i]);
+// }
+
+// // Loops FOR/IN OBJECT
+
+// let person = {
+//   name: 'Daniel',
+//   age: '26',
+//   country: 'Israel'
+// }
+
+// for (let x in person) {
+//   console.log(x);
+//   console.log(person[x]);
+// }
+
+// console.log(person.name)
+
+// // Loops FOR/OF
+
+// let colors = ['red', 'blue', 'pink', 'red'];
+
+// for (let color of colors) {
+//   console.log(color);
+// }
+
+// // While Loop
+
+// let n = 0;
+
+// while (n < 3) {
+//   console.log(n);
+//   n++;
+// }
+
+// let answer = prompt('What is the secret password?');
+
+// while (answer != '1234') {
+//   answer = prompt('What is the secret password?');
+// }
+
+// alert('Welcome Admin');
+
+
+// // While-Do Loop
+// let i = 0;
+// do {
+//   console.log('The number is' + 1);
+//   i++;
+// }
+// while (i < 10);
+
+// // Break statement
+
+// for (let i = 0; i < 5; i++) {
+//   if (i === 3) {
+//     break
+//   }
+//   console.log(i);
+// }
+
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    console.log('And here is a moment when we are skipping number 3')
+    continue;
+  }
+  console.log(i);
 }
+
