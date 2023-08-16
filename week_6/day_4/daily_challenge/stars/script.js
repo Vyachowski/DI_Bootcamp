@@ -26,3 +26,14 @@ for (let i = 1; i <= starsNumber; i++) {
 
   console.log(starsRow.join(''));
 }
+
+// Solution 3
+for (let i = 1; i <= starsNumber; i++) {
+  let starsRow = '';
+
+  for (let j = 1; j <= i; j++) {
+    starsRow += star;
+  }
+
+  console.log(starsRow);
+}
