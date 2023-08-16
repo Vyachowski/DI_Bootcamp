@@ -287,11 +287,16 @@
 //   console.log(i);
 // }
 
-for (let i = 0; i < 10; i++) {
-  if (i === 3) {
-    console.log('And here is a moment when we are skipping number 3')
-    continue;
-  }
-  console.log(i);
-}
+// for (let i = 0; i < 10; i++) {
+//   if (i === 3) {
+//     console.log('And here is a moment when we are skipping number 3')
+//     continue;
+//   }
+//   console.log(i);
+// }
 
+let myPeople = 'go';
+
+const yourName = 'Vladlena';
+
+console.log(yourName);
