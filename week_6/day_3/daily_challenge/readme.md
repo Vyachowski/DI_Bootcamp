@@ -1,1 +1,1 @@
-# SORRY, not ready yet, still working on it :)
+# SORRY, not ready yet, still working on it :) It takes huge amount of time to deal with Django
