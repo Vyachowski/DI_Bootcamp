@@ -34,16 +34,24 @@ student_list = [
     }
 ]
 
+for student in student_list:
+  print(student['name'], student['age'])
 
 # Function Behavior with *args and **kwargs
-
 # Write a function combine_words that accepts any number of positional arguments and key-value arguments. The function should return a single sentence combining all the words provided.
 # Example:
 # print(combine_words("Hello", "world", second="is", third="great!", first="Python"))
 # Expected Output:
-
 # "Hello world. Python is great!"
+def combine_words(*args, **kwargs):
+    sentence_part = list(args)
+    other_part = [value for key, value in sorted(kwargs.items())]
+    sentence = ' '.join(sentence_part) + '. ' + ' '.join(other_part)
+    return sentence
+  
 
+print(combine_words("Hello", "world", second="is", third="great!", first="Python"))
+# print('But Javascript is much-much-much better!')
 
 # Object-Oriented Programming (OOP)
 
@@ -79,6 +87,8 @@ student_list = [
 # Replace non-numeric values in column “A” with the mean of numeric values. Plot a histogram of the “A” column using matplotlib.
 
 # Plot “A” and “B” columns of df using matplotlib. Add x-axis, y-axis labels, and a title.
+
+
 
 
 # Django and Django REST
