@@ -66,6 +66,7 @@ class Vehicle:
    
 vehicle = Vehicle('Moto', 'Bmw', 2114)
 print(vehicle)
+
 # With error
 try:
     vehicle2 = Vehicle('Car')
@@ -76,16 +77,71 @@ except TypeError as e:
 
 # OOP Inheritance and Decorators
 
-# Create a class Car with string attributes brand, model, and integer attribute mileage. Implement a method to return the car’s details.
-
+# Create a class Car with string attributes brand, model, and integer attribute mileage. 
+# Implement a method to return the car’s details.
+class Car:
+    def __init__(self, brand, model, mileage):
+        self.brand = brand
+        self.model = model
+        self.mileage = mileage
+        
+    def __str__(self):
+        return f'Details: {self.brand}, {self.model}, {self.mileage}'
 
 # Create a subclass ElectricCar inheriting from Car with an additional float private attribute __battery_capacity. Override the car’s details method to include the battery capacity.
 # Use the @property decorator to get the battery_capacity value and @battery_capacity.setter to modify the battery capacity only if the new value is positive.
+class ElectricCar(Car):
+    def __init__(self, brand, model, mileage, battery_capacity):
+        super().__init__(brand, model, mileage)
+        self.__battery_capacity = battery_capacity
+    
+    @property
+    def battery_capacity(self):
+        return self.__battery_capacity
+    
+    @battery_capacity.setter
+    def battery_capacity(self, value):
+        if value > 0:
+            self.__battery_capacity = value
 
+    # def details(self):
+    def __str__(self):
+        car_details = super().details()
+        return f"{car_details}, Battery Capacity: {self.__battery_capacity}"
 
-# Create a BankAccount class with private float attribute _balance and private string attribute _account_holder. Implement methods to deposit, withdraw, and view the balance. Include a class method to track accounts created and a static method for a bank policy message. Ensure the balance is non-negative.
+# Create a BankAccount class with private float attribute _balance and private string attribute _account_holder. 
+# Implement methods to deposit, withdraw, and view the balance. Include a class method to track accounts created and a static method for a bank policy message. 
+# Ensure the balance is non-negative.
+class BankAccount:
+    accounts = 0
 
+    def __init__(self, balance, account_holder):
+      if balance < 0: 
+          raise ValueError("Should be more than 0")
+      self._balance = balance
+      self._account_holder = account_holder
+      BankAccount.accounts += 1
+    
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+    
+    def withdraw(self, amount):
+        if 0 <= amount <= self._balance:
+            self._balance -= amount
+        else:
+            print('Not enough money for operation')
+    
+    def check_balance(self):
+        return self._balance
 
+    @classmethod
+    def total_accounts(cls):
+        return cls.accounts
+
+    @staticmethod
+    def bank_policy():
+        return 'Do you remember your pin?'
 
 # Data Science
 
