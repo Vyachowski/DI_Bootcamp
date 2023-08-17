@@ -149,7 +149,7 @@ class BankAccount:
 import numpy as np
 basic_array = np.arange(1, 10).reshape(3, 3)
 print('Answer', basic_array)
-# Provided pandas DataFrame df:
+
 import pandas as pd
 df = pd.DataFrame({'A': [1, 'apple', 3, 4, 'banana'], 'B': [5, 6, 7, 8, 9]})
 # To Nan
@@ -167,18 +167,20 @@ print(df['A'])
 # Plot “A” and “B” columns of df using matplotlib. Add x-axis, y-axis labels, and a title.
 import matplotlib.pyplot as plt
 plt.hist(df['A'], bins=10, edgecolor='black')
-plt.title('Histogram')
+plt.title('Histogram for column A')
 plt.show()
+
+
 # Django and Django REST
 
 # Create a new Django project called ‘academy’. After that - create a new app (inside the ‘academy’ project) called ‘school’.
 
-
+# ANSWER: IN ACADEMY FOLDER 
 
 # Django Models with Foreign Key
-
 # Define Django models Teacher and Course. Course has course_name (CharField) and course_code (CharField). Teacher has name (CharField). Create a many-to-many relationship between Teacher and Course.
 
+# ANSWER: IN FOLDER ACADEMY
 
 # Views
 
