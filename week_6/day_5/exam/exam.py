@@ -81,12 +81,20 @@ except TypeError as e:
 # Implement a method to return the car’s details.
 class Car:
     def __init__(self, brand, model, mileage):
+        if not isinstance(brand, str):
+            raise ValueError('Brand must be a string')
+        if not isinstance(model, str):
+            raise ValueError('Model must be a string')
+        if not isinstance(mileage, int):
+            raise ValueError('Mileage must be an integer')
         self.brand = brand
         self.model = model
         self.mileage = mileage
         
-    def __str__(self):
+    def details(self):
         return f'Details: {self.brand}, {self.model}, {self.mileage}'
+
+car = Car(12, 13,14) # -> Should be na error with ValueError
 
 # Create a subclass ElectricCar inheriting from Car with an additional float private attribute __battery_capacity. Override the car’s details method to include the battery capacity.
 # Use the @property decorator to get the battery_capacity value and @battery_capacity.setter to modify the battery capacity only if the new value is positive.
@@ -104,9 +112,9 @@ class ElectricCar(Car):
         if value > 0:
             self.__battery_capacity = value
 
-    # def details(self):
-    def __str__(self):
-        return f'Battery Capacity: {self.__battery_capacity}'
+    def details(self):
+        car_details = super().details()
+        return f'{car_details}, battery Capacity: {self.__battery_capacity}'
 
 # Create a BankAccount class with private float attribute _balance and private string attribute _account_holder. 
 # Implement methods to deposit, withdraw, and view the balance. Include a class method to track accounts created and a static method for a bank policy message. 
