@@ -186,10 +186,11 @@ plt.show()
 
 # Create a Django view course_details to fetch details of a course by its id.
 
+# ANSWER: IN FOLDER ACADEMY
 
 # Use a APIview for Teacher to display all teachers.
 
-
+# ANSWER: IN FOLDER ACADEMY
 
 # Full App
 
