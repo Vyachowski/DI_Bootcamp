@@ -94,7 +94,8 @@ class Car:
     def details(self):
         return f'Details: {self.brand}, {self.model}, {self.mileage}'
 
-car = Car(12, 13,14) # -> Should be na error with ValueError
+# car = Car(12, 13, 14) # -> Should be na error with ValueError
+car = Car('12', '13', 14) # -> Shouldn't be na error
 
 # Create a subclass ElectricCar inheriting from Car with an additional float private attribute __battery_capacity. Override the car’s details method to include the battery capacity.
 # Use the @property decorator to get the battery_capacity value and @battery_capacity.setter to modify the battery capacity only if the new value is positive.

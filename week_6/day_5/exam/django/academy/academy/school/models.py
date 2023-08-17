@@ -8,3 +8,4 @@ class Course(models.Model):
 class Teacher(models.Model):
     name = models.CharField(max_length=50)
     courses = models.ManyToManyField(Course)
+
