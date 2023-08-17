@@ -146,21 +146,29 @@ class BankAccount:
 # Data Science
 # Numpy and Pandas Visualization
 # Create a numpy array of shape (3,3) filled with integers from 1 to 9 using arange().
-
-
+import numpy as np
+basic_array = np.arange(1, 10).reshape(3, 3)
+print('Answer', basic_array)
 # Provided pandas DataFrame df:
-
-# import pandas as pd
-# df = pd.DataFrame({'A': [1, 'apple', 3, 4, 'banana'], 'B': [5, 6, 7, 8, 9]})
-
+import pandas as pd
+df = pd.DataFrame({'A': [1, 'apple', 3, 4, 'banana'], 'B': [5, 6, 7, 8, 9]})
+# To Nan
+to_nan_df = pd.to_numeric(df['A'], errors='coerce')
+print(to_nan_df)
+#  Calculating
+mean = to_nan_df.mean(skipna=True)
+# Repalce
+df['A'] = df['A'].where(to_nan_df.notna(), mean)
+# Answer
+print(df['A'])
 
 # Replace non-numeric values in column “A” with the mean of numeric values. Plot a histogram of the “A” column using matplotlib.
 
 # Plot “A” and “B” columns of df using matplotlib. Add x-axis, y-axis labels, and a title.
-
-
-
-
+import matplotlib.pyplot as plt
+plt.hist(df['A'], bins=10, edgecolor='black')
+plt.title('Histogram')
+plt.show()
 # Django and Django REST
 
 # Create a new Django project called ‘academy’. After that - create a new app (inside the ‘academy’ project) called ‘school’.
