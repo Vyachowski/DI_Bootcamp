@@ -142,11 +142,9 @@ class BankAccount:
     @staticmethod
     def bank_policy():
         return 'Do you remember your pin?'
-
+    
 # Data Science
-
 # Numpy and Pandas Visualization
-
 # Create a numpy array of shape (3,3) filled with integers from 1 to 9 using arange().
 
 
