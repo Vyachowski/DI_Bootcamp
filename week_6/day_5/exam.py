@@ -56,6 +56,22 @@ print(combine_words("Hello", "world", second="is", third="great!", first="Python
 # Object-Oriented Programming (OOP)
 
 # Create a class Vehicle with string attributes type, brand, and integer attribute year. Ensure instances of the vehicle cannot be created if any of these attributes are missing and include a method to display the vehicle’s info. Use dunder method.
+class Vehicle:
+   def __init__(self, type: str, brand: str, year: int):
+        self.type = type
+        self.brand = brand
+        self.year = year
+   def __str__(self):
+        return f'Type: {self.type}, Brand: {self.brand}, Year: {self.year}'
+   
+vehicle = Vehicle('Moto', 'Bmw', 2114)
+print(vehicle)
+# With error
+try:
+    vehicle2 = Vehicle('Car')
+    print(vehicle2)
+except TypeError as e:
+    print(f'Error: {e}')
 
 
 # OOP Inheritance and Decorators
