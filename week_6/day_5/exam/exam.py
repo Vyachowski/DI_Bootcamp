@@ -106,8 +106,7 @@ class ElectricCar(Car):
 
     # def details(self):
     def __str__(self):
-        car_details = super().details()
-        return f"{car_details}, Battery Capacity: {self.__battery_capacity}"
+        return f'Battery Capacity: {self.__battery_capacity}'
 
 # Create a BankAccount class with private float attribute _balance and private string attribute _account_holder. 
 # Implement methods to deposit, withdraw, and view the balance. Include a class method to track accounts created and a static method for a bank policy message. 
@@ -196,12 +195,15 @@ plt.show()
 
 # Create a base model SchoolFacility with facility_name (CharField) and usage_purpose (TextField).
 
+# ANSWER: IN FOLDER ACADEMY
 
 # Create a Laboratory model inheriting from SchoolFacility with equipment_list (TextField).
 
+# No answer
 
 # Create views for all school facilities and another for only laboratories.
 
+# No answer
 
 # Create a serializer for SchoolFacility and another for Laboratory to convert to JSON. Test using Postman.
 
