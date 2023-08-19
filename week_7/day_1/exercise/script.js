@@ -140,21 +140,21 @@ console.log(changeEnough(0.75, [0,0,20,5])) // => returns true
 // It should ask the user for the number of nights they would like to stay in the hotel.
 // If the user doesn’t answer or if the answer is not a number, ask again.
 // The hotel costs $140 per night. The function should return the total price of the hotel.
-function hotelCost() {
-  let totalPrice = 0;
-  let answer = '';
-  let nightsInHotel = 0;
-  const pricePerNight = 140;
+// function hotelCost() {
+//   let totalPrice = 0;
+//   let answer = '';
+//   let nightsInHotel = 0;
+//   const pricePerNight = 140;
 
-  while (nightsInHotel === 0 ) {
-    answer = prompt('How long do you want to stay?');
-    isNaN(Number(answer)) ? 0 : nightsInHotel = Number(answer);
-  }
-  totalPrice = nightsInHotel * pricePerNight;
-  return totalPrice;
-}
+//   while (nightsInHotel === 0 ) {
+//     answer = prompt('How long do you want to stay?');
+//     isNaN(Number(answer)) ? 0 : nightsInHotel = Number(answer);
+//   }
+//   totalPrice = nightsInHotel * pricePerNight;
+//   return totalPrice;
+// }
 
-console.log(hotelCost()); // -> for 10 days = 1400
+// console.log(hotelCost()); // -> for 10 days = 1400
 
 // Define a function called planeRideCost().
 // It should ask the user for their destination.
@@ -164,17 +164,26 @@ console.log(hotelCost()); // -> for 10 days = 1400
 // “Paris” : 220$
 // All other destination : 300$
 
-// function planeRideCost() {
-//   let totalPrice = 0;
+function planeRideCost() {
+  let londonPrice = '183';
+  let parisPrice = '220';
+  let commonPrice = '300';
+  let answer = 0;
 
-//   const pricePerNight = 140;
-//   const answer = prompt('What is your destination?');
+  while (typeof answer !== 'string') {
+    answer = prompt('What is your destination?') ?? 0;
+  }
 
-//   totalPrice = Number(answer) * pricePerNight;
-//   return totalPrice;
-// }
+  if (answer.toLowerCase() === 'london') {
+    return (londonPrice + ' dollars')
+  } else if (answer.toLowerCase() === 'paris') {
+    return (parisPrice + ' dollars')
+  } else {
+    return (commonPrice + ' dollars')
+  }
+}
 
-// console.log(hotelCost()); // -> for 10 days = 1400
+console.log(planeRideCost()); // -> for 10 days = 1400
 
 // Define a function called rentalCarCost().
 // It should ask the user for the number of days they would like to rent the car.
