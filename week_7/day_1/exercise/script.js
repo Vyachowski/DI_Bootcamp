@@ -143,18 +143,14 @@ console.log(changeEnough(0.75, [0,0,20,5])) // => returns true
 function hotelCost() {
   let totalPrice = 0;
   let answer = '';
+  let nightsInHotel = 0;
   const pricePerNight = 140;
 
-  while (typeof answer !== 'number') {
+  while (nightsInHotel === 0 ) {
     answer = prompt('How long do you want to stay?');
-    console.log(answer)
-    // answer !== null || answer.length > 0 ? answer = Number(answer) : answer = '';
-    // if (answer != null){
-    //   answer = Number(answer);
-    // }
+    isNaN(Number(answer)) ? 0 : nightsInHotel = Number(answer);
   }
-  
-  totalPrice = Number(answer) * pricePerNight;
+  totalPrice = nightsInHotel * pricePerNight;
   return totalPrice;
 }
 
