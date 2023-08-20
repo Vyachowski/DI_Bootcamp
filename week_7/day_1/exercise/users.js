@@ -9,19 +9,32 @@ listItems.forEach(element => element.textContent === 'Pete' ?
 
 // Delete the second <li> of the second <ul>
 const listElements = document.querySelectorAll('.list');
+const firstList = listElements[0];
 const secondList = listElements[1];
 const secondElement = secondList.childNodes[3];
 secondList.removeChild(secondElement);
 
 // Change the name of the first <li> of each <ul> to your name. (Hint : use a loop)
+listElements.forEach(elements => elements.firstElementChild.textContent = 'Slava The King of JS');
 
 
-// Using Javascript:
-// Add a class called student_list to both of the <ul>'s.
-// Add the classes university and attendance to the first <ul>.
+// Add a class called student_list to both of the <ul>'s
+listElements.forEach(element => element.classList.add('student_list'));
 
-// Using Javascript:
-// Add a “light blue” background color and some padding to the <div>.
-// Do not display the <li> that contains the text node “Dan”. (the last <li> of the first <ul>)
-// Add a border to the <li> that contains the text node “Richard”. (the second <li> of the <ul>)
+// Add the classes university and attendance to the first <ul>
+firstList.classList.add('university', 'attendance');
+
+
+// Add a “light blue” background color and some padding to the <div>
+containerElement.setAttribute('style', 'text-align: center; background-color: lightblue; padding-block: 20px;')
+
+// Do not display the <li> that contains the text node “Dan”
+// (the last <li> of the first <ul>)
+listItems.forEach(element => element.textContent === 'Dan' ?
+element.setAttribute('style', 'display: none;') : null);
+// Add a border to the <li> that contains the text node “Richard”
+// (the second <li> of the <ul>)
+listItems.forEach(element => element.textContent === 'Richard' ?
+element.setAttribute('style', 'border: 25px orange solid; padding: 20px;') : null);
 // Change the font size of the whole body.
+document.body.setAttribute('style', 'font-size: 25px;')
