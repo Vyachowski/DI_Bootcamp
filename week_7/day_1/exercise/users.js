@@ -38,3 +38,13 @@ listItems.forEach(element => element.textContent === 'Richard' ?
 element.setAttribute('style', 'border: 25px orange solid; padding: 20px;') : null);
 // Change the font size of the whole body.
 document.body.setAttribute('style', 'font-size: 25px;')
+
+// Bonus: If the background color of the div is “light blue”, 
+// alert “Hello x and y” (x and y are the users in the div).
+const names = [];
+listItems.forEach(elements => names.push(elements.textContent));
+const uniqueNames = [...new Set(names)].slice(0, 2);
+console.log(uniqueNames);
+if (containerElement.style.backgroundColor === 'lightblue') {
+  alert(`Hello: ${uniqueNames.join(', ')}`)
+}
