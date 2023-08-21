@@ -106,3 +106,22 @@ function returnItemsToDefault() {
 const paragraphWithBold = document.querySelector('.boldTestingGround');
 paragraphWithBold.addEventListener('mouseover', highlight);
 paragraphWithBold.addEventListener('mouseout', returnItemsToDefault);
+
+
+
+// Exercise 5 : Event Listeners
+const transformerElement = document.getElementById("transformer");
+
+transformerElement.addEventListener("click", function () {
+  this.style.backgroundColor = "orange";
+  this.style.border = '3px solid red';
+  this.style.paddingBlock= '30px';
+});
+
+transformerElement.addEventListener("mouseover", function () {
+  this.style.textAlign = "center";
+});
+
+transformerElement.addEventListener("mouseout", function () {
+  this.style.textAlign = "right";
+});
