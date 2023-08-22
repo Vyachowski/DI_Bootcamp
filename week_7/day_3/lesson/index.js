@@ -102,3 +102,22 @@ const sum = (num) => num + 1;
 
 let ret = x(sum2, sum)(6);
 console.log('ret => ', ret);
+
+let a = 'city';
+let b = 'name';
+
+let obj = {
+  // name: 'John',
+  [b]: 'John',
+  age: 25,
+  lastName: 'Doe',
+  getFullName: function() {
+    return this.name + '' + this.lastName;
+  },
+  [a]: 'Ramat Gan'
+};
+
+console.log(obj);
+console.log(obj.name);
+console.log(obj['name']);
+console.log(obj[a]);
