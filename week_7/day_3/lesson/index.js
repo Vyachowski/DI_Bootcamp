@@ -1,12 +1,12 @@
-// LINK - Scoping
-let b = 3; d = b; u = b;
+// // LINK - Scoping
+// let b = 3; d = b; u = b;
 
-const tree = ++d * d * b * b++ + // -> 4 * $ * 3 * 3 + 
-+ --d + + +b-- + // -> 3 + 4 +
-+ +d*b+ + // -> 3 * 3 +
-u // -> 3
+// const tree = ++d * d * b * b++ + // -> 4 * $ * 3 * 3 + 
+// + --d + + +b-- + // -> 3 + 4 +
+// + +d*b+ + // -> 3 * 3 +
+// u // -> 3
 
-console.log(tree); // -> 163
+// console.log(tree); // -> 163
 
 // LINK - Scoping
 // let x = 8;
@@ -51,3 +51,54 @@ console.log(tree); // -> 163
 
 // let y = (x < 5) ? 6 : (x === 5) ? 'hi' : 'bye';
 
+
+
+// Function properties
+// function x () {
+//   let hi = 'hello';
+//   function y () {
+//     console.log(hi);
+//   }
+//   return y;
+// };
+
+// let sayHi = x()();
+// console.log(sayHi);
+
+// function x(param) {
+//   function y(param1) {
+//     return param * param1;
+//   }
+//   return y;
+// }
+
+// const xArrow = (x) => {
+//   return (y) => {
+//     return x * y;
+//   };
+// };
+
+// // Regular function
+// const VAT = 1.17;
+// let sum = x(VAT);
+// console.log(sum);
+// console.log('sum =>', sum(100));
+// console.log('sum =>', sum(200));
+// console.log('sum =>', sum(300));
+
+// // Arrow function
+// let sumWithArrow = xArrow(VAT);
+// console.log(sumWithArrow);
+// console.log('sum =>', sumWithArrow(100));
+// console.log('sum =>', sumWithArrow(200));
+// console.log('sum =>', sumWithArrow(300));
+
+
+/* Compose */
+const x = (a,b) => (c) => a(b(c));
+
+const sum2 = (num) => num * 2;
+const sum = (num) => num + 1;
+
+let ret = x(sum2, sum)(6);
+console.log('ret => ', ret);
