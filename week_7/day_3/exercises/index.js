@@ -1,127 +1,181 @@
-// 🌟 Exercise 1 : Change The Article
-// Using a DOM property, retrieve the h1 and console.log it.
-const headerElement = document.querySelector('h1');
+// 🌟 Exercise 1 : Scope
+// Instructions
+// Analyse the code below, and predict what will be the value of a in all the following functions.
+// Write your prediction as comments in a js file. Explain your predictions.
+// // #1
+// function funcOne() {
+//     let a = 5;
+//     if(a > 1) {
+//         a = 3;
+//     }
+//     alert(`inside the funcOne function ${a}`);
+// }
 
-// Using DOM methods, remove the last paragraph in the <article> tag.
-const articleElement = document.querySelector('article');
-articleElement.removeChild(articleElement.lastElementChild);
+// ANSWER -> It will be 3, just a regular flow of the code
 
-// Add a event listener which will change the background color of the h2 to red, when it’s clicked on.
-const headerTwoElement = document.querySelector('h2');
-headerTwoElement.addEventListener('click', () => headerTwoElement.style.backgroundColor = 'red');
+// #1.1 - run in the console:
+// funcOne()
+// #1.2 What will happen if the variable is declared 
+// with const instead of let ?
 
-// Add an event listener which will hide the h3 when it’s clicked on (use the display:none property).
-const headerThreeElement = document.querySelector('h3');
-headerThreeElement.addEventListener('click', () => headerThreeElement.style.display = 'none');
+// ANSWER -> It will be an error (anyway a will not change), something like you cannot redeclare a constant variable
 
-// Add a <button> to the HTML file, that when clicked on, should make the text of all the paragraphs, bold.
-function makeBold() {
-  const allParagraphs = document.querySelectorAll('p');
-  allParagraphs.forEach((el) => el.style.fontWeight = '700');
+// //#2
+// let a = 0;
+// function funcTwo() {
+//     a = 5;
+// }
+
+// function funcThree() {
+//     alert(`inside the funcThree function ${a}`);
+// }
+
+// // #2.1 - run in the console:
+// funcThree() // ANSWER -> a = 0
+// funcTwo()
+// funcThree() // ANSWER -> a = 5
+
+// // #2.2 What will happen if the variable is declared 
+// // with const instead of let ?
+
+// Answer -> will fall with an error
+
+// //#3
+// function funcFour() {
+//     window.a = "hello";
+// }
+
+// function funcFive() {
+//     alert(`inside the funcFive function ${a}`);
+// }
+
+// // // #3.1 - run in the console:
+// funcFour()
+// funcFive()
+
+// ANSWER -> As I understand window.a is not equal or not a reference of a variable «a» so nothing will be changed
+
+// //#4
+// let a = 1;
+// function funcSix() {
+//     let a = "test";
+//     alert(`inside the funcSix function ${a}`);
+// }
+
+// ANSWER -> a will have a «test» value
+
+// // #4.1 - run in the console:
+// funcSix()
+// // #4.2 What will happen if the variable is declared 
+// // with const instead of let ?
+
+// ANSWER -> In this case it is not important, they are in different scopes (function scope)
+
+// //#5
+// let a = 2;
+// if (true) {
+//     let a = 5;
+//     alert(`in the if block ${a}`);
+// }
+// alert(`outside of the if block ${a}`);
+
+
+// ANSWER -> in if scope it will be 5, outside if scope it will be 2, because global scope don't have an access to inner scope
+
+// // #5.1 - run the code in the console
+// // #5.2 What will happen if the variable is declared 
+// // with const instead of let ?
+
+// ANSWER -> Nothing will change
+
+// 🌟 Exercise 2 : Ternary Operator
+// Instructions
+// Using the code below:
+// function winBattle(){
+//     return true;
+// };
+
+// Transform the winBattle() function to an arrow function.
+const winBattle = () => true;
+// Create a variable called experiencePoints.
+let experiencePoints;
+// Assign to this variable, a ternary operator. If winBattle() is true, the experiencePoints variable should be equal to 10, else the variable should be equal to 1.
+winBattle() ? experiencePoints = 10 : experiencePoints = 1;
+// Console.log the experiencePoints variable.
+console.log(experiencePoints);
+
+// 🌟 Exercise 3 : Is It A String ?
+// Instructions
+// Write a JavaScript arrow function that checks whether the value of the argument passed, is a string or not. The function should return true or false
+// Check out the example below to see the expected output.
+function isString(obj) {
+  return (typeof obj === 'string');
 }
 
-// BONUS : When you hover on the h1, set the font size to a random pixel size between 0 to 100.(Check out this documentation)
-headerElement.setAttribute('onmouseover', "this.style.fontSize='32px';");
-headerElement.setAttribute('onmouseout', "this.style.fontSize='24px';");
-// BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fade css animation” on Google)
+// Example:
+console.log(isString('hello')); // -> true
+console.log(isString([1, 2, 4, 0])); // -> false
 
 
-// 🌟 Exercise 2 : Change The Article
-// Retrieve the form and console.log it.
-const formElement = document.querySelector('form');
-console.log(formElement);
+// 🌟 Exercise 4 : Find The Sum
+// Instructions:
+// Create a one line function (ie. an arrow function) that receives two numbers as parameters and returns the sum.
+const sum = (a, b) => a + b;
 
-// Retrieve the inputs by their id and console.log them.
-const fnameInput = document.querySelector('#fname');
-const lnameInput = document.querySelector('#lname');
-console.log(fnameInput);
-console.log(lnameInput);
+// 🌟 Exercise 5 : Kg And Grams
+// Instructions
+// Create a function that receives a weight in kilograms and returns it in grams. (Hint: 1 kg is 1000gr)
 
-// Retrieve the inputs by their name attribute and console.log them.
-const fnameInputAlt = document.getElementsByName('firstname');
-const lnameInputAlt = document.getElementsByName('lastname');
-console.log(fnameInputAlt);
-console.log(lnameInputAlt);
+// First, use function declaration and invoke it.
+// function convertKilogrammToGramm(kilogramms) {
+//   const KILOGRAMM_IN_GRAMMS = 1000;
+//   return kilogramms * KILOGRAMM_IN_GRAMMS;
+// }
 
-// When the user submits the form (ie. submit event listener)
-// use event.preventDefault(), why ? -> to prevent a default bhaviour and handle it manually
-// get the values of the input tags,
-// make sure that they are not empty,
-formElement.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const firstName = fnameInput.value;
-  const lastName = lnameInput.value;
-  if (firstName.length === 0) {
-    alert('Do you have a name, sir? Please try again');
-  }
-  if (lastName.length === 0) {
-    alert('Do you have a lastname, sir? Please try again');
-  }
-
-  // create an li per input value
-  const firstNameListItem = document.createElement('li');
-  const lastNameListItem = document.createElement('li');
-  firstNameListItem.textContent = firstName;
-  lastNameListItem.textContent = lastName;
-  const listAnswers = document.querySelector('.usersAnswer');
-
-  // then append them to a the <ul class="usersAnswer"></ul>, below the form.
-  listAnswers.append(firstNameListItem, lastNameListItem);
-});
-
-// The output should be :
-
-// <ul class="usersAnswer">
-//     <li>first name of the user</li>
-//     <li>last name of the user</li>
-// </ul>
-
-
-// In the JS file:
-
-// Declare a global variable named allBoldItems.
-let allBoldItems;
-
-// Create a function called getBoldItems() that takes no parameter. 
-// This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
-function getAllBoldItems() {
-  const boldTestingGround = document.querySelector('.boldTestingGround');
-  allBoldItems = boldTestingGround.querySelectorAll('strong');
+// console.log(convertKilogrammToGramm(3)) // -> 3000
+// Then, use function expression and invoke it.
+const convertKilogrammToGramm = function(kilogramms) {
+  const KILOGRAMM_IN_GRAMMS = 1000;
+  return kilogramms * KILOGRAMM_IN_GRAMMS;
 }
 
-// Create a function called highlight() that changes the color of all the bold text to blue.
-function highlight() {
-  getAllBoldItems();
-  allBoldItems.forEach((el) => el.style.color = 'blue');
-}
-
-// Create a function called returnItemsToDefault() that changes the color of all the bold text back to black.
-function returnItemsToDefault() {
-  getAllBoldItems()
-  allBoldItems.forEach((el) => el.style.color = 'black');
-}
-
-// Call the function highlight() on mouseover (ie. when the mouse pointer is moved onto the paragraph), and the function returnItemsToDefault() on mouseout 
-// (ie. when the mouse pointer is moved out of the paragraph). Look at this example
-const paragraphWithBold = document.querySelector('.boldTestingGround');
-paragraphWithBold.addEventListener('mouseover', highlight);
-paragraphWithBold.addEventListener('mouseout', returnItemsToDefault);
+console.log(convertKilogrammToGramm(3)) // -> 3000
+// Write in a one line comment, the difference between function declaration and function expression.
+// Finally, use a one line arrow function and invoke it.
 
 
+// 🌟 Exercise 6 : Fortune Teller
+// Instructions
+// Create a self invoking function that takes 4 arguments: number of children, partner’s name, geographic location, job title.
+// The function should display in the DOM a sentence like "You will be a <job title> in <geographic location>, and married to <partner's name> with <number of children> kids."
 
-// Exercise 5 : Event Listeners
-const transformerElement = document.getElementById("transformer");
 
-transformerElement.addEventListener("click", function () {
-  this.style.backgroundColor = "orange";
-  this.style.border = '3px solid red';
-  this.style.paddingBlock= '30px';
-});
+// 🌟 Exercise 7 : Welcome
+// Instructions
+// John has just signed in to your website and you want to welcome him.
 
-transformerElement.addEventListener("mouseover", function () {
-  this.style.textAlign = "center";
-});
+// Create a Navbar in your HTML file.
+// In your js file, create a self invoking funtion that takes 1 argument: the name of the user that just signed in.
+// The function should add a div in the nabvar, displaying the name of the user and his profile picture.
 
-transformerElement.addEventListener("mouseout", function () {
-  this.style.textAlign = "right";
-});
+
+// 🌟 Exercise 8 : Juice Bar
+// Instructions
+// You will use nested functions, to open a new juice bar.
+
+// Part I:
+// The outer function named makeJuice receives 1 argument: the size of the beverage the client wants - small, medium or large.
+
+// The inner function named addIngredients receives 3 ingredients, and displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
+
+// Invoke the inner function ONCE inside the outer function. Then invoke the outer function in the global scope.
+
+
+// Part II:
+// In the makeJuice function, create an empty array named ingredients.
+
+// The addIngredients function should now receive 3 ingredients, and push them into the ingredients array.
+
+// Create a new inner function named displayJuice that displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
+
+// The client wants 6 ingredients in his juice, therefore, invoke the addIngredients function TWICE. Then invoke once the displayJuice function. Finally, invoke the makeJuice function in the global scope.
