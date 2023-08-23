@@ -22,7 +22,7 @@ const cloneGroceries = () => {
   user = 'Betty';
   const shopping = groceries;
   console.log(user);
-  // console.log(shopping);
+  console.log(shopping);
 };
 
 // In the function, create a variable named user that is a copy of the client variable. (Tip : make the user variable equal to the client variable)
