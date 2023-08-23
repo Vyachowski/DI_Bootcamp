@@ -134,35 +134,46 @@ const sum = (a, b) => a + b;
 
 // console.log(convertKilogrammToGramm(3)) // -> 3000
 // Then, use function expression and invoke it.
-const convertKilogrammToGramm = function(kilogramms) {
-  const KILOGRAMM_IN_GRAMMS = 1000;
-  return kilogramms * KILOGRAMM_IN_GRAMMS;
-}
+// const convertKilogrammToGramm = function(kilogramms) {
+//   const KILOGRAMM_IN_GRAMMS = 1000;
+//   return kilogramms * KILOGRAMM_IN_GRAMMS;
+// }
 
-console.log(convertKilogrammToGramm(3)) // -> 3000
+// console.log(convertKilogrammToGramm(3)) // -> 3000
 // Write in a one line comment, the difference between function declaration and function expression.
 // Finally, use a one line arrow function and invoke it.
+// const convertKilogrammToGramm = (kilogramms) => kilogramms * 1000;
 
-
+// console.log(convertKilogrammToGramm(3)) // -> 3000
 // 🌟 Exercise 6 : Fortune Teller
-// Instructions
+// Instructions:
 // Create a self invoking function that takes 4 arguments: number of children, partner’s name, geographic location, job title.
 // The function should display in the DOM a sentence like "You will be a <job title> in <geographic location>, and married to <partner's name> with <number of children> kids."
-
+(function fortuneTeller(childrensNumber, partnersName, location, jobTitle) {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = `You will be a ${jobTitle} in ${location}, and married to ${partnersName} with ${childrensNumber} kids.`;
+  document.body.append(paragraph);
+})(3,'bobr','Lousianna','CEO');
 
 // 🌟 Exercise 7 : Welcome
-// Instructions
+// Instructions:
 // John has just signed in to your website and you want to welcome him.
-
+(function createWelcomeBanner(userName) {
+  const navbar = document.createElement('nav');
+  const image = document.createElement('img');
+  image.setAttribute('src','avatar.jpeg');
+  navbar.textContent = `Hello, ${userName}.`;
+  document.querySelector('header').append(navbar);
+  document.querySelector('header').append(image);
+})(3);
 // Create a Navbar in your HTML file.
 // In your js file, create a self invoking funtion that takes 1 argument: the name of the user that just signed in.
-// The function should add a div in the nabvar, displaying the name of the user and his profile picture.
+// The function should add a div in the navba (I added nav to header to make it more semantic), displaying the name of the user and his profile picture.
 
 
 // 🌟 Exercise 8 : Juice Bar
-// Instructions
+// Instructions:
 // You will use nested functions, to open a new juice bar.
-
 // Part I:
 // The outer function named makeJuice receives 1 argument: the size of the beverage the client wants - small, medium or large.
 
