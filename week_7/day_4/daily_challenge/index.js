@@ -1,46 +1,41 @@
-let client = 'John';
+// Using this array:
 
-const groceries = {
-    fruits : ["pear", "apple", "banana"],
-    vegetables: ["tomatoes", "cucumber", "salad"],
-    totalPrice : "20$",
-    totalPrice : "35$",
-    other : {
-        paid : true,
-        paid : false,
-        meansOfPayment : ["cash", "creditCard"]
-    }
-}
+const gameInfo = [
+ {
+   username: "john",
+   team: "red",
+   score: 5,
+   items: ["ball", "book", "pen"]
+ },
+ {
+   username: "becky",
+   team: "blue",
+   score: 10,
+   items: ["tape", "backpack", "pen"]
+ },
+ {
+   username: "susy",
+   team: "red",
+   score: 55,
+   items: ["ball", "eraser", "pen"]
+ },
+ {
+   username: "tyson",
+   team: "green",
+   score: 1,
+   items: ["book", "pen"]
+ },
+];
+// Create an array using forEach that contains all the usernames from the gameInfo array, add an exclamation point (ie. “!”) to the end of every username.
+const userNames = [];
+gameInfo.forEach((user) => userNames.push(user.username + '!'));
+// console.log(userNames); // -> ['john!', 'becky!', 'susy!', 'tyson!']
 
-// Create an arrow function named displayGroceries, that console.logs the 3 fruits from the groceries object. Use the forEach method.
-const displayGroceries = () => groceries.fruits.forEach(element => {console.log(element)});
-// displayGroceries();
+// 2. Create an array using forEach that contains the usernames of all players with a score bigger than 5.
+const highScoreGamers = [];
+gameInfo.forEach((user) => user.score > 5 && highScoreGamers.push(user.username));
+// console.log(highScoreGamers)// -> ["becky", "susy"]
 
-// Create another arrow function named cloneGroceries.
-const cloneGroceries = () => {
-  let user = client;
-  user = 'Betty';
-  const shopping = groceries;
-  console.log(user);
-  // console.log(shopping);
-};
-
-// In the function, create a variable named user that is a copy of the client variable. (Tip : make the user variable equal to the client variable)
-// Change the client variable to “Betty”. Will we also see this modification in the user variable ? Why ?
-
-// ANSWER: ANSWER: No, it will not be changed. Primitive values copies values, not references.
-
-// In the function, create a variable named shopping that is equal to the groceries variable.
-// Change the value of the totalPrice key to 35$. Will we also see this modification in the shopping object ? Why ?
-
-// ANSWER: Yes, it will be changed, because objects copies by reference, it means new object points at the same position in the memory.
-
-// Change the value of the paid key to false. Will we also see this modification in the shopping object ? Why ?
-
-// ANSWER: Yes, it will be changed, the same reason.
-
-// Invoke the cloneGroceries function.
-cloneGroceries();
-
-console.log('Old value: ', client);
-console.log('Old value: ', groceries);
+// 3. Find and display the total score of the users. (Hint: The total score is 71)
+const totalScore = gameInfo.reduce((acc, user) => acc + user.score, 0);
+console.log(totalScore)// -> 71
