@@ -158,6 +158,9 @@ const sum = (a, b) => a + b;
 // 🌟 Exercise 7 : Welcome
 // Instructions:
 // John has just signed in to your website and you want to welcome him.
+// Create a Navbar in your HTML file.
+// In your js file, create a self invoking funtion that takes 1 argument: the name of the user that just signed in.
+// The function should add a div in the navba (I added nav to header to make it more semantic), displaying the name of the user and his profile picture.
 (function createWelcomeBanner(userName) {
   const navbar = document.createElement('nav');
   const image = document.createElement('img');
@@ -165,28 +168,51 @@ const sum = (a, b) => a + b;
   navbar.textContent = `Hello, ${userName}.`;
   document.querySelector('header').append(navbar);
   document.querySelector('header').append(image);
-})(3);
-// Create a Navbar in your HTML file.
-// In your js file, create a self invoking funtion that takes 1 argument: the name of the user that just signed in.
-// The function should add a div in the navba (I added nav to header to make it more semantic), displaying the name of the user and his profile picture.
-
+})('John');
 
 // 🌟 Exercise 8 : Juice Bar
 // Instructions:
 // You will use nested functions, to open a new juice bar.
 // Part I:
 // The outer function named makeJuice receives 1 argument: the size of the beverage the client wants - small, medium or large.
+function displayOutput(text) {
+  const drinksElement = document.getElementsByClassName('drinks');
+  drinksElement.textContent += `${text}`;
+}
 
-// The inner function named addIngredients receives 3 ingredients, and displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
+// The inner function named addIngredients receives 3 ingredients, and displays on the DOM a sentence like 
+// "The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
+function makeJuice(size) {
+  function addIngredients(firstIngredient, secondIngredient, thirdIngredient) {
+    const sentence = `The client wants a ${size} juice, containing ${firstIngredient}, ${secondIngredient}, ${thirdIngredient}`;
+    displayOutput(sentence);
+  }
 
+  addIngredients('beer', 'lime', 'pineapple');
+}
 // Invoke the inner function ONCE inside the outer function. Then invoke the outer function in the global scope.
-
+makeJuice('small');
 
 // Part II:
 // In the makeJuice function, create an empty array named ingredients.
-
 // The addIngredients function should now receive 3 ingredients, and push them into the ingredients array.
-
 // Create a new inner function named displayJuice that displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
+// !! displayOutput was created before !!
+function makeJuiceWithIngredients(size) {
+  const ingredients = [];
 
+  function addIngredientsToArr(firstIngredient, secondIngredient, thirdIngredient) {
+    ingredients.push(firstIngredient, secondIngredient, thirdIngredient);
+  }
+
+  function displayJuice() {
+    const sentence = `The client wants a ${size} juice, containing ${ingredients.join(', ')}`;
+    displayOutput(sentence);
+  }
+
+  addIngredientsToArr('ice', 'mango', 'chili');
+  addIngredientsToArr('beer', 'milk', 'potato :)');
+  displayJuice();
+}
 // The client wants 6 ingredients in his juice, therefore, invoke the addIngredients function TWICE. Then invoke once the displayJuice function. Finally, invoke the makeJuice function in the global scope.
+makeJuiceWithIngredients('medium');
