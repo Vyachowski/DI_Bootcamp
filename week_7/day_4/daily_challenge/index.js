@@ -40,7 +40,6 @@ const totalScore = gameInfo.reduce((acc, user) => acc + user.score, 0);
 // console.log(totalScore)// -> 71
 
 
-
 // Daily Challenge: Car Inventory
 
 // Part I
@@ -66,7 +65,6 @@ function getCarHonda(carInventory) {
 // console.log(getCarHonda(inventory)); // -> This is a Honda Accord from 1983
 
 // Part II
-
 // Create a function sortCarInventoryByYear(carInventory) that takes a single parameter carInventory‘s value is an array which is an inventory of cars
 // the function should return an inventory that is sorted by car_year, ascending.
 // Hint : Check out this tutorial on the sort method
