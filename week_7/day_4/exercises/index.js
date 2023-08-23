@@ -52,31 +52,38 @@ const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Res
 // Using the map() method, push into a new array the firstname of the user and a welcome message. You should get an array that looks like this :
 // const welcomeStudents = ["Hello Bradley", "Hello Chloe", "Hello Jonathan", "Hello Michael", "Hello Robert", "Hello Wes", "Hello Zach"]
 const welcomeStudents = [];
-users.map((user) => welcomeStudents.push(``))
+users.map((user) => welcomeStudents.push(`Hello ${user.firstName}`));
+// console.log(welcomeStudents); // -> ['Hello Bradley', 'Hello Chloe', 'Hello Jonathan', 'Hello Michael', 'Hello Robert', 'Hello Wes', 'Hello Zach']
 
 // 2. Using the filter() method, create a new array, containing only the Full Stack Residents.
-
-
+const fullStackDevs = users.filter((user) => user.role === 'Full Stack Resident');
+// console.log(fullStackDevs); // -> { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' }...
 // 3. Bonus : Chain the filter method with a map method, to return an array containing only the lastName of the Full Stack Residents.
-
+console.log(users.filter((user) => user.role === 'Full Stack Resident').map((user) => user.lastName));
 
 
 // 🌟 Exercise 5 : Star Wars
 // Instructions
-// Using this array const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+// Using this array 
+const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
 
 // Use the reduce() method to combine all of these into a single string.
-
+const notSoEpic = epic.reduce((acc, word) => acc + ' ' + word);
+console.log(notSoEpic);
 
 // 🌟 Exercise 6 : Employees #2
 // Instructions
 // Using this object:
 
-// const students = [{name: "Ray", course: "Computer Science", isPassed: true}, 
-//                {name: "Liam", course: "Computer Science", isPassed: false}, 
-//                {name: "Jenner", course: "Information Technology", isPassed: true}, 
-//                {name: "Marco", course: "Robotics", isPassed: true}, 
-//                {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
-//                {name: "Jamie", course: "Big Data", isPassed: false}];
+const students = [{name: "Ray", course: "Computer Science", isPassed: true}, 
+               {name: "Liam", course: "Computer Science", isPassed: false}, 
+               {name: "Jenner", course: "Information Technology", isPassed: true}, 
+               {name: "Marco", course: "Robotics", isPassed: true}, 
+               {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
+               {name: "Jamie", course: "Big Data", isPassed: false}];
 // Using the filter() method, create a new array, containing the students that passed the course.
-// Bonus : Chain the filter method with a forEach method, to congratulate the students with their name and course name (ie. “Good job Jenner, you passed the course in Information Technology”, “Good Job Marco you passed the course in Robotics” ect…)
+// Bonus : Chain the filter method with a forEach method, to congratulate the students with their name and course name 
+// (ie. “Good job Jenner, you passed the course in Information Technology”, “Good Job Marco you passed the course in Robotics” ect…)
+const passedStudents = students.filter(student => student.isPassed);
+console.log(passedStudents);
+passedStudents.forEach((student) => console.log(`Congratulions, ${student.name}`));
