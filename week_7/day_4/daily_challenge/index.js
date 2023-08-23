@@ -73,7 +73,8 @@ function getCarHonda(carInventory) {
 function sortCarInventoryByYear(carInventory) {
   return carInventory.sort((a, b) => a.car_year - b.car_year);
 }
-console.log(sortCarInventoryByYear(inventory)); // VVVV
+
+// console.log(sortCarInventoryByYear(inventory)); // VVVV
 // [
 //   { id: 3, car_make: "Honda", car_model: "Accord", car_year: 1983 },
 //   { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
