@@ -59,7 +59,7 @@ users.map((user) => welcomeStudents.push(`Hello ${user.firstName}`));
 const fullStackDevs = users.filter((user) => user.role === 'Full Stack Resident');
 // console.log(fullStackDevs); // -> { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' }...
 // 3. Bonus : Chain the filter method with a map method, to return an array containing only the lastName of the Full Stack Residents.
-console.log(users.filter((user) => user.role === 'Full Stack Resident').map((user) => user.lastName));
+// console.log(users.filter((user) => user.role === 'Full Stack Resident').map((user) => user.lastName)); // -> ['Bouley', 'Alnaji', 'Hajek']
 
 
 // 🌟 Exercise 5 : Star Wars
@@ -69,7 +69,7 @@ const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
 
 // Use the reduce() method to combine all of these into a single string.
 const notSoEpic = epic.reduce((acc, word) => acc + ' ' + word);
-console.log(notSoEpic);
+// console.log(notSoEpic); // -> a long time ago in a galaxy far far away
 
 // 🌟 Exercise 6 : Employees #2
 // Instructions
@@ -85,5 +85,5 @@ const students = [{name: "Ray", course: "Computer Science", isPassed: true},
 // Bonus : Chain the filter method with a forEach method, to congratulate the students with their name and course name 
 // (ie. “Good job Jenner, you passed the course in Information Technology”, “Good Job Marco you passed the course in Robotics” ect…)
 const passedStudents = students.filter(student => student.isPassed);
-console.log(passedStudents);
-passedStudents.forEach((student) => console.log(`Congratulions, ${student.name}`));
+// console.log(passedStudents); // -> {Ray...}...
+// passedStudents.forEach((student) => console.log(`Congratulions, ${student.name}`)); // -> Congratulions, Ray...
