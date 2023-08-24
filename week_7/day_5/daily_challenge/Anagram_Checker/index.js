@@ -21,11 +21,11 @@ function isAnagram(word1, word2) {
 }
 
 // Examples
-console.log(isAnagram('mooo on', 'no ooom')); // -> True
-console.log(isAnagram('Astronomer', 'Moon starer')); // -> True
-console.log(isAnagram('School master', 'The classroom')); // -> True
-console.log(isAnagram('The Morse Code', 'Here come dots')); // -> True
+console.log(isAnagram('mooo on', 'no ooom'));                // -> True
+console.log(isAnagram('Astronomer', 'Moon starer'));         // -> True
+console.log(isAnagram('School master', 'The classroom'));    // -> True
+console.log(isAnagram('The Morse Code', 'Here come dots'));  // -> True
 
 // Examples of false result
-console.log(isAnagram('moon', 'bobeer')); // -> False
-console.log(isAnagram('Astronomer', 'Moon starter')); // -> False
+console.log(isAnagram('moon', 'bobeer'));                    // -> False
+console.log(isAnagram('Astronomer', 'Moon starter'));        // -> False
