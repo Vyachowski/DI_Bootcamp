@@ -1,19 +1,31 @@
 // Mini-Project - Robo-Friends Search
+
 // Displaying all robots
 const filteredList = filterRobots('');
 displayRobots(filteredList);
 
+// Adding event listener to input
 const inputElement = document.getElementById('robosearch');
 inputElement.addEventListener('input', updateFilteredRobots);
 
+// Function for updating list
 function updateFilteredRobots() {
+  removeAllChildNodes(document.querySelector('.robo-list'));
   const normalizedQuery = normalizeQuery();
+  console.log(normalizedQuery);
   const filteredList = filterRobots(normalizedQuery);
   displayRobots(filteredList);
 }
 
+// Function for removing child nodes
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
 
-// Part I: Display robots
+/* Part I: Display robots */
+
 function createCard(obj) {
   // Creating card
   const card = document.createElement('li');
@@ -42,10 +54,6 @@ function createCard(obj) {
 
   // Getting the result
   return card;
-
-  // // Test Ground
-  // const list = document.querySelector('.robo-list');
-  // list.appendChild(card);
 }
 
 function displayRobots(list) {
@@ -58,13 +66,14 @@ function displayRobots(list) {
   const listElement = document.querySelector('.robo-list');
 
   // Creating cards
-  const cards = robots.map((robot) => createCard(robot));
+  const cards = list.map((robot) => createCard(robot));
 
   // Appending cards
   cards.forEach((card) => listElement.appendChild(card));
 }
 
-// Part II: Filter robots
+/* Part II: Filter robots */
+
 function filterRobots(query) {
   // Checking query
   if (query.length === 0 || typeof query !== 'string') {
@@ -74,7 +83,7 @@ function filterRobots(query) {
   // Filtering array with query
   const filteredRobotsList = robots.filter((robot) =>
   robot.name.toLowerCase().includes(query));
-
+  console.log(filteredRobotsList);
   // Getting result
   return filteredRobotsList;
 }
