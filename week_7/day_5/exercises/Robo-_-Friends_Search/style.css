@@ -49,7 +49,8 @@ main {
   margin: 0 auto;
   padding: 50px;
   gap: 45px;
-  list-style-type: none;;
+  list-style-type: none;
+  ;
 }
 
 .card {
@@ -64,17 +65,18 @@ main {
 }
 
 .card:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px rgba(33, 33, 33, .2);
 }
 
 .card-image-wrapper {
   border-radius: 50%;
   background-color: midnightblue;
   margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .card-image {
-  display: block
+  display: block;
 }
 
 .card-title {
