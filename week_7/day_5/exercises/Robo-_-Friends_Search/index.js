@@ -1,76 +1,17 @@
 // Mini-Project - Robo-Friends Search
-const robots = [
-  {
-    id: 1,
-    name: 'Leanne Graham',
-    username: 'Bret',
-    email: 'Sincere@april.biz',
-    image: 'https://robohash.org/1?200x200'
-  },
-  {
-    id: 2,
-    name: 'Ervin Howell',
-    username: 'Antonette',
-    email: 'Shanna@melissa.tv',
-    image: 'https://robohash.org/2?200x200'
-  },
-  {
-    id: 3,
-    name: 'Clementine Bauch',
-    username: 'Samantha',
-    email: 'Nathan@yesenia.net',
-    image: 'https://robohash.org/3?200x200'
-  },
-  {
-    id: 4,
-    name: 'Patricia Lebsack',
-    username: 'Karianne',
-    email: 'Julianne.OConner@kory.org',
-    image: 'https://robohash.org/4?200x200'
-  },
-  {
-    id: 5,
-    name: 'Chelsey Dietrich',
-    username: 'Kamren',
-    email: 'Lucio_Hettinger@annie.ca',
-    image: 'https://robohash.org/5?200x200'
-  },
-  {
-    id: 6,
-    name: 'Mrs. Dennis Schulist',
-    username: 'Leopoldo_Corkery',
-    email: 'Karley_Dach@jasper.info',
-    image: 'https://robohash.org/6?200x200'
-  },
-  {
-    id: 7,
-    name: 'Kurtis Weissnat',
-    username: 'Elwyn.Skiles',
-    email: 'Telly.Hoeger@billy.biz',
-    image: 'https://robohash.org/7?200x200'
-  },
-  {
-    id: 8,
-    name: 'Nicholas Runolfsdottir V',
-    username: 'Maxime_Nienow',
-    email: 'Sherwood@rosamond.me',
-    image: 'https://robohash.org/8?200x200'
-  },
-  {
-    id: 9,
-    name: 'Glenna Reichert',
-    username: 'Delphine',
-    email: 'Chaim_McDermott@dana.io',
-    image:'https://robohash.org/9?200x200'
-  },
-  {
-    id: 10,
-    name: 'Clementina DuBuque',
-    username: 'Moriah.Stanton',
-    email: 'Rey.Padberg@karina.biz',
-    image:'https://robohash.org/10?200x200'
-  }
-  ];
+// Displaying all robots
+const filteredList = filterRobots('');
+displayRobots(filteredList);
+
+const inputElement = document.getElementById('robosearch');
+inputElement.addEventListener('input', updateFilteredRobots);
+
+function updateFilteredRobots() {
+  const normalizedQuery = normalizeQuery();
+  const filteredList = filterRobots(normalizedQuery);
+  displayRobots(filteredList);
+}
+
 
 // Part I: Display robots
 function createCard(obj) {
@@ -108,20 +49,33 @@ function createCard(obj) {
 }
 
 function displayRobots(list) {
+  // Checking if argument fits
   if (typeof list !== 'object') {
     alert('Should be an object');
   }
-  const section = document.querySelector('.robo-list');
 
+  // Getting parent container
+  const listElement = document.querySelector('.robo-list');
+
+  // Creating cards
+  const cards = robots.map((robot) => createCard(robot));
+
+  // Appending cards
+  cards.forEach((card) => listElement.appendChild(card));
 }
 
 // Part II: Filter robots
 function filterRobots(query) {
+  // Checking query
   if (query.length === 0 || typeof query !== 'string') {
     return robots;
   }
-  robots.forEach((robot) => robot.name.toLowerCase());
-  const filteredRobotsList = robots.filter((robot) => robot.name.includes(query));
+
+  // Filtering array with query
+  const filteredRobotsList = robots.filter((robot) =>
+  robot.name.toLowerCase().includes(query));
+
+  // Getting result
   return filteredRobotsList;
 }
 
