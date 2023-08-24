@@ -1,89 +1,132 @@
-// 🌟 Exercise 1 : Colors
-// Instructions
-// Using this array :
-const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+// Mini-Project - Robo-Friends Search
+const robots = [
+  {
+    id: 1,
+    name: 'Leanne Graham',
+    username: 'Bret',
+    email: 'Sincere@april.biz',
+    image: 'https://robohash.org/1?200x200'
+  },
+  {
+    id: 2,
+    name: 'Ervin Howell',
+    username: 'Antonette',
+    email: 'Shanna@melissa.tv',
+    image: 'https://robohash.org/2?200x200'
+  },
+  {
+    id: 3,
+    name: 'Clementine Bauch',
+    username: 'Samantha',
+    email: 'Nathan@yesenia.net',
+    image: 'https://robohash.org/3?200x200'
+  },
+  {
+    id: 4,
+    name: 'Patricia Lebsack',
+    username: 'Karianne',
+    email: 'Julianne.OConner@kory.org',
+    image: 'https://robohash.org/4?200x200'
+  },
+  {
+    id: 5,
+    name: 'Chelsey Dietrich',
+    username: 'Kamren',
+    email: 'Lucio_Hettinger@annie.ca',
+    image: 'https://robohash.org/5?200x200'
+  },
+  {
+    id: 6,
+    name: 'Mrs. Dennis Schulist',
+    username: 'Leopoldo_Corkery',
+    email: 'Karley_Dach@jasper.info',
+    image: 'https://robohash.org/6?200x200'
+  },
+  {
+    id: 7,
+    name: 'Kurtis Weissnat',
+    username: 'Elwyn.Skiles',
+    email: 'Telly.Hoeger@billy.biz',
+    image: 'https://robohash.org/7?200x200'
+  },
+  {
+    id: 8,
+    name: 'Nicholas Runolfsdottir V',
+    username: 'Maxime_Nienow',
+    email: 'Sherwood@rosamond.me',
+    image: 'https://robohash.org/8?200x200'
+  },
+  {
+    id: 9,
+    name: 'Glenna Reichert',
+    username: 'Delphine',
+    email: 'Chaim_McDermott@dana.io',
+    image:'https://robohash.org/9?200x200'
+  },
+  {
+    id: 10,
+    name: 'Clementina DuBuque',
+    username: 'Moriah.Stanton',
+    email: 'Rey.Padberg@karina.biz',
+    image:'https://robohash.org/10?200x200'
+  }
+  ];
 
-// Write a JavaScript program that displays the colors in the following order : “1# choice is Blue.” “2# choice is Green.” “3# choice is Red.” ect…
-colors.forEach((element, index) => console.log(`${index + 1}# choice is ${element}`));
-// Check if at least one element of the array is equal to the value “Violet”. If yes, console.log("Yeah"), else console.log("No...")
-colors.some(element => element === 'Violet') ? console.log('Yeah') : console.log('No');
-// Hint : Use the array methods taught in class. Look at the lesson Array Methods.
+// Part I: Display robots
+function createCard(obj) {
+  // Creating card
+  const card = document.createElement('li');
+  card.classList.add('card');
+  // Creating card image-wrapper
+  const cardImageWrapper = document.createElement('div');
+  cardImageWrapper.classList.add('card-image-wrapper');
+  // Creating card image
+  const cardImage = document.createElement('img');
+  cardImage.setAttribute('src', obj.image);
+  cardImage.classList.add('card-image');
+  // Creating card title
+  const cardTitle = document.createElement('h2');
+  cardTitle.textContent = obj.name;
+  cardTitle.classList.add('card-title');
+  // Creating card email
+  const cardEmail = document.createElement('p');
+  cardEmail.textContent = obj.email;
+  cardEmail.classList.add('card-email');
 
+  // Appending nodes
+  cardImageWrapper.appendChild(cardImage);
+  card.appendChild(cardImageWrapper);
+  card.appendChild(cardTitle);
+  card.appendChild(cardEmail);
 
-// 🌟 Exercise 2 : Colors #2
-// Instructions
-// Using these arrays :
-// const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-const ordinal = ["th","st","nd","rd"];
-// Write a JavaScript program that displays the colors in the following order : “1st choice is Blue .” “2nd choice is Green.” “3rd choice is Red.” ect…
-colors.slice(0, ordinal.length).forEach((element, index) => console.log(`${index + 1}${ordinal[index]} choice is ${element}`));
-// Hint : Use the array methods taught in class and ternary operator.
+  // Getting the result
+  return card;
 
+  // // Test Ground
+  // const list = document.querySelector('.robo-list');
+  // list.appendChild(card);
+}
 
-// Exercise 3 : Analyzing
-// Instructions
-// Analyze these pieces of code before executing them. What will be the outputs ?
-// ------1------
-// const fruits = ["apple", "orange"];
-// const vegetables = ["carrot", "potato"];
+function displayRobots(list) {
+  if (typeof list !== 'object') {
+    alert('Should be an object');
+  }
+  const section = document.querySelector('.robo-list');
 
-// const result = ['bread', ...vegetables, 'chicken', ...fruits];
-// console.log(result);
+}
 
-// ------2------
-// const country = "USA";
-// console.log([...country]);
+// Part II: Filter robots
+function filterRobots(query) {
+  if (query.length === 0 || typeof query !== 'string') {
+    return robots;
+  }
+  robots.forEach((robot) => robot.name.toLowerCase());
+  const filteredRobotsList = robots.filter((robot) => robot.name.includes(query));
+  return filteredRobotsList;
+}
 
-// ------Bonus------
-// let newArray = [...[,,]];
-// console.log(newArray);
-
-
-// 🌟 Exercise 4 : Employees
-// Instructions
-// Using this array:
-const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
-             { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
-             { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
-             { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
-             { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
-             { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
-             { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}];
-// Using the map() method, push into a new array the firstname of the user and a welcome message. You should get an array that looks like this :
-// const welcomeStudents = ["Hello Bradley", "Hello Chloe", "Hello Jonathan", "Hello Michael", "Hello Robert", "Hello Wes", "Hello Zach"]
-const welcomeStudents = [];
-users.map((user) => welcomeStudents.push(`Hello ${user.firstName}`));
-// console.log(welcomeStudents); // -> ['Hello Bradley', 'Hello Chloe', 'Hello Jonathan', 'Hello Michael', 'Hello Robert', 'Hello Wes', 'Hello Zach']
-
-// 2. Using the filter() method, create a new array, containing only the Full Stack Residents.
-const fullStackDevs = users.filter((user) => user.role === 'Full Stack Resident');
-// console.log(fullStackDevs); // -> { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' }...
-// 3. Bonus : Chain the filter method with a map method, to return an array containing only the lastName of the Full Stack Residents.
-// console.log(users.filter((user) => user.role === 'Full Stack Resident').map((user) => user.lastName)); // -> ['Bouley', 'Alnaji', 'Hajek']
-
-
-// 🌟 Exercise 5 : Star Wars
-// Instructions
-// Using this array 
-const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
-
-// Use the reduce() method to combine all of these into a single string.
-const notSoEpic = epic.reduce((acc, word) => acc + ' ' + word);
-// console.log(notSoEpic); // -> a long time ago in a galaxy far far away
-
-// 🌟 Exercise 6 : Employees #2
-// Instructions
-// Using this object:
-
-const students = [{name: "Ray", course: "Computer Science", isPassed: true}, 
-               {name: "Liam", course: "Computer Science", isPassed: false}, 
-               {name: "Jenner", course: "Information Technology", isPassed: true}, 
-               {name: "Marco", course: "Robotics", isPassed: true}, 
-               {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
-               {name: "Jamie", course: "Big Data", isPassed: false}];
-// Using the filter() method, create a new array, containing the students that passed the course.
-// Bonus : Chain the filter method with a forEach method, to congratulate the students with their name and course name 
-// (ie. “Good job Jenner, you passed the course in Information Technology”, “Good Job Marco you passed the course in Robotics” ect…)
-const passedStudents = students.filter(student => student.isPassed);
-// console.log(passedStudents); // -> {Ray...}...
-// passedStudents.forEach((student) => console.log(`Congratulions, ${student.name}`)); // -> Congratulions, Ray...
+function normalizeQuery() {
+  const inputValue = document.getElementById("robosearch").value;
+  const normalizedQuery = inputValue.replace(/\s+/g, " ").trim().toLowerCase();
+  return normalizedQuery;
+}
