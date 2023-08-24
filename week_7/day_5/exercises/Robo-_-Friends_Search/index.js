@@ -81,6 +81,7 @@ function filterRobots(query) {
   // Filtering array with query
   const filteredRobotsList = robots.filter((robot) =>
   robot.name.toLowerCase().includes(query));
+  
   // Getting result
   return filteredRobotsList;
 }
