@@ -22,7 +22,7 @@ function removeAllChildNodes(parent) {
   while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
   }
-}
+};
 
 /* Part I: Display robots */
 
@@ -48,9 +48,7 @@ function createCard(obj) {
 
   // Appending nodes
   cardImageWrapper.appendChild(cardImage);
-  card.appendChild(cardImageWrapper);
-  card.appendChild(cardTitle);
-  card.appendChild(cardEmail);
+  card.append(cardImageWrapper, cardTitle, cardEmail);
 
   // Getting the result
   return card;
@@ -76,7 +74,7 @@ function displayRobots(list) {
 
 function filterRobots(query) {
   // Checking query
-  if (query.length === 0 || typeof query !== 'string') {
+  if (typeof query !== 'string') {
     return robots;
   }
 
