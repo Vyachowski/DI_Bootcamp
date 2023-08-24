@@ -1,7 +1,9 @@
-// Daily Challenge: Anagram
+/* Daily Challenge: Anagram */
+
 // Create a function that:
 // – takes in two strings as two parameters
-// – and returns a boolean that indicates whether or not the first string is an anagram of the second string.
+// – and returns a boolean that indicates whether or not the first string is an anagram of the second string
+
 function isAnagram(word1, word2) {
   // Normalizing array
   const lettersList1 = word1.trim().split('').map((letter) => letter.toLowerCase());
