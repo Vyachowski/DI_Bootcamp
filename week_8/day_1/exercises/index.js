@@ -97,8 +97,8 @@ console.log(usersMultipliedData); // -> [ [ 'user1', 36546 ], [ 'user2', 185666 
 // 🌟 Exercise 6: Challenges
 // Evaluate these (ie True or False)
 
-[2] === [2] // -> ANSWER: Not equal (False), because reference is not equal
-{} === {} // -> ANSWER: Not equal (False), because reference is not equal
+// [2] === [2] // -> ANSWER: Not equal (False), because reference is not equal
+// {} === {} // -> ANSWER: Not equal (False), because reference is not equal
 
 // What is, for each object below, the value of the property number and why?
 
@@ -114,8 +114,26 @@ console.log(usersMultipliedData); // -> [ [ 'user1', 36546 ], [ 'user2', 185666 
 
 
 // Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin ect …
+class Animal {
+  constructor(name, type, color) {
+    this.name = name;
+    this.type = type;
+    this.color = color;
+  };
+};
+// Create a class Mamal that extends from the Animal class. Inside the class, add a method called sound(). 
+// This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) as well as the sound it makes.
+class Mamal extends Animal {
+  constructor(name, type, color) {
+    super(name, type, color);
+  }
 
-// Create a class Mamal that extends from the Animal class. Inside the class, add a method called sound(). This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) as well as the sound it makes.
-
+  sound(soundExample) {
+    return `${this.name} makes ${soundExample}. It is an ${this.color} ${this.type}.`;
+  }
+}
 // Create a farmerCow object that is an instance of the class Mamal. The object accepts a name, a type and a color and calls the sound method that “moos” her information.
 // For example: Moooo I'm a cow, named Lily and I'm brown and white;
+
+// const farmerCow = new Mamal('Blizzard', 'Cow', 'Orange');
+// console.log(farmerCow.sound('Moooooo!!! meow :)')); // -> Blizzard makes Moooooo!!! meow :). It is an Orange Cow.
