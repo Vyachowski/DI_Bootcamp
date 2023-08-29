@@ -1,5 +1,8 @@
 const paragraph = document.querySelector('.chuck-joke');
+const button = document.querySelector('.joke-button');
 
-fetch('https://api.chucknorris.io/jokes/random')
+button.addEventListener('click', () => {
+  fetch('https://api.chucknorris.io/jokes/random')
     .then((response) => response.json())
-    .then((data) => paragraph.textContent = JSON.stringify(data.value));
+    .then((data) => paragraph.textContent = JSON.stringify(data.value))
+})
