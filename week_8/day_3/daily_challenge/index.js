@@ -1,83 +1,56 @@
-// 🌟 Exercise 1: Giphy API
+// Daily Challenge: Gifs
 // Instructions:
-// With your knewly accumulated knowledge of the Fetch API lets write some cool code!
-// You will work with this part of the documention
-// You will use this Gif URL: https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My
-// Explanation of the Gif URL and the queries:
-// – q Request Parameter: Search query term or phrase. Above, the URL is searching for “hilarious” gifs
-// – rating Request Parameter: Filters results by specified rating. We are searching for Level 1 gifs. Check out the ratings documentation
-// – api_key Request Paramater : GIPHY API Key. Our API KEY is hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My
-// Create a program to retrieve the data from the API URL provided above.
-// Use the fetch() method to make a GET request to the Giphy API and Console.log the Javascript Object that you receive.
-// Make sure to check the status of the Response and to catch any occuring errors.
-fetch('https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok, status code: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+// Use this Giphy API Random documentation. Use this API Key : hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My
+// In the HTML file, add a form, containing an input and a button.
+// This input is used to fetch gif depending on a specific category.
+// In the JS file, create a program to fetch one random gif depending on the search of the user
+// (ie. If the search is “sun”, append on the page one gif with a category of “sun”).
+// The gif should be appended with a DELETE button next to it.
+// Hint : to find the URL of the gif, look for the sub-object named “images” inside the data you receive from the API.
+// Allow the user to delete a specific gif by clicking the DELETE button.
+// Allow the user to remove all of the GIFs by clicking a DELETE ALL button.
 
-// 🌟 Exercise 2 : Giphy API
-// Instructions
-// Read carefully the documention to understand all the possible queries that the URL accept.
-// Use the Fetch API to retrieve 10 gifs about the “sun”. The starting position of the results should be 2.
-// Make sure to check the status of the Response and to catch any occuring errors.
-// Console.log the Javascript Object that you receive.
-fetch('https://api.giphy.com/v1/gifs/search?q=sun&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&limit=10&offset=2')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok, status code: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+const apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+const form = document.querySelector("#form");
+const categoryInput = document.querySelector("#input");
+const deleteAllButton = document.querySelector("#deleteAll");
+const gifContainer = document.querySelector("#container");
 
-// 🌟 Exercise 3: Async Function
-// Instructions
-// Improve the program below:
-// fetch("https://www.swapi.tech/api/starships/9/")
-//     .then(response => response.json())
-//     .then(objectStarWars => console.log(objectStarWars.result));
-// Create an async function, that will await for the above GET request.
-// The program shouldn’t contain any then() method.
-// Make sure to check the status of the Response and to catch any occuring errors.
-async function fetchStarship() {
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const category = categoryInput.value.trim();
+  if (category === "") return;
+
   try {
-    const response = await fetch('https://www.swapi.tech/api/starships/9/');
-
-    if (!response.ok) {
-      throw new Error(`Network response was not ok, status code: ${response.status}`);
-    }
-
-    const objectStarWars = await response.json();
-    console.log(objectStarWars.result);
+    const gifData = await fetchRandomGif(category);
+    appendGif(gifData, category);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching GIF:", error);
   }
-};
+});
 
-// fetchStarship();
-// 🌟 Exercise 4: Analyze
-// Instructions:
-// Analyse the code provided below - what will be the outcome?
-// function resolveAfter2Seconds() {
-//     return new Promise(resolve => {
-//         setTimeout(() => {
-//             resolve('resolved');
-//         }, 2000);
-//     });
-// }
+deleteAllButton.addEventListener("click", () => {
+  gifContainer.innerHTML = "";
+});
 
-// async function asyncCall() {
-//     console.log('calling');
-//     let result = await resolveAfter2Seconds();
-//     console.log(result);
-// }
+async function fetchRandomGif(category) {
+  const apiUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${category}`;
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data;
+}
 
-// asyncCall();
+function appendGif(gifData, category) {
+  const gifUrl = gifData.data.images.downsized.url;
+  const gifElement = document.createElement("div");
+  gifElement.innerHTML = `
+    <img src="${gifUrl}" alt="${category}">
+    <button class="deleteButton">Delete</button>
+  `;
+  gifContainer.appendChild(gifElement);
 
-// AS i understand it will display 'calling' first, and then 'resolved', because inside it works like a regular synchronous function
+  const deleteButton = gifElement.querySelector(".deleteButton");
+  deleteButton.addEventListener("click", () => {
+    gifContainer.removeChild(gifElement);
+  });
+}
