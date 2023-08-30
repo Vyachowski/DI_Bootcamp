@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Site</title>
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      background-image: url("background.jpg");
+      color: white;
+      font-size: 1.3rem;
+    }
+    .star-wars-logo {
+      width: 50%;
+      margin-bottom: 10px;
+    }
+    .hero-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      min-height: 400px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      border: 4px solid yellow;
+      border-radius: 10px;
+    }
+    .fetch-button {
+      display: block;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: transparent;
+      border: 3px solid yellow;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .loading {
+      display: none;
+      margin: auto;
+    }
+    .character {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="query-box">
+    <img class="star-wars-logo" src="logo.svg" alt="Star Wars Logo.">
+    <div class="hero-info">
+      <div class="loading">
+        <i class="fa-solid fa-spinner fa-spin" style="color: white; font-size: 4rem"></i>
+        <p style="color: white; font-size: 3rem">Loading...</p>
+      </div>
+      <div class="character">
+        <h2>Name: <span id="name"></span></h2>
+        <p>Height: <span id="height"></span> cm</p>
+        <p>Gender: <span id="gender"></span></p>
+        <p>Birth Year: <span id="birth-year"></span></p>
+        <p>Home World: <span id="home-world"></span></p>
+      </div>
+    </div>
+    <button class="fetch-button" type="button">Find someone</button>
+  </section>
+  <script src="index.js"></script>
+  <script src="https://kit.fontawesome.com/63bd801ead.js" crossorigin="anonymous"></script>
+</body>
+</html>
