@@ -6,6 +6,30 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Currency converter</h1>
+  <section>
+    <div class="currency-display">
+      <ul class="currency-cards">
+        <li class="currency-card">
+          <p class="label">From</p>
+          <label class="currency-selector" for="currency-selector">
+            <select id="currency-selector" name="currency-selector"></select>
+          </label>
+          <p class="currency-name"></p>
+        </li>
+        <li class="currency-card">
+          <p class="label">From</p>
+          <label class="currency-selector" for="to-currency-selector">
+            <select id="to-currency-selector" name="to-currency-selector"></select>
+          </label>
+          <p class="currency-name"></p>
+        </li>
+        <li class="result-card"></li>
+        <li class="result-card"></li>
+      </ul>
+    </div>
+    <button class="convert-button" type="button">Convert</button>
+  </section>
   <script src="index.js"></script>
 </body>
 </html>
