@@ -1,7 +1,7 @@
 // 🌟 Exercise 3: File Management Using CommonJS Syntax
 // Instructions:
-// Create a file named fileManager.js.
-// Inside fileManager.js, define a module that exports functions for reading and writing files.
+// Create a file named todo.js.
+// Inside todo.js, define a module that exports functions for reading and writing files.
 // Export functions named readFile and writeFile.
 // Implement the readFile function to read the content of a specified file using the fs module.
 const { readFileSync, writeFileSync} = require("node:fs");
