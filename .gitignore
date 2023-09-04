@@ -7,3 +7,4 @@ notes.py
 notes.js
 **/env
 venv/
+**/node_modules
