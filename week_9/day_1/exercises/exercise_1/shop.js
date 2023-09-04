@@ -7,8 +7,7 @@
 const products = require('./products');
 
 function findProduct(productName) {
-  const productNames = products.map((product) => product.name);
-  const indexOfRequestedProduct = productNames.indexOf(productName);
+  const indexOfRequestedProduct = products.map((product) => product.name).indexOf(productName);
   return products[indexOfRequestedProduct];
 }
 
