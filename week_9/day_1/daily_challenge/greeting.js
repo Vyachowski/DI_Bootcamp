@@ -5,8 +5,6 @@
 // Create another file named app.js in the same directory.
 // In app.js, require the greeting.js module and use the greet function to greet a user.
 // Run app.js using Node.js and see the greeting message.
-function greet(name) {
+export default function greet(name) {
   console.log(name);
 }
-
-module.exports = greet;
