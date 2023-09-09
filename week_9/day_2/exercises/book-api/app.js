@@ -8,6 +8,7 @@
 // In app.js, import the express module and create an instance of an Express app.
 const express = require('express');
 const app = express();
+app.use(express.json());
 // Define a basic data array containing a few book objects. Each book object should have properties like
 // – id, title, author, and publishedYear.
 const booksShelf = [
@@ -25,7 +26,7 @@ const booksShelf = [
   },
   {
     id: 3,
-    title: 'Daredevil',
+    title: 'Captain Daredevil',
     author: 'Louie Boussenard',
     publishedYear: 1850
   },
@@ -52,7 +53,17 @@ app.get('/api/books', (req, res) => {
   res.status(200).json(booksShelf);
 });
 // Implement the “Create” route at POST /api/books. Use the express.json() middleware to parse JSON body content.
-
-// Inside the route handler, create a new book object with an incremented ID and the data from the request body.
-
-// Add the new book to the books array and return a JSON response with the new book and a status code of 201 (Created).
+app.post('/api/books', (req, res) => {
+  const { title, author, publishedYear } = req.body;
+  // Inside the route handler, create a new book object with an incremented ID and the data from the request body.
+  const newBook = {
+    id: booksShelf.length + 1,
+    title,
+    author,
+    publishedYear
+  }
+  booksShelf.push(newBook);
+  // Add the new book to the books array and return a JSON response with the new book and a status code of 201 (Created).
+  res.status(201).json(newBook);
+  console.log(booksShelf);
+})
