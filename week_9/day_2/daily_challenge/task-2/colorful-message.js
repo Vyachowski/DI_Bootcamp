@@ -3,9 +3,9 @@
 // Install the chalk package by running npm install chalk in the terminal.
 // Create a file named colorful-message.js.
 // In colorful-message.js, require the chalk package and use it to create and display a colorful message in the terminal.
-// Create another file named app.js.
-// In app.js, require the colorful-message.js module and call the function you’ve written to display the colorful message.
-// Run app.js using Node.js and see the colorful message.
+// Create another file named db.js.
+// In db.js, require the colorful-message.js module and call the function you’ve written to display the colorful message.
+// Run db.js using Node.js and see the colorful message.
 
 import chalk from "chalk";
 

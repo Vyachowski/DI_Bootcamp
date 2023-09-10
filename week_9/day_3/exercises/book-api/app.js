@@ -4,8 +4,8 @@
 // (Create, Read, Update, Delete) API using Express.js. Your task is to create routes to manage a collection of books.
 // Create a new directory named book-api.
 // Inside the book-api directory, initialize a new Node.js project and install the express package.
-// Create a new file named app.js in the book-api directory.
-// In app.js, import the express module and create an instance of an Express app.
+// Create a new file named db.js in the book-api directory.
+// In db.js, import the express module and create an instance of an Express app.
 const express = require('express');
 const app = express();
 app.use(express.json());
