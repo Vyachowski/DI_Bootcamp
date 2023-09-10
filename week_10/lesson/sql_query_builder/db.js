@@ -30,11 +30,11 @@ const db = knex({
 })
 
 // Normal example of query
-db.select('id', 'name', 'price').from('products')
-.then(rows => {
-  console.log(rows);
-})
-.catch(err => console.log(err))
+// db.select('id', 'name', 'price').from('products')
+// .then(rows => {
+//   console.log(rows);
+// })
+// .catch(err => console.log(err))
 
 // !!! Bad example of query !!!
 // db('products').select('*')
@@ -42,3 +42,59 @@ db.select('id', 'name', 'price').from('products')
 //     console.log(rows);
 //   })
 //   .catch(err => console.log(err))
+
+// Query with conditions
+// db('products')
+//   .select('id', 'name', 'price').from('products')
+//   .where({id: 1})
+//   .then(rows => {
+//     console.log(rows);
+//   })
+//   .catch(err => console.log(err))
+
+// Query with conditions
+// db('products')
+//   .insert(
+//     [
+//       { name: 'icAr', price: 1000 },
+//       { name: 'iBook', price: 300 },
+//     ]
+//   )
+//   .returning('*')
+//   .where({id: 1})
+//   .then(rows => {
+//     console.log(rows);
+//   })
+//   .catch(err => console.log(err))
+
+// db.raw('select id, name, price from products')
+//   .then(rows => {
+//     console.log(rows);
+//   })
+//   .catch(err => console.log(err))
+
+const register = async () => {
+  const trx = await db.transaction();
+  try {
+    const user = await db('products').insert(
+      {
+        username: 'aaa',
+        email: 'aaa@gmail.com'
+      },
+      ['username', "email"]
+    )
+      .transacting(trx)
+    const hashpwd = await db('hashpwd')
+      .insert(
+        {
+          username: user[0].username,
+          password: 123456
+        }, ['password', 'username']
+      )
+    await trx.commit();
+  } catch (e) {
+    trx.rollback();
+    console.log(e);
+  }
+}
+register()
