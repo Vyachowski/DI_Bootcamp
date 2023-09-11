@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .inputs-wrapper {
+            display: flex;
+            gap: 20px;
+        }
+        .variant-button {
+            display: block;
+            background-color: transparent;
+            font: inherit;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Guess an emoji!</h1>
+        <h2 class="leaderboard-title">Leaderboard</h2>
+        <ul class="leaderboard-list">
+            <li class="leaderboard-item">No data yet :(</li>
+        </ul>
+        <form action="#" method="post">
+            <div class="inputs-wrapper">
+                <label for="variant-1" class="input-label">
+                    <input class="variant-button" type="button" id="variant-1" value="Variant 1">
+                </label>
+                <label for="variant-2" class="input-label">
+                    <input class="variant-button" type="button" id="variant-2" value="Variant 2">
+                </label>
+                <label for="variant-3" class="input-label">
+                    <input class="variant-button" type="button" id="variant-3" value="Variant 3">
+                </label>
+                <label for="variant-4" class="input-label">
+                    <input class="variant-button" type="button" id="variant-4" value="Variant 4">
+                </label>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
