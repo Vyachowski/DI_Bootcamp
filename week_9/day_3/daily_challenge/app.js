@@ -31,7 +31,7 @@ const emojis = [
 ];
 //   Generate a random emoji from the array and select a few incorrect options as distractors.
 const randomNumber = (max) => Math.floor(Math.random() * max);
-const randomEmojiWithException = (excludedNumber) => ;
+const randomEmojiWithException = (excludedNumber) => 'something';
 //   Using a form, present the player with the random emoji and multiple choice options (including the correct name).
 //
 // Allow the player to submit their guess. Get the data from the form and POST it, using the Fetch API.
