@@ -186,18 +186,18 @@ function planeRideCost() {
 // console.log(planeRideCost()); // -> for 10 days = 1400
 
 // Define a function called rentalCarCost().
-// It should ask the user for the number of days they would like to rent the car.
+// It should ask the user for the number of days they would like to rent the react-exercise.
 // If the user doesn’t answer or if the answer is not a number, ask again.
-// Calculate the cost to rent the car. The car costs $40 everyday.
-// If the user rents a car for more than 10 days, they get a 5% discount.
-// The function should return the total price of the car rental.
+// Calculate the cost to rent the react-exercise. The react-exercise costs $40 everyday.
+// If the user rents a react-exercise for more than 10 days, they get a 5% discount.
+// The function should return the total price of the react-exercise rental.
 function rentalCarCost() {
   let numberOfDays = 0;
   let totalPrice;
   let price = 40;
 
   while (numberOfDays === 0 ) {
-        answer = prompt('How long do you need a car?');
+        answer = prompt('How long do you need a react-exercise?');
         isNaN(Number(answer)) ? 0 : numberOfDays = Number(answer);
       }
 
@@ -213,7 +213,7 @@ function rentalCarCost() {
 // console.log(rentalCarCost()); // -> for 10 days = 400
 
 // Define a function called totalVacationCost() that returns the total cost of the user’s vacation by calling the 3 functions that you created above.
-// Example : The car cost: $x, the hotel cost: $y, the plane tickets cost: $z.
+// Example : The react-exercise cost: $x, the hotel cost: $y, the plane tickets cost: $z.
 // Hint: You have to call the functions hotelCost(), planeRideCost() and rentalCarCost() inside the function totalVacationCost().
 
 // Call the function totalVacationCost()

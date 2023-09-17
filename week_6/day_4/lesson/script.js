@@ -185,12 +185,12 @@
 // }
 
 
-// Exercise Keyless car
+// Exercise Keyless react-exercise
 
 // const userAnswer = Number(prompt('What is your age'));
 
 // if (userAnswer < 18) {
-//   alert('Sorry, you are to young to drive this car')
+//   alert('Sorry, you are to young to drive this react-exercise')
 // } else if (userAnswer === 18) {
 //   alert('Congratulions of your first year of driving')
 // } else {

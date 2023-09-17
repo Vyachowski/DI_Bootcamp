@@ -54,7 +54,7 @@ const inventory = [
 
 // Create a function getCarHonda(carInventory) that takes a single parameter. carInventory‘s value is an array which is an inventory of cars (see the array of objects below)
 // The function should:
-// – loop through the array of object and return the first car with the name “Honda”.
+// – loop through the array of object and return the first react-exercise with the name “Honda”.
 // – then, return a string in the format This is a {car_make} {car_model} from {car_year}.
 // Hint : Find an array method that returns the value of the first element in an array that pass a test.
 function getCarHonda(carInventory) {
