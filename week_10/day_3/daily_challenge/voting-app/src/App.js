@@ -9,35 +9,25 @@ function App() {
     {name: "Java", votes: 0}
   ])
 
-  function increaseVote(number) {
+  function increaseVote(languageName) {
     const updatedLanguages = [...languages];
-    updatedLanguages[number].votes += 1;
+    const lang = updatedLanguages.find((language) => language.name === languageName);
+    if (lang) {
+      lang.votes += 1;
+    }
     setLanguages(updatedLanguages);
   }
 
   return (
     <div className="App">
       <ul className='languages-list'>
-        <li className='language-item'>
-          <span className='votes'>{languages[0].votes}</span>
-          <span className='language-name'>Php</span>
-          <button className='votes-total' type='button' onClick={() => increaseVote(0)}>Click here</button>
-        </li>
-        <li className='language-item'>
-          <span className='votes'>{languages[1].votes}</span>
-          <span className='language-name'>Python</span>
-          <button className='votes-total' type='button' onClick={() => increaseVote(1)}>Click here</button>
-        </li>
-        <li className='language-item'>
-          <span className='votes'>{languages[2].votes}</span>
-          <span className='language-name'>JavaScript</span>
-          <button className='votes-total' type='button' onClick={() => increaseVote(2)}>Click here</button>
-        </li>
-        <li className='language-item'>
-          <span className='votes'>{languages[3].votes}</span>
-          <span className='language-name'>Java</span>
-          <button className='votes-total' type='button' onClick={() => increaseVote(3)}>Click here</button>
-        </li>
+        {languages.map((language, index) => {
+          return (<li key={index} className={'language-item language-item-' + index}>
+            <span className='votes'>{language.votes}</span>
+            <span className='language-name'>{language.name}</span>
+            <button className='votes-total' type='button' onClick={() => increaseVote(language.name)}>Click here</button>
+          </li>)
+        })}
       </ul>
     </div>
   );
