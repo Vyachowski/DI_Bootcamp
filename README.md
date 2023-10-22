@@ -1,4 +1,4 @@
-# Developers institute Bootcamp
+# Developers Institute Bootcamp
 
 Developers.Institute is a selective & intensive coding bootcamp, dedicated to educating the next generation of tech talent in Israel.
 
