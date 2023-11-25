@@ -12,13 +12,12 @@ function displayNumbersDivisible() {
       sum += i;
     }
   }
-
   console.log(sum);
 }
 
 // OUTCOME
 displayNumbersDivisible();
-// Outcome : 0 23 46 69 92 115 138 161 184 207 230 253 276 299 322 345 
+// Outcome : 0 23 46 69 92 115 138 161 184 207 230 253 276 299 322 345
 // 368 391 414 437 460 483
 // Sum : 5313
 
@@ -47,21 +46,21 @@ displayGivenNumbersDivisible(45);
 
 // 🌟 Exercise 2 : Shopping List
 // Instructions:
-const stock = { 
-    "banana": 6, 
+const stock = {
+    "banana": 6,
     "apple": 0,
     "pear": 12,
     "orange": 32,
     "blueberry":1
-}  
+}
 
-const prices = {    
-    "banana": 4, 
-    "apple": 2, 
+const prices = {
+    "banana": 4,
+    "apple": 2,
     "pear": 1,
     "orange": 1.5,
     "blueberry":10
-} 
+}
 // Add the stock and prices objects to your js file.
 // Create an array called shoppingList with the following items: “banana”, “orange”, and “apple”. It means that you have 1 banana, 1 orange and 1 apple in your cart.
 const shoppingList = ['banana', 'orange', 'apple'];
@@ -73,7 +72,7 @@ function myBill() {
     if (stock[item] > 0) {
       totalPrice = totalPrice + prices[item];
       stock[item] = stock[item] - 1;
-    } 
+    }
   }
   return totalPrice;
 }
@@ -91,7 +90,7 @@ console.log(stock['banana']); // -> 5
 // Exercise 3 : What’s In My Wallet ?
 // Instructions
 // Note: Read the illustration (point 4), while reading the instructions
-// Create a function named changeEnough(itemPrice, amountOfChange) that receives two arguments: 
+// Create a function named changeEnough(itemPrice, amountOfChange) that receives two arguments:
 // – an item price
 // – and an array representing the amount of change in your pocket.
 // In the function, determine whether or not you can afford the item.
@@ -105,7 +104,7 @@ console.log(stock['banana']); // -> 5
 
 function changeEnough(itemPrice, amountOfChange) {
   [quarters, dimes, nickel, penny] = amountOfChange;
-  let totalSum = 0;
+  let totalSum;
 
   const QUARTERNOMINAL = 0.25;
   const DIMESNOMINAL = 0.1;
@@ -141,7 +140,7 @@ console.log(changeEnough(0.75, [0,0,20,5])) // => returns true
 // If the user doesn’t answer or if the answer is not a number, ask again.
 // The hotel costs $140 per night. The function should return the total price of the hotel.
 function hotelCost() {
-  let totalPrice = 0;
+  let totalPrice;
   let answer = '';
   let nightsInHotel = 0;
   const pricePerNight = 140;
