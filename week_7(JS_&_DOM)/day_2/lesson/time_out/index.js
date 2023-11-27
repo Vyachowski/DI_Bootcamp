@@ -1,3 +1,4 @@
+// Time-out exercise
 function showBanner(){
   const bannerElement = document.querySelector('#banner');
   bannerElement.removeAttribute('style');
